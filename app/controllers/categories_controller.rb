@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
  
-before_filter :check_logged_in
+#before_filter :check_logged_in
 before_filter :check_admin,:except => :index
   # GET /categories
   # GET /categories.xml

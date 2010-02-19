@@ -1,6 +1,6 @@
 class FbCategoriesController < ApplicationController
-ensure_authenticated_to_facebook  
-layout "users"
+#ensure_authenticated_to_facebook  
+
 
 # Scrub sensitive parameters from your log
   # filter_parameter_logging :password

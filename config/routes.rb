@@ -25,5 +25,5 @@ ActionController::Routing::Routes.draw do |map|
    end
 
   map.resources :categories, :collection => {:subcategory_new => :get}
-  map.root :controller => "dashboards", :action => "index"
+  map.root :controller => "categories", :action => "index"
 end

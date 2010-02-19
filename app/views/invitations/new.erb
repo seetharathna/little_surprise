@@ -1,0 +1,9 @@
+<% content_for("invite_message") do %>
+  Come join my Little superise and send gifts to your fiiends
+	<%= fb_req_choice("Join Little Superise",:url => new_catogery_path) %>
+<% end %>
+<% fb_request_form("Little Superise","invite_message",invitations_path) do %>
+  <%= fb_multi_friend_selector( "Invite your friends to join Little Superise")%>
+  <br />
+
+<% end %>

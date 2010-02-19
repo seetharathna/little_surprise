@@ -1,0 +1,18 @@
+<p>
+  <b>Reference string:</b>
+  <%=h @email.reference_string %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%=h @email.subject %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @email.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_email_path(@email) %> |
+<%= link_to 'Back', emails_path %>

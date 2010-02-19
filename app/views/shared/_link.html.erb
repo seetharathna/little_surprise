@@ -1,0 +1,22 @@
+ 
+<div id = "sub_menu"> 
+<% if !current_user %>
+  <table> <tr><!-- <td> <%= link_to "Register", new_account_path %> |</td>
+  <td><%= link_to "Log In", new_user_session_path %> -->| </td> <td><%= authlogic_facebook_login_button :js => :jquery %></td></tr></table>
+<% elsif facebook_session %>
+ <!-- <%= link_to "My Account", account_path %>-->
+  <%= fb_logout_link("Logout from facebook", "#{root_url}user_session/logout")%> 
+<%else%>
+  <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+<% end %>
+</div>
+<div id="menu">
+  <ul>
+   <%if admin?%> 
+   <li><%= link_to "Categories", admin_categories_path %></li> 
+   <li><%= link_to "Users",admin_users_path %></li>
+  <%end%> 
+  </ul>
+ </div>
+    
+

@@ -1,0 +1,49 @@
+
+<h1>Listing wish lists</h1>
+
+
+
+ <fb:prompt-permission perms="email" next_fbjs="$('#grant-permissions').hide()">
+    Click here to grant email access!
+  </fb:prompt-permission>
+
+ <fb:prompt-permission perms="offline_access" next_fbjs="$('#grant-permissions').hide()">
+    Click here to grant offline access!
+  </fb:prompt-permission>
+
+
+
+<% if !@my_wish_lists.blank? %>
+
+<table cellpadding="10px" cellspacing="10px">
+  <% @counter = 0 %>
+  <tr>
+  <% @my_wish_lists.each do |my_wish_list| %>
+  <% @counter = @counter + 1 %>
+    <td class = "image_border">
+      <div class = "left">
+        <b><%=h my_wish_list.name %></b><br/><%= image_tag my_wish_list.avatar.url(:thumb)%>
+      </div>
+ 
+      <div class = "right">
+        <b>Description:</b><%=h my_wish_list.description %><br/>
+        <b>Url</b>:<a><%=h my_wish_list.url %></a><br/>
+        <b>Lowest points needed:</b><%=h my_wish_list.lowest_number_of_points_needed %><br/>
+        <b><%= link_to 'Remove from wishlist', wish_list_path(:id => my_wish_list.category_id), :confirm => 'Are you sure?', :method => :delete %></b>
+      </div>
+     </td>
+     <% if @counter == 2 %>
+    <tr></tr>
+    <% @counter = 0 %> 
+    <%end%>
+  <% end %>
+  </tr>
+  <tr>
+   </tr>
+</table>
+<%else%>
+  <%=@message%>
+<%end%>
+
+<br />
+

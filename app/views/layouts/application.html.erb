@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= controller.controller_name %>: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'style' %> 
+  <%= javascript_include_tag 'jquery' %>
+  <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+
+</head>
+<body>
+
+ <%= fb_connect_javascript_tag %>
+ <%= init_fb_connect "XFBML", :js => :jquery %>
+
+
+<div id="wrapper">
+	<div id="header">
+<div id="logo">
+<h2><a>Little Surprise</a></h2>
+</div>
+	<%= render :partial => "shared/link" %>	
+</div>
+
+ 
+<p style="color: green"><%= flash[:notice] %></p>
+<br /><br /><br /
+
+
+
+<%= yield  %>
+
+</body>
+</html>

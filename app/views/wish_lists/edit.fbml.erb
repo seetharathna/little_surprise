@@ -1,0 +1,18 @@
+<h2>Edit your wishlist</h1>
+
+<% form_for(@wish_list) do |f| %>
+  <%= f.error_messages %>
+
+  <p>Wishlist Name<br/>
+  <%= f.text_field :name %></p>
+
+  <p>Wishlist Description<br/>
+  <%= f.text_area :description%></p>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @wish_list %> |
+<%= link_to 'Back', wish_lists_path %>

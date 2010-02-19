@@ -1,0 +1,32 @@
+
+
+<table cellpadding = "25px" cellspacing = "25px">
+<% @counter = 0 %>
+<h2>Listing all product categories</h2>
+  <tr>
+    <% @categories.each do |category| %>
+      <% @counter = @counter + 1 %>
+      <td class = "image_border">
+        <div class = "left">
+          <b><%=h category.name %></b><br/><%=link_to "#{image_tag category.avatar.url(:thumb)}",fb_categories_path(:category_id => category.id)%> 
+        </div>
+  
+        <div class = "right">
+          <%=h category.description %><br/><br/>
+          <a><%=h category.url %></a><br/><br/>
+          <!--<b>Lowest points needed:</b><%=h category.lowest_number_of_points_needed %><br/>-->
+          
+      
+      
+    </div>
+    </td>
+    <% if @counter == 3 %>
+      <tr></tr>
+    <% @counter = 0 %> 
+    <%end%>
+<% end %>
+ </tr>
+</table>
+
+<br />
+

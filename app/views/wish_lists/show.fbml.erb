@@ -1,0 +1,53 @@
+<% if @wish_list.nil? %>
+   This WishList does not exist.
+<%else%>
+  
+<% if !@categories.blank? %>
+  <% if  @owner.to_i == @wish_list.facebook_id.to_i %>
+     <div id = 'top_links'> 
+        <b><%=link_to "Publish",publish_to_friends_wish_lists_path(:category => @category) ,:confirm => 'Allow your friends to view your wishlist?'%> </b>  |  <b><%= link_to 'Edit my wishlist', edit_wish_list_path(@wish_list)%></b>  |  <b><%= link_to 'Delete my wishlist', wish_list_path(:id => @wish_list.id), :confirm => 'your wishlist will be deleted', :method => :delete %></b> 
+     </div>
+     <h2>Items in your wishlist.</h2>  
+   <%else%>
+   <h2> <%=fb_name(@facebook_id)%> 's  wishlist.</h2>
+<%end%>
+  <table>
+  <% @counter = 0 %>
+  <tr>
+    <% @categories.each do |category| %>
+    <% @counter = @counter + 1 %>
+      <td>
+        <div class = "item">
+          <div class ='item_title'> <%=h category.name %> </div>
+          <div class ='item_image'><%= image_tag category.avatar.url(:thumb)%></div>
+          <div class ='item_desc'> <%=h category.description %></div>
+          <div class ='item_url'> <a><%=h category.url %></a></div>
+          <!--<b>Lowest points needed:</b><%=h category.lowest_number_of_points_needed %><br/> -->
+          <% if @owner.to_i == @wish_list.facebook_id.to_i %>
+          <div class ='item_links'> <%= link_to 'Remove from wishlist', remove_category_wish_lists_path(:id => category.category_id), :confirm => "#{category.name} will be removed from your wishlist.", :method => :delete %>
+          </div>
+         <% end %>
+       </div>
+    </td>
+    <% if @counter == 3 %>
+      <tr></tr>
+    <% @counter = 0 %> 
+    <%end%>
+  <% end %>
+   </tr>
+   
+    
+
+</table>
+<%else%> 
+  <p>There are no items in your wishlist 
+  <%= link_to 'Click here to Add Items', fb_categories_path %></p>
+<%end%>
+<br />
+
+
+
+
+<%end%>
+ 
+

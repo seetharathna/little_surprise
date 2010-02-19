@@ -1,0 +1,13 @@
+<p>
+  <b>Points:</b>
+  <%=h @plan.points %>
+</p>
+
+<p>
+  <b>Credit:</b>
+  <%=h @plan.credit %>
+</p>
+
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

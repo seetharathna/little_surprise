@@ -1,0 +1,20 @@
+<h1>Editing wish_list</h1>
+
+<% form_for(@wish_list) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :facebook_id %><br />
+    <%= f.text_field :facebook_id %>
+  </p>
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.text_field :category_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @wish_list %> |
+<%= link_to 'Back', wish_lists_path %>

@@ -1,0 +1,15 @@
+ <table class ="category-index" align = "right" >
+<% @categories.each do |category| %>
+ <tr>
+   <td width="175px"><b><%=h category.name %></b><br/><%= image_tag category.avatar.url(:thumb)%><br/>
+   <td><b>Description:</b><%=h category.description %><br/>
+    <b>Url</b>:<a><%=h category.url %></a><br/>
+    <b>Lowest points needed:</b><%=h category.lowest_number_of_points_needed %><br />
+      <%if admin?%>
+      <%= link_to 'Edit', edit_admin_category_path(category) %>
+      <%= link_to 'Destroy', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete %><br/><br/></td>
+      <%end%>
+   
+  </tr>
+ <% end %>
+ </table>

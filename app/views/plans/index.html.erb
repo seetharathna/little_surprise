@@ -1,0 +1,20 @@
+<h3>Listing plans</h3><br />
+
+
+
+<% @plans.each do |plan| %>
+<table class>
+  <tr>
+    <%unless plan.points.blank? ||plan.credit.blank? || plan.name.blank? %>
+     <td><%=h plan.name%>&nbsp;.<%=h plan.points %>&nbsp;<b>Points&nbsp;---&nbsp;$</b><%=h plan.credit %></td>
+
+     <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+     <td><%= link_to 'Delete', plan, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New plan', new_plan_path %>

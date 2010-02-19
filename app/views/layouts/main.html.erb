@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Users: <%= controller.action_name %></title>
+  <%= javascript_include_tag 'application', :defaults,'jquery-1', 'jquery.cookie' %>
+    <%= stylesheet_link_tag 'style' %>
+
+  <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+
+
+  <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#tree").treeview({
+                collapsed: false,
+                animated: "medium",
+                control:"#sidetreecontrol",
+                persist: "location"
+            });
+        })
+    </script>
+    <script type="text/javascript">
+       jQuery.noConflict();
+ </script>
+
+
+</head>
+<body>
+<body>
+<div id="wrapper">
+	<div id="header">
+<div id="logo">
+<h2><a>Little Surprise</a></h2>
+</div>
+		<%= render :partial => "shared/link" %>
+</div>
+
+ 
+<p style="color: green"><%= flash[:notice] %></p>
+<br /><br /><br />
+
+<%= fb_connect_javascript_tag %>
+<%= init_fb_connect "XFBML"%>
+
+<%= yield %>
+</div>
+</body>
+</html>

@@ -21,7 +21,7 @@ development:
   database: little_surprise
   pool: 5
   username: root
-  password: isiri
+  password: qdroot123
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -34,7 +34,7 @@ test:
   database: little_surprise
   pool: 5
   username: root
-  password: isiri
+  password: qdroot123
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -44,5 +44,5 @@ production:
   database: little_surprise
   pool: 5
   username: root
-  password: isiri
+  password: qdroot123
   socket: /var/run/mysqld/mysqld.sock

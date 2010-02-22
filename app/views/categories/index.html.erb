@@ -1,4 +1,4 @@
-<%if @wish_list.nil? and !admin?%>
+<%if @wish_list.nil? and current_user and !admin?%>
   <p>No Items Found In Your Wish List.</p>
 <%end%>
 <table class = "category-list" align = "left" ><br />

@@ -31,20 +31,19 @@
 <body>
 <div id="wrapper">
 	<div id="header">
-<div id="logo">
-<h2><a>Little Surprise</a></h2>
-</div>
+		<div id="logo">
+			<h2><a>Little Surprise</a></h2>
+		</div>
 		<%= render :partial => "shared/link" %>
-</div>
+	</div>
 
- 
-<p style="color: green"><%= flash[:notice] %></p>
-<br /><br /><br />
+	<p style="color: green"><%= flash[:notice] %></p>
 
-<%= fb_connect_javascript_tag %>
-<%= init_fb_connect "XFBML"%>
 
-<%= yield %>
+	<%= fb_connect_javascript_tag %>
+	<%= init_fb_connect "XFBML"%>
+
+	<%= yield %>
 </div>
 </body>
 </html>

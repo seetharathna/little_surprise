@@ -1,15 +1,21 @@
  
-<div id = "sub_menu"> 
 <% if !current_user %>
-  <table> <tr><!-- <td> <%= link_to "Register", new_account_path %> |</td>
-  <td><%= link_to "Log In", new_user_session_path %> -->| </td> <td><%= authlogic_facebook_login_button :js => :jquery %></td></tr></table>
+<ul>
+	<!-- <%= link_to "Register", new_account_path %> 
+      	<%= link_to "Log In", new_user_session_path %> -->
+     	<li><%= authlogic_facebook_login_button :js => :jquery %></li>
+</ul>
 <% elsif facebook_session %>
- <!-- <%= link_to "My Account", account_path %>-->
-  <%= fb_logout_link("Logout from facebook", "#{root_url}user_session/logout")%> 
+<ul>
+ 	<!-- <%= link_to "My Account", account_path %>-->
+	<li><%= fb_logout_link("Logout from facebook", "#{root_url}user_session/logout")%> </li>
 <%else%>
-  <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+  	<li><%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %></li>
+</ul>
 <% end %>
-</div>
+
+
+
 <div id="menu">
   <ul>
    <%if admin?%> 

@@ -50,7 +50,7 @@ body { margin: 10px; padding: 0px; background:#e8e6e7 url(images/Xb_body.gif) 0 
 .header_left{
 	float:left;
 	width:26%;
-	padding:10px 5px 5px 10px;
+	padding:12px 5px 5px 12px;
 }
 
 .header_right{
@@ -148,6 +148,24 @@ p.text{
 	font-size:25px;
 	margin:5px 0px 0px 10px;
 }
+ul#tree{margin:15px 0px 0px 30px;
+	padding:0px;}
+
+ul#tree li {
+	margin:5px 0px;
+	padding:0px;
+	font-size:16px;
+	color:#105ea7;
+	text-align:left;list-style-type:circle
+}
+
+ul#tree li a{color:#105ea7;}
+
+ul#tree li ul li {
+	
+	font-size:13px;
+	
+}
 
 .container{
 	width:72%;
@@ -176,7 +194,7 @@ p.text{
 	padding:4px 5px;
 	margin:25px 0px 0px 5px;
 }
-.border_left{
+.outer_box{
   	width:300px;
   	float:left;
 	min-height:200px;
@@ -191,12 +209,8 @@ p.text{
 	padding:5px;
 }
 
-.border_right{
-  	width:300px;
-	min-height:200px;
-  	float:right;
-	margin:10px 5px 10px 0px;
-	background-color:#dbdbdb;	
+table.category-index tr td p{
+	line-height:18px;
 }
 
 

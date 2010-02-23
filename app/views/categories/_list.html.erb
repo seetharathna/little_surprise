@@ -1,26 +1,26 @@
 <h3>Product Categories</h3>
 <% @categories.each do |category| %>
-<div class="border_left">
+<div class="outer_box">
 <div class="box">
- <table class ="category-index" width="98%">
+<table class ="category-index" width="98%">
+<tr><td><center><%=h category.name %></center></td><td></td></tr>
  <tr>
    <td width="175px">
-		<b><%=h category.name %></b>
-		<br/><%= image_tag category.avatar.url(:thumb)%>
+		
+		<center><%= image_tag category.avatar.url(:thumb)%></center>
    </td>
-   <td>
-		<b>Description:</b><%=h category.description %><br/>
-    		<b>Url</b>:<a><%=h category.url %></a><br/>
-    		<b>Lowest points needed:</b><%=h category.lowest_number_of_points_needed %>
-  </td>
+   <td valign="top">
+		<p><%=h category.description %></p>
+    		<p><a><%=h category.url %></a></p>
+    		<p>Lowest points needed: <%=h category.lowest_number_of_points_needed %></p>
+   </td>
       
-      <!--<%= link_to 'Edit', edit_category_path(category) %>
-      <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %><br/><br/></td>-->
+   <!--<%= link_to 'Edit', edit_category_path(category) %>
+   <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %><br/><br/></td>-->
       
-   
-  </tr>
- </table>
+</tr>
+</table>
 </div>
 </div>
- <% end %>
+<% end %>
 

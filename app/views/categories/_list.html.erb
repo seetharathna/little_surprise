@@ -3,20 +3,27 @@
 <div class="outer_box">
 <div class="box">
 <table class ="category-index" width="98%">
-<tr><td><center><%=h category.name %></center></td><td></td></tr>
- <tr>
-   <td width="175px">
+<tr>
+	<td>
+	      <h4 class="heading"><%=h category.name %></h4>
+	</td>
+	<td></td>
+</tr>
+<tr>
+   	<td width="175px">
 		
 		<center><%= image_tag category.avatar.url(:thumb)%></center>
-   </td>
-   <td valign="top">
+   	</td>
+   	<td valign="top">
 		<p><%=h category.description %></p>
     		<p><a><%=h category.url %></a></p>
-    		<p>Lowest points needed: <%=h category.lowest_number_of_points_needed %></p>
-   </td>
+    		<p class="points">Lowest points needed 
+		<%=h category.lowest_number_of_points_needed %>
+		</p>
+   	</td>
       
-   <!--<%= link_to 'Edit', edit_category_path(category) %>
-   <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %><br/><br/></td>-->
+   	<!--<%= link_to 'Edit', edit_category_path(category) %>
+   	<%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %><br/><br/></td>-->
       
 </tr>
 </table>

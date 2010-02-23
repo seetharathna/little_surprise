@@ -15,7 +15,13 @@ before_filter :check_admin,:except => :index
      @wish_list = WishList.wishlist(facebook_session.user.uid) rescue nil
      
       
-     
+     if !params[:category_id].blank?
+     @fb_categories = Category.find_all_by_parent_id(params[:category_id])
+   else
+     @fb_categories = Category.find_all_by_parent_id(nil)
+    end
+    @category_ids = []
+    @category_ids = @wish_list.categories.collect { | h|  h.id } unless @wish_list.nil?
      respond_to do |format|
        format.html # index.html.erb
        format.js {  render :update do |page|

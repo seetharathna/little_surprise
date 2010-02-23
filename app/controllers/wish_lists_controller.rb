@@ -2,7 +2,7 @@ class WishListsController < ApplicationController
 ensure_authenticated_to_facebook  
 #ensure_application_is_installed_by_facebook_user
 before_filter :owner_of_the_profile,:only => [:delete, :edit]
-before_filter :require_user
+#before_filter :require_user
   # GET /wish_lists
   # GET /wish_lists.xml
  

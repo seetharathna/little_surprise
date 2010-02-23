@@ -15,9 +15,9 @@ class FbCategoriesController < ApplicationController
   def set_current_user
     set_facebook_session
     # if the session isn't secured, we don't have a good user id
-    if facebook_session and facebook_session.secured? and !request_is_facebook_tab?
-      self.current_user = User.for(facebook_session.user.to_i,facebook_session) 
-    end
+    #if facebook_session and facebook_session.secured? and !request_is_facebook_tab?
+     # self.current_user = User.for(facebook_session.user.to_i,facebook_session) 
+    #end
   end
   # END:CURRENT_USER
  
@@ -25,7 +25,7 @@ class FbCategoriesController < ApplicationController
 
 
  def index
-  @wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i])
+  #@wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i])
   if !params[:category_id].blank?
      @categories = Category.find_all_by_parent_id(params[:category_id])
   else

@@ -125,7 +125,8 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 	font-size:18px;
         margin-top:5px;
 	line-height:30px;
-	color:#1560a4;text-align:justify;
+	color:#1560a4;
+	text-align:justify;
 }
 
 .image_right{
@@ -154,7 +155,8 @@ p.text{
 	min-height:600px;
 	height:auto !important;
         height:600px;
-        float:left;background:url(/images/sidebar.jpg) no-repeat;
+        float:left;
+	background:url(/images/sidebar.jpg) no-repeat;
 }
 
 .sidebar h2{
@@ -173,7 +175,8 @@ ul#tree li {
 	padding:0px;
 	font-size:16px;
 	color:#105ea7;
-	text-align:left;list-style-type:circle
+	text-align:left;
+	list-style-type:dotted;
 }
 
 ul#tree li a{
@@ -222,9 +225,10 @@ ul#tree li ul li {
 .box{
 	margin:3px 1px 2px 1px;
 	background-color:#fff;
-	min-height:200px;
+	height:200px;
 	padding:5px;
 }
+
 table.category-index tr td h4.heading{
 	text-align:center;
 	color:#db3131;
@@ -240,6 +244,7 @@ table.category-index tr td p a:hover{
 }
 
 .points{
+	margin:10px 0px 0px 0px;
 	background-color:#ededed;
 	padding:3px 10px;
 }

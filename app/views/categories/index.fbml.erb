@@ -9,7 +9,7 @@
       <% @counter = @counter + 1 %>
       <td>
         <div class = "item">
-            <div class ='item_title'><%=h fb_category.name %></b><br/><%=link_to "#{image_tag fb_category.avatar.url(:thumb)}",fb_categories_path(:category_id => category.id)%></div>
+            <div class ='item_title'><%=h fb_category.name %></b><br/><%=link_to "#{image_tag fb_category.avatar.url(:thumb)}",fb_categories_path(:category_id => fb_category.id)%></div>
        
            <div class ='item_desc'><%=h fb_category.description %></div>
            <div class ='item_url'>Lowest points needed:</b><%=h fb_category.lowest_number_of_points_needed %></div>

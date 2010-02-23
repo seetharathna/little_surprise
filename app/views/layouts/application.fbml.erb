@@ -1,0 +1,50 @@
+<fb:fbml version="1.1">
+
+<%= javascript_include_tag "facebooker.js"%>
+<%= stylesheet_link_tag "category"%>
+
+<!--
+<% fb_dashboard do %>
+<%= fb_help 'Feedback', "http://www.facebook.com/apps/application.php?id=6236036681" %>
+
+<%end%>
+-->
+<%= fb_connect_javascript_tag %>
+<% init_fb_connect "XFBML","Api" do %>
+      <%= fb_user_action(flash[:user_action_to_publish]) if flash[:user_action_to_publish] %>
+<% end %>
+
+
+<% fb_tabs do %>
+
+  <%= fb_tab_item "Categories", fb_categories_path %>
+ 
+  <% if !@wish_list.blank? %>
+  <%= fb_tab_item "#{@wish_list.name}",wish_list_path(@wish_list.id) %>
+  <%end%>
+  
+  <% if (!@owner_wish_list.blank? &&  @owner_wish_list.id != @wish_list.id) %>
+    <%= fb_tab_item "View my wishlist",wish_list_path(@owner_wish_list.id) %>
+  <%end%>
+  
+
+  <%= fb_tab_item "Help &amp; Feedback",fb_about_url,:align=>"right"%> 
+  
+<% end %>
+
+
+
+
+
+<br />
+<%= fb_add_profile_section %>
+
+
+ <div id = 'wrapper'>
+   <%= yield%>
+ </div>
+
+</fb:fbml>
+
+
+

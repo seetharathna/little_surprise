@@ -14,7 +14,9 @@
 <body>
 <%= fb_connect_javascript_tag %>
 <%= init_fb_connect "XFBML", :js => :jquery %>
-<p style="color: green"><%= flash[:notice] %></p>
+
+	<p class= "notice"><%= flash[:notice] %></p>
+
 <div class="main">
 	<div class="header_left">
 		<h1>Little <span>Surprizes</span></h1>
@@ -34,6 +36,7 @@
 	jQuery(".header_right").corner("corner 10px");
         jQuery(".sidebar").corner("top 10px");
         jQuery(".container").corner("top 10px");
+	jQuery(".notice").corner("corner 10px");
 </script>
 </body>
 </html>

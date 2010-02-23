@@ -36,6 +36,15 @@ quotes : "" "";
 /*******************************************************/
 body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; font-family: Helvetica, Arial, Sans-Serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; line-height: normal; }
 
+.notice{
+	width:900px;
+	margin:0 auto;
+	color:#3b612d;
+	font-size:15px;
+	line-height:30px;
+	padding-left:10px;
+}
+
 
 .main{
 	width:900px;

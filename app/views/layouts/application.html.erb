@@ -8,12 +8,12 @@
   <%= stylesheet_link_tag 'style' %>
   <%=javascript_include_tag :defaults,:fckeditor, 'jquery-1', 'jquery.cookie', 'jquery.treeview.min','jquery','jquery.corner'%> 
 
-<!--<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>-->
+<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
 </head>
 
 <body>
-<!--<%= fb_connect_javascript_tag %>
-<%= init_fb_connect "XFBML", :js => :jquery %>-->
+<%= fb_connect_javascript_tag %>
+<%= init_fb_connect "XFBML", :js => :jquery %>
 
 	<p class= "notice"><%= flash[:notice] %></p>
 

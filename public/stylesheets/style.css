@@ -34,7 +34,7 @@ blockquote, q {
 quotes : "" "";
 }
 /*******************************************************/
-body { margin: 10px; padding: 0px; background:#e8e6e7 url(images/Xb_body.gif) 0 0 repeat-x; color: #6d6c67; font-family: Helvetica, Arial, Sans-Serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; line-height: normal; }
+body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; font-family: Helvetica, Arial, Sans-Serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; line-height: normal; }
 
 
 .main{
@@ -116,7 +116,7 @@ body { margin: 10px; padding: 0px; background:#e8e6e7 url(images/Xb_body.gif) 0 
 	font-size:18px;
         margin-top:5px;
 	line-height:30px;
-	color:#1560a4;
+	color:#1560a4;text-align:justify;
 }
 
 .image_right{

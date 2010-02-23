@@ -1,9 +1,27 @@
 class CategoriesController < ApplicationController
  
 #before_filter :check_logged_in
-before_filter :check_admin,:except => :index
+#helper_attr :current_user
+#attr_accessor :current_user
+before_filter :check_admin,:except => :index #:set_current_user,
+  
+   #def set_current_user
+    #set_facebook_session
+    # if the session isn't secured, we don't have a good user id
+    #if facebook_session and facebook_session.secured? and !request_is_facebook_tab?
+     # self.current_user = User.for(facebook_session.user.to_i,facebook_session) 
+    #end
+  #end
+  # END:CURRENT_USER
+ 
+
+
+
   # GET /categories
   # GET /categories.xml
+
+
+ 
   def index
      
      params[:search] ||= {}
@@ -28,6 +46,7 @@ before_filter :check_admin,:except => :index
                            page.replace_html 'category-list', :partial => 'list'
                        end
                   }
+       format.fbml #index.fbml.erb
      end
    end
 

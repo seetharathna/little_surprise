@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,  table, caption{
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, fieldset, form, label, legend,  table, caption{
 margin : 0;
 padding : 0;
 border : 0;
@@ -14,9 +14,7 @@ vertical-align:baseline;
 outline : 0;
 }
  
-ol, ul {
-list-style : none;
-}
+
  
 table {
 border-collapse : separate;
@@ -132,7 +130,9 @@ body { margin: 10px; padding: 0px; background:#e8e6e7 url(images/Xb_body.gif) 0 
 	float:left;	
 }
 
-p.text{font-size:12px;}
+p.text{
+	font-size:12px;
+}
 
 
 .sidebar{
@@ -141,7 +141,6 @@ p.text{font-size:12px;}
 	height:auto !important;
         height:600px;
         float:left;background:url(/images/sidebar.jpg) no-repeat;
-
 }
 
 .sidebar h2{
@@ -204,4 +203,6 @@ p.text{font-size:12px;}
 .clear{
 	clear:both;
 }
+
+
 

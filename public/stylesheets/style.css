@@ -80,6 +80,10 @@ body { margin: 10px; padding: 0px; background:#e8e6e7 url(images/Xb_body.gif) 0 
 	font-weight:bold;
 }
 
+.header_right ul.logout{
+	margin-top:15px;
+}
+
 .header_left h1{
 	color:#d71920;
 	font-size:30px;
@@ -132,6 +136,7 @@ body { margin: 10px; padding: 0px; background:#e8e6e7 url(images/Xb_body.gif) 0 
 
 p.text{
 	font-size:12px;
+	margin-left:8px;
 }
 
 
@@ -148,8 +153,11 @@ p.text{
 	font-size:25px;
 	margin:5px 0px 0px 10px;
 }
-ul#tree{margin:15px 0px 0px 30px;
-	padding:0px;}
+
+ul#tree{
+	margin:15px 0px 0px 30px;
+	padding:0px;
+}
 
 ul#tree li {
 	margin:5px 0px;
@@ -159,12 +167,12 @@ ul#tree li {
 	text-align:left;list-style-type:circle
 }
 
-ul#tree li a{color:#105ea7;}
+ul#tree li a{
+	color:#105ea7;
+}
 
-ul#tree li ul li {
-	
+ul#tree li ul li {	
 	font-size:13px;
-	
 }
 
 .container{
@@ -208,9 +216,23 @@ ul#tree li ul li {
 	min-height:200px;
 	padding:5px;
 }
+table.category-index tr td h4.heading{
+	text-align:center;
+	color:#db3131;
+	font-size:15px;
+}
 
 table.category-index tr td p{
 	line-height:18px;
+}
+
+table.category-index tr td p a:hover{
+	text-decoration:underline;
+}
+
+.points{
+	background-color:#ededed;
+	padding:3px 10px;
 }
 
 

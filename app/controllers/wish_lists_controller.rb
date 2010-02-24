@@ -132,9 +132,9 @@ private
  end
  
  def current_user
- puts "ppppppppppppppppppppppppppppppppp #{facebook_session.user.to_i} #{facebook_session.user.to_i.class}"
+ puts "ppppppppppppppppppppppppppppppppp #{facebook_session.user.to_i} #{facebook_session.user.to_i.class}  #{facebook_session.user.uid.class}"
   puts "ppppppppppasssssssssssssssssssssssss #{User.find_by_facebook_id('100000402570887')}"
-   User.find_by_facebook_id(facebook_session.user.to_i)
+   User.find_by_facebook_id(facebook_session.user.uid)
  end
 
  def facebook_user

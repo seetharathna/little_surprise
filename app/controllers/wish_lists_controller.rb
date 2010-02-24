@@ -132,6 +132,7 @@ private
  end
  
  def current_user
+ puts "ppppppppppppppppppppppppppppppppp #{facebook_session.user.to_i}"
    User.find_by_facebook_id(facebook_session.user.to_i)
  end
 

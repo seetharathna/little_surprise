@@ -22,7 +22,7 @@ class UserSessionsController < ApplicationController
          end
       else
          flash[:notice] = "Login successful!"
-         redirect_to  categories_path
+         redirect_to  wish_list_path(current_user.wishlist)
       end
 
      

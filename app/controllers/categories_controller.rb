@@ -47,7 +47,9 @@ before_filter :check_admin,:except => :index #:set_current_user,
                            page.replace_html 'category-list', :partial => 'list'
                        end
                   }
-       format.fbml { ensure_authenticated_to_facebook  }
+       format.fbml { ensure_authenticated_to_facebook 
+                     set_current_user
+                    }
      end
    end
 
@@ -130,7 +132,15 @@ before_filter :check_admin,:except => :index #:set_current_user,
   #@parent = Category.find_all_by_parent_id(nil)
  #end
 
+ private
  
+ def set_current_user
+    set_facebook_session
+    #if the session isn't secured, we don't have a good user id
+    if facebook_session and facebook_session.secured? and !request_is_facebook_tab?
+      self.current_user = User.for(facebook_session.user.to_i,facebook_session) 
+    end
+  end
 
  
 

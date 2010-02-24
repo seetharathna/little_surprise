@@ -1,4 +1,4 @@
-<% facebook_form_for :wish_list, WishList.new, :url => wish_lists_path do |f| %>
+<% facebook_form_for :wish_list, @wish_list, :url => wish_lists_path do |f| %>
 
 <% if flash[:notice] %>
   <fb:success>

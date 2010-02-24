@@ -17,7 +17,7 @@
 
 <% fb_tabs do %>
 
-  <%= fb_tab_item "Categories", fb_categories_path %>
+  <%= fb_tab_item "Categories", categories_path %>
  
   <% if !@wish_list.blank? %>
   <%= fb_tab_item "#{@wish_list.name}",wish_list_path(@wish_list.id) %>

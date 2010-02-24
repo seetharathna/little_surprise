@@ -18,9 +18,8 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   # GET /wish_lists/new
   # GET /wish_lists/new.xml
   def new
-    @user = facebook_session.user
-
-    
+    @user = current_user
+    @wish_list = current_user.wish_list.new
   end
 
   # GET /wish_lists/1/edit

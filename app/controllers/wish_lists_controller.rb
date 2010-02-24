@@ -14,28 +14,20 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
     end
   end
 
-  # GET /wish_lists/new
-  # GET /wish_lists/new.xml
   def new
     @user = facebook_user
     @wish_list = WishList.new
   end
 
-  # GET /wish_lists/1/edit
   def edit
     @wish_list = WishList.find(params[:id])
   end
-
-  # POST /wish_lists
-  # POST /wish_lists.xml
+ 
   def create
-    #@user = facebook_session.user
     @wish_list = WishList.new(params[:wish_list])
     @wish_list.user = user
-    #@wish_list.facebook_id = facebook_session.user.to_i
-    if @wish_list.save
-      
 
+    if @wish_list.save
       flash.now[:notice] = "Wish list has been created successfully."
       redirect_to(wish_list_path(@wish_list))
     else
@@ -46,8 +38,7 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
  
   end
 
-  # PUT /wish_lists/1
-  # PUT /wish_lists/1.xml
+
   def update
     @wish_list = WishList.find(params[:id])
 

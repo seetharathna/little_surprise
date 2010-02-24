@@ -72,6 +72,7 @@ class WishListsController < ApplicationController
   def publish_to_friends
     @wish_list = user.wish_list
     @category = Category.find(params[:category])
+    puts "ssssssssssssssssssssssssssssssssssssssssssss#{@category}"
     @user = facebook_session.user
     if @user.has_permissions?('publish_stream')
       facebook_session.user.publish_to(facebook_session.user, :message => 'has added new product categories to wishlist.',:action_links => [
@@ -80,7 +81,7 @@ class WishListsController < ApplicationController
       :attachment => {  :name => "#{@category.name}",
                         :description => "#{@category.description}",
                         :media => [{ :type => 'image',
-                                      #:src => "http://69.164.192.249:3012/#{@category.avatar.url(:thumb)}",      
+                                      :src => "http://69.164.192.249:3012/#{@category.avatar.url(:thumb)}",      
                                       :href => "http://apps.facebook.com/littlesurprizes"}]
                                                 }
                         )

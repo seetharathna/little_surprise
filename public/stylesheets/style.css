@@ -96,12 +96,10 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 .header_left h1{
 	color:#d71920;
 	font-size:30px;
-
 }
 
 .header_left h1 span{
 	color:#1560a4;
-
 
 }
 
@@ -117,7 +115,6 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 .image_bg p span,a{
 	color:#d71920;
 }
-
 
 
 .image_bg p{
@@ -181,6 +178,7 @@ ul#tree li {
 
 ul#tree li a{
 	color:#105ea7;
+	text-decoration:none;
 }
 
 ul#tree li ul li {	
@@ -214,19 +212,22 @@ ul#tree li ul li {
 	padding:4px 5px;
 	margin:25px 0px 0px 5px;
 }
-.outer_box{
-  	width:300px;
-  	float:left;
+.outer_box {
 	min-height:200px;
-	margin:10px 0px 10px 10px;
-	background-color:#dbdbdb;
+	height:auto !important;
+        height:200px;
+	float:left; 
+	margin: 10px 0px 10px 10px; 
+	padding:3px 2px 2px 2px;
+	width: 300px; 
+	background-color: #dbdbdb;
 }
-
-.box{
-	margin:3px 1px 2px 1px;
-	background-color:#fff;
-	height:200px;
-	padding:5px;
+.box {
+	background-color: #fff;
+	clear:both;
+	min-height:200px;
+	height:auto !important;
+        height:200px;
 }
 
 table.category-index tr td h4.heading{

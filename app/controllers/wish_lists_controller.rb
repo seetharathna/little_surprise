@@ -31,10 +31,10 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   def create
     #@user = facebook_session.user
     @wish_list = WishList.new(params[:wish_list])
+    @wish_list.user = user
     #@wish_list.facebook_id = facebook_session.user.to_i
     if @wish_list.save
-      user.wish_list = @wish_list
-      #user.save
+      
 
       flash.now[:notice] = "Wish list has been created successfully."
       redirect_to(wish_list_path(@wish_list))

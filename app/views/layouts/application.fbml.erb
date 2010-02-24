@@ -14,8 +14,17 @@
       <%= fb_user_action(flash[:user_action_to_publish]) if flash[:user_action_to_publish] %>
 <% end %>
 
-
-<%= render :partial => "shared/fblink" %>	
+<div id="menu">
+  <ul>
+  
+   <li><%= link_to "Categories", fb_categories_path %></li> 
+    <% if !@wish_list.blank? %>
+     <li><%= link_to "#{@wish_list.name}",wish_list_path(@wish_list.id) %></li>
+    <%end%>
+  
+  
+  </ul>
+ </div>	
 
 
 

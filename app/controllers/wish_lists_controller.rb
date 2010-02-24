@@ -135,6 +135,7 @@ private
  puts "ppppppppppppppppppppppppppppppppp #{facebook_session.user.to_i} #{facebook_session.user.to_i.class}  #{facebook_session.user.uid.class}"
   puts "ppppppppppasssssssssssssssssssssssss #{User.find_by_facebook_id('100000402570887')}"
    User.find(:first, :conditions => ["facebook_id = ?", facebook_session.user.uid])
+  puts "ppppppppppppppppppppppppppp #{User.find(:all)[2].facebook_id.class} "
  end
 
  def facebook_user

@@ -30,7 +30,7 @@ before_filter :check_admin,:except => :index #:set_current_user,
      @search = Category.new_search(params[:search])
      @categories = @search.all
      @parent = Category.find_all_by_parent_id(nil)
-     @wish_list = WishList.wishlist(facebook_session.user.uid) rescue nil
+     @wish_list = WishList.wishlist(current_user.uid) rescue nil
      
      @fb_wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.uid]) rescue nil
       

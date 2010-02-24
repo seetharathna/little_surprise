@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_authentic do |c|
-
+  has_one :wish_list
 
   
     #c.validate_login_field = false

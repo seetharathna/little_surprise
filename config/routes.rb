@@ -21,17 +21,9 @@ ActionController::Routing::Routes.draw do |map|
 
    map.namespace(:admin) do |admin|
     admin.resources :users, :controller => 'users'
-    admin.resources :categories, :controller => 'categories',:collection => {:subcategory_new => :get}
+    admin.resources :categories , :controller => 'categories',:collection => {:subcategory_new => :get}
    end
 
-  map.resources :categories, :collection => {:subcategory_new => :get}
+  map.resources :categories   #, :collection => {:subcategory_new => :get}
   map.root :controller => "categories", :action => "index"
-
-  map.fb_categories '',:controller=>"fb_categories", 
-                 :conditions=>{:canvas=>true}
-
-  map.wish_lists '',:controller=>"wish_lists", 
-                 :conditions=>{:canvas=>true}
-
-  
 end

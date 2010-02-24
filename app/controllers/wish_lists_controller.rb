@@ -1,36 +1,18 @@
 class WishListsController < ApplicationController
 ensure_authenticated_to_facebook  
-#ensure_application_is_installed_by_facebook_user
-before_filter :owner_of_the_profile,:only => [:delete, :edit]
-#before_filter :require_user
-  # GET /wish_lists
-  # GET /wish_lists.xml
- 
-  def index
-    @wish_lists = WishList.all
-    @wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i])
-    @my_wish_lists = @wish_list.categories 
-   # WishList.birthday_reminder
-    
-      
-  end
 
-  # GET /wish_lists/1
-  # GET /wish_lists/1.xml
+before_filter :owner_of_the_profile,:only => [:delete, :edit]
+ 
   def show
-    
     @wish_list = WishList.find(params[:id]) rescue nil
-   if @wish_list
-    @owner = facebook_session.user
-    @facebook_id = @wish_list.facebook_id 
-    @owner_wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i]) rescue ""
-    @categories = @wish_list.categories
-    @items = @wish_list.categories.map{|c| c.category_id}
-    @category =  @items.last 
-    
-    
-  end
-    
+    if @wish_list
+      #@owner = facebook_session.user
+      #@facebook_id = @wish_list.facebook_id 
+      #@owner_wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i]) rescue ""
+      @categories = @wish_list.categories(:order => 'desc created_at')
+      #@items = @wish_list.categories.map{|c| c.category_id}
+      #@category =  @items.last 
+    end
   end
 
   # GET /wish_lists/new
@@ -49,11 +31,11 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   # POST /wish_lists
   # POST /wish_lists.xml
   def create
-    @user = facebook_session.user
-    @wish_list = WishList.new(params[:wish_list])
-    @wish_list.facebook_id = facebook_session.user.to_i
+    #@user = facebook_session.user
+    @wish_list = current_user.wish_list.new(params[:wish_list])
+    #@wish_list.facebook_id = facebook_session.user.to_i
     if @wish_list.save
-     flash.now[:notice] = "Wish list has been created successfully."
+      flash.now[:notice] = "Wish list has been created successfully."
       redirect_to(wish_list_path(@wish_list))
     else
       flash.now[:error] = "Make sure that all required fields are entered."

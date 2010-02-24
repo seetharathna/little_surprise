@@ -65,10 +65,8 @@ def WishList.birthday_reminder
 
 
  def self.wishlist(facebook_session)
-    #set_facebook_session
-    @wish_list = WishList.find_by_facebook_id(facebook_session) rescue nil
-    return  @wish_list
-  end
+    WishList.find_by_facebook_id(facebook_session) rescue nil
+ end
 
 
 end

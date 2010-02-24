@@ -18,9 +18,7 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   # GET /wish_lists/new.xml
   def new
     @user = facebook_user
-    u = User.find_or_create_by_facebook_id(facebook_session.user.to_i)
-    puts "kkkkkkkkkkkkkkkkkkkkkkkkkkk #{u}"
-    @wish_list = u.wish_list.new
+    @wish_list = user.build_wish_list.new
   end
 
   # GET /wish_lists/1/edit
@@ -138,7 +136,6 @@ private
   puts "ppppppppppasssssssssssssssssssssssss #{User.find_by_facebook_id('100000402570887')}"
    #u = User.find(:first, :conditions => ["facebook_id = ?", facebook_session.user.uid])
   User.find_or_create_by_facebook_id(facebook_session.user.to_i)
-
  end
 
  def facebook_user

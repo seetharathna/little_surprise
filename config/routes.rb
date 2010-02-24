@@ -27,11 +27,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :categories, :collection => {:subcategory_new => :get}
   map.root :controller => "categories", :action => "index"
 
-  #map.fb_categories '',:controller=>"fb_categories", 
-                 #:conditions=>{:canvas=>true}
+  map.fb_categories '',:controller=>"fb_categories", 
+                 :conditions=>{:canvas=>true}
 
- # map.wish_lists '',:controller=>"wish_lists", 
-                 #:conditions=>{:canvas=>true}
+  map.wish_lists '',:controller=>"wish_lists", 
+                 :conditions=>{:canvas=>true}
 
   
 end

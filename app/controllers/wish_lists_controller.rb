@@ -18,7 +18,7 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   # GET /wish_lists/new.xml
   def new
     @user = facebook_user
-    @wish_list = current_user.wish_list.new
+    @wish_list = user.wish_list.new
   end
 
   # GET /wish_lists/1/edit
@@ -30,7 +30,7 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   # POST /wish_lists.xml
   def create
     #@user = facebook_session.user
-    @wish_list = current_user.wish_list.new(params[:wish_list])
+    @wish_list = user.wish_list.new(params[:wish_list])
     #@wish_list.facebook_id = facebook_session.user.to_i
     if @wish_list.save
       flash.now[:notice] = "Wish list has been created successfully."
@@ -131,13 +131,12 @@ private
     end
  end
  
- def current_user
+ def user
  puts "ppppppppppppppppppppppppppppppppp #{facebook_session.user.to_i} #{facebook_session.user.to_i.class}  #{facebook_session.user.uid.class}"
   puts "ppppppppppasssssssssssssssssssssssss #{User.find_by_facebook_id('100000402570887')}"
    #u = User.find(:first, :conditions => ["facebook_id = ?", facebook_session.user.uid])
-  u = User.find_or_create_by_facebook_id(facebook_session.user.to_i)
- puts "ppppppppppppppppppppppppppsssssssssss #{u}"
-   User.all.map{|u| puts "ppppppppppppppppppppppppppp #{u.facebook_id.class} "}
+  User.find_or_create_by_facebook_id(facebook_session.user.to_i)
+
  end
 
  def facebook_user

@@ -112,11 +112,11 @@ private
 
  def owner_of_the_profile
    @wish_list = WishList.find(params[:id])
-   if @wish_list.facebook_id == facebook_session.user.to_i
+   if @wish_list.user.facebook_id == facebook_session.user.to_i
       return true
    else
       redirect_to(wish_list_path(@wish_list))
-      flash[:notice] = "you are not authorised to acess this page"
+      flash[:error] = "you are not authorised to acess this page"
     end
  end
  

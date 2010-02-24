@@ -18,7 +18,7 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   # GET /wish_lists/new.xml
   def new
     @user = facebook_user
-    @wish_list = user.build_wish_list
+    @wish_list = WishList.new
   end
 
   # GET /wish_lists/1/edit
@@ -30,7 +30,7 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   # POST /wish_lists.xml
   def create
     #@user = facebook_session.user
-    @wish_list = user.wish_list.new(params[:wish_list])
+    @wish_list = WishList.new(params[:wish_list], :user_id => user.id)
     #@wish_list.facebook_id = facebook_session.user.to_i
     if @wish_list.save
       flash.now[:notice] = "Wish list has been created successfully."

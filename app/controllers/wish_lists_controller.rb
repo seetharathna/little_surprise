@@ -30,9 +30,12 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   # POST /wish_lists.xml
   def create
     #@user = facebook_session.user
-    @wish_list = WishList.new(params[:wish_list], :user_id => user.id)
+    @wish_list = WishList.new(params[:wish_list])
     #@wish_list.facebook_id = facebook_session.user.to_i
     if @wish_list.save
+      user.wish_list = @wish_list
+      #user.save
+
       flash.now[:notice] = "Wish list has been created successfully."
       redirect_to(wish_list_path(@wish_list))
     else

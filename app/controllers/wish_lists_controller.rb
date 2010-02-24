@@ -1,6 +1,5 @@
 class WishListsController < ApplicationController
 ensure_authenticated_to_facebook  
-before_filter :set_current_user
 before_filter :owner_of_the_profile,:only => [:delete, :edit]
  
   def show
@@ -132,7 +131,7 @@ private
     end
  end
  
- def set_current_user
+ def current_user
    facebook_session.user
  end
 

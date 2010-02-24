@@ -52,28 +52,25 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   end
 
    
-  
-
-  # DELETE /wish_lists/1
-  # DELETE /wish_lists/1.xml
   def destroy
     @wish_list = WishList.find(params[:id])
     @wish_list.destroy
     redirect_to(fb_categories_path)
-    
   end
 
  def add_to_wishlist
-   @wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i])
+   @wish_list = user.wish_list
    category = Category.find(params[:category_id])
-   @wish_list = WishList.new unless !@wish_list.blank?
-   @wish_list.category_id = category.id
-   @wish_list.facebook_id = facebook_session.user.to_i
-   @wish_list.save
-   @wish_list.categories << category
-    
+  
+   unless @wish_list.blank?
+     @wish_list.categories << category
+     redirect_to(wish_list_path(@wish_list))
+   else
+     flash[:notice] = 'Please create wish list first.'
+     redirect_to(new_wish_list_path)
+   end  
      
-   redirect_to(wish_list_path(@wish_list))
+  
  end
 
   def publish_to_friends

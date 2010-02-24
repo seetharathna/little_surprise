@@ -252,6 +252,15 @@ table.category-index tr td p a:hover{
 
 .clear{
 	clear:both;
+
+.item {padding: 15px 0px 20px 0px; background: #fff url(/images/item-bg.jpg) repeat-x; margin-right: 20px; border: 2px double #dbdcde; width: 220px; text-align: center;}
+.item_title{ font-weight: bold; text-align: center; color: #3a5798; font-size: 15px; margin-bottom: 15px;}
+.item_desc{width: 200px; font-size: 13px; text-align: left; padding:10px 5px 10px 15px; }
+.item_url{text-align: left;  padding:0px 10px 10px 15px; }
+.item_url a{color: #3a5798; font-size: 12px; }
+.item_links{ text-align: left;  padding:0px 10px 10px 15px; }
+.item_links a {color: #a70000; font-size: 13px;}
+
 }
 
 

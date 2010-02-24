@@ -29,4 +29,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.fb_categories '',:controller=>"fb_categories", 
                  :conditions=>{:canvas=>true}
+
+  map.wish_lists '/wish_lists/:id(.:format => :fbml)',:controller=>"wish_lists", 
+                 :conditions=>{:canvas=>true}
+
+  
 end

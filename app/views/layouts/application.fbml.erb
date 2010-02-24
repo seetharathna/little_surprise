@@ -19,8 +19,8 @@
 
   <%= fb_tab_item "Categories", categories_path %>
  
-  <% if !@wish_list.blank? %>
-  <%= fb_tab_item "#{@wish_list.name}",wish_list_path(@wish_list.id) %>
+  <% if (!@wish_list.blank? && !@wish_list.new?) %>
+    <%= fb_tab_item "#{@wish_list.name}",wish_list_path(@wish_list.id) %>
   <%end%>
   
   <% if (!@owner_wish_list.blank? &&  @owner_wish_list.id != @wish_list.id) %>

@@ -17,7 +17,7 @@
           <% if @wish_list.blank? %>
              <b><%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%> </b>
           <%else%>
-             <% unless  @category_ids.include?(fb_category.id) %>
+             <% unless @category_ids.include?(fb_category.id) %>
             <div class ='item_links'><%=link_to "Add to wishlist",add_to_wishlist_wish_lists_path(:category_id => fb_category.id) ,:confirm => "#{fb_category.name} will be added to your wishlist."%> </div>
           <%else%>
             <div class ='item_links'><a>Already added to wishlist</div>

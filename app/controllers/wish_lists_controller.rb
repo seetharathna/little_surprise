@@ -1,6 +1,6 @@
 class WishListsController < ApplicationController
-ensure_authenticated_to_facebook  
-before_filter :owner_of_the_profile,:only => [:delete, :edit]
+  ensure_authenticated_to_facebook  
+  before_filter :owner_of_the_profile,:only => [:delete, :edit]
  
   def show
     @wish_list = WishList.find(params[:id]) rescue nil
@@ -47,8 +47,6 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
     else
        render :action => 'edit'
     end
-  
-   
   end
 
    
@@ -58,37 +56,32 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
     redirect_to(fb_categories_path)
   end
 
- def add_to_wishlist
-   @wish_list = user.wish_list
-   category = Category.find(params[:category_id])
+  def add_to_wishlist
+    @wish_list = user.wish_list
+    category = Category.find(params[:category_id])
   
-   unless @wish_list.blank?
-     @wish_list.categories << category
-     redirect_to(wish_list_path(@wish_list))
-   else
-     flash[:notice] = 'Please create wish list first.'
-     redirect_to(new_wish_list_path)
-   end  
-     
-  
- end
+    unless @wish_list.blank?
+      @wish_list.categories << category
+      redirect_to(wish_list_path(@wish_list))
+    else
+      flash[:notice] = 'Please create wish list first.'
+      redirect_to(new_wish_list_path)
+    end  
+  end
 
   def publish_to_friends
-    @wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i])
+    @wish_list = user.wish_list
     @category = Category.find(params[:category])
     @user = facebook_session.user
     if @user.has_permissions?('publish_stream')
       facebook_session.user.publish_to(facebook_session.user, :message => 'has added new product categories to wishlist.',:action_links => [
       :text => "#{facebook_session.user.name}'s wishlist",
       :href => "http://apps.facebook.com/littlesurprizes/wish_lists/#{@wish_list.id}"],
-      :attachment => {
-                                        :name => "#{@category.name}",
-                                        :description => "#{@category.description}",
-                                        :media => [{
-                                                :type => 'image',
-                                                :src => "http://69.164.192.249:3012/#{@category.avatar.url(:thumb)}",
-                                                :href => "http://
-apps.facebook.com/littlesurprizes"}]
+      :attachment => {  :name => "#{@category.name}",
+                        :description => "#{@category.description}",
+                        :media => [{ :type => 'image',
+                                      #:src => "http://69.164.192.249:3012/#{@category.avatar.url(:thumb)}",      
+                                      :href => "http://apps.facebook.com/littlesurprizes"}]
                                                 }
                         )
       redirect_to(wish_list_path(@wish_list))
@@ -103,30 +96,30 @@ apps.facebook.com/littlesurprizes"}]
   end
   
   def remove_category
-    @wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i])
+    @wish_list =  user.wish_list
     @wish_list.categories.delete(Category.find(params[:id]))
     redirect_to(wish_list_path(@wish_list))
   end
   
 private  
 
- def owner_of_the_profile
-   @wish_list = WishList.find(params[:id])
-   if @wish_list.user.facebook_id == facebook_session.user.to_i
+  def owner_of_the_profile
+    @wish_list = WishList.find(params[:id])
+    if @wish_list.user.facebook_id == facebook_session.user.to_i
       return true
-   else
+    else
       redirect_to(wish_list_path(@wish_list))
       flash[:error] = "you are not authorised to acess this page"
     end
- end
+  end
  
- def user
-   User.find_or_create_by_facebook_id(facebook_session.user.to_i)
- end
+  def user
+    User.find_or_create_by_facebook_id(facebook_session.user.to_i)
+  end
 
- def facebook_user
-   facebook_session.user
- end
+  def facebook_user
+    facebook_session.user
+  end
 
   
 end

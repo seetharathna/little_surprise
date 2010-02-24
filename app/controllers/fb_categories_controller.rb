@@ -25,7 +25,7 @@ class FbCategoriesController < ApplicationController
 
 
  def index
-  @wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i])
+  @wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i]) rescue nil
   if !params[:category_id].blank?
      @categories = Category.find_all_by_parent_id(params[:category_id])
   else

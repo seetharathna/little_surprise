@@ -47,7 +47,7 @@ before_filter :check_admin,:except => :index #:set_current_user,
                            page.replace_html 'category-list', :partial => 'list'
                        end
                   }
-       format.fbml #{ ensure_authenticated_to_facebook  } #index.fbml.erb
+       format.fbml { ensure_authenticated_to_facebook  }
      end
    end
 
@@ -125,10 +125,10 @@ before_filter :check_admin,:except => :index #:set_current_user,
   end
 
 
- def subcategory_new
-  @category = Category.new
-  @parent = Category.find_all_by_parent_id(nil)
- end
+ #def subcategory_new
+  #@category = Category.new
+  #@parent = Category.find_all_by_parent_id(nil)
+ #end
 
  
 

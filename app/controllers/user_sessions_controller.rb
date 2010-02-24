@@ -12,18 +12,30 @@ class UserSessionsController < ApplicationController
     
 
     if @user_session.save
-    
-      if facebook_session
-         flash[:notice] = "Facebook login successful!"
-         if WishList.wishlist(facebook_session.user.uid)
-            redirect_to  wish_list_path(WishList.wishlist(facebook_session.user.uid))
-         else
-            redirect_to  categories_path
-         end
+
+      if current_user.has_role?(:admin)
+         redirect_to  admin_categories_path   
       else
-         flash[:notice] = "Login successful!"
-         redirect_to  wish_list_path(current_user.wishlist)
+          puts "ppppppppppppppppppppppp #{current_user.wish_list}"
+         if current_user.wish_list.blank?
+           redirect_to  categories_path   
+         else
+            redirect_to  wish_list_path(current_user.wish_list)
+         end
       end
+     
+    
+      #if facebook_session
+         #flash[:notice] = "Facebook login successful!"
+         #if WishList.wishlist(facebook_session.user.uid)
+           #redirect_to  wish_list_path(WishList.wishlist(facebook_session.user.uid))
+         #else
+           # redirect_to  categories_path
+        # end
+      #else
+         #flash[:notice] = "Login successful!"
+        # redirect_to  wish_list_path(WishList.wishlist(facebook_session.user.uid))
+     # end
 
      
       #flash[:notice] = "Login successful!"
@@ -37,6 +49,7 @@ class UserSessionsController < ApplicationController
   
   def destroy
     current_user_session.destroy
+    clear_facebook_session_information
     flash[:notice] = "Logout successful!"
     redirect_to root_url
   end

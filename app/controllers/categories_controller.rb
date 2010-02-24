@@ -32,7 +32,7 @@ before_filter :check_admin,:except => :index #:set_current_user,
      @parent = Category.find_all_by_parent_id(nil)
      @wish_list = WishList.wishlist(facebook_session.user.uid) rescue nil
      
-     @fb_wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i])
+     @fb_wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.uid])
       
      if !params[:category_id].blank?
      @fb_categories = Category.find_all_by_parent_id(params[:category_id])

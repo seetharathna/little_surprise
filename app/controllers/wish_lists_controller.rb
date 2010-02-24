@@ -18,6 +18,7 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
   # GET /wish_lists/new
   # GET /wish_lists/new.xml
   def new
+    puts "ppppppppppppppppppppppppppppppppppppp #{current_user}"
     @user = current_user
     @wish_list = current_user.wish_list.new
   end

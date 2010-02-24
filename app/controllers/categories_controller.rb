@@ -47,7 +47,7 @@ before_filter :check_admin,:except => :index #:set_current_user,
                            page.replace_html 'category-list', :partial => 'list'
                        end
                   }
-       format.fbml { ensure_authenticated_to_facebook  }
+       format.fbml {  }
      end
    end
 

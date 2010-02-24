@@ -41,14 +41,12 @@ before_filter :owner_of_the_profile,:only => [:delete, :edit]
 
   def update
     @wish_list = WishList.find(params[:id])
-
-        if @wish_list.update_attributes(params[:wish_list])
-        flash[:notice] = 'Category was successfully updated.'
-        redirect_to(wish_list_path(@wish_list))
-        
-      else
-         render :action => 'edit'
-      end
+    if @wish_list.update_attributes(params[:wish_list])
+       flash[:notice] = 'Category was successfully updated.'
+       redirect_to(wish_list_path(@wish_list))
+    else
+       render :action => 'edit'
+    end
   
    
   end
@@ -126,10 +124,7 @@ private
  end
  
  def user
- puts "ppppppppppppppppppppppppppppppppp #{facebook_session.user.to_i} #{facebook_session.user.to_i.class}  #{facebook_session.user.uid.class}"
-  puts "ppppppppppasssssssssssssssssssssssss #{User.find_by_facebook_id('100000402570887')}"
-   #u = User.find(:first, :conditions => ["facebook_id = ?", facebook_session.user.uid])
-  User.find_or_create_by_facebook_id(facebook_session.user.to_i)
+   User.find_or_create_by_facebook_id(facebook_session.user.to_i)
  end
 
  def facebook_user

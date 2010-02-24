@@ -30,17 +30,15 @@ before_filter :check_admin,:except => :index #:set_current_user,
      @search = Category.new_search(params[:search])
      @categories = @search.all
      @parent = Category.find_all_by_parent_id(nil)
-     @wish_list = WishList.wishlist(current_user.uid) rescue nil
-     
-     @fb_wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.uid]) rescue nil
-      
+     @wish_list = user.wish_list
+         
      if !params[:category_id].blank?
-     @fb_categories = Category.find_all_by_parent_id(params[:category_id])
-   else
-     @fb_categories = Category.find_all_by_parent_id(nil)
-    end
-    @category_ids = []
-    @category_ids = @wish_list.categories.collect { | h|  h.id } unless @wish_list.nil?
+       @fb_categories = Category.find_all_by_parent_id(params[:category_id])
+     else
+       @fb_categories = Category.find_all_by_parent_id(nil)
+     end
+     @category_ids = []
+     @category_ids = @wish_list.categories.collect { | h|  h.id } unless @wish_list.nil?
      respond_to do |format|
        format.html # index.html.erb 
        format.js {  render :update do |page|
@@ -134,7 +132,7 @@ before_filter :check_admin,:except => :index #:set_current_user,
 
  private
  
- def set_current_user
+  def set_current_user
     set_facebook_session
     #if the session isn't secured, we don't have a good user id
     if facebook_session and facebook_session.secured? and !request_is_facebook_tab?
@@ -143,7 +141,9 @@ before_filter :check_admin,:except => :index #:set_current_user,
   end
 
  
-
+  def user
+    User.find_or_create_by_facebook_id(facebook_session.user.to_i)
+  end
  
   
 end

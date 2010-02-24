@@ -138,7 +138,7 @@ before_filter :check_admin,:except => :index #:set_current_user,
     set_facebook_session
     #if the session isn't secured, we don't have a good user id
     if facebook_session and facebook_session.secured? and !request_is_facebook_tab?
-      self.current_user = User.for(facebook_session.user.to_i,facebook_session) 
+       User.for(facebook_session.user.to_i,facebook_session) 
     end
   end
 

@@ -4,7 +4,6 @@
 class ApplicationController < ActionController::Base
   helper :all
   helper_method :current_user_session, :current_user, :facebook_session
-  
   filter_parameter_logging :password, :password_confirmation
   
   private

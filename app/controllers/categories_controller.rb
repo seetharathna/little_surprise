@@ -1,27 +1,5 @@
 class CategoriesController < ApplicationController
  
-#before_filter :check_logged_in
-#helper_attr :current_user
-#attr_accessor :current_user
-before_filter :check_admin,:except => :index #:set_current_user,
-  
-   #def set_current_user
-    #set_facebook_session
-    # if the session isn't secured, we don't have a good user id
-    #if facebook_session and facebook_session.secured? and !request_is_facebook_tab?
-     # self.current_user = User.for(facebook_session.user.to_i,facebook_session) 
-    #end
-  #end
-  # END:CURRENT_USER
- 
-
-
-
-  # GET /categories
-  # GET /categories.xml
-
-
- 
   def index
      
      params[:search] ||= {}
@@ -52,84 +30,8 @@ before_filter :check_admin,:except => :index #:set_current_user,
      end
    end
 
-  # GET /categories/1
-  # GET /categories/1.xml
-  def show
-    @category = Category.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @category }
-    end
-  end
-
-  # GET /categories/new
-  # GET /categories/new.xml
-  def new
-    @category = Category.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @category }
-    end
-  end
-
-  # GET /categories/1/edit
-  def edit
-    @category = Category.find(params[:id])
-  end
-
-  # POST /categories
-  # POST /categories.xml
-  def create
-    @category = Category.new(params[:category])
-
-    respond_to do |format|
-      if @category.save
-        flash[:notice] = 'Category was successfully created.'
-        format.html { redirect_to(admin_categories_path) }
-        format.xml  { render :xml => @category, :status => :created, :location => @category }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /categories/1
-  # PUT /categories/1.xml
-  def update
-    @category = Category.find(params[:id])
-
-    respond_to do |format|
-      if @category.update_attributes(params[:category])
-        flash[:notice] = 'Category was successfully updated.'
-        format.html { redirect_to(categories_path) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /categories/1
-  # DELETE /categories/1.xml
-  def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(admin_categories_url) }
-      format.xml  { head :ok }
-    end
-  end
-
-
- #def subcategory_new
-  #@category = Category.new
-  #@parent = Category.find_all_by_parent_id(nil)
- #end
+  
+ 
 
  private
  

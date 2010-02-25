@@ -2,8 +2,7 @@ class Admin::CategoriesController < ApplicationController
  
 before_filter :check_logged_in
 before_filter :check_admin,:except => :index
-  # GET /categories
-  # GET /categories.xml
+  
   def index
      
      params[:search] ||= {}
@@ -23,8 +22,7 @@ before_filter :check_admin,:except => :index
      end
    end
 
-  # GET /categories/1
-  # GET /categories/1.xml
+  
   def show
     @category = Category.find(params[:id])
 
@@ -34,8 +32,7 @@ before_filter :check_admin,:except => :index
     end
   end
 
-  # GET /categories/new
-  # GET /categories/new.xml
+  
   def new
     @category = Category.new
 
@@ -45,13 +42,12 @@ before_filter :check_admin,:except => :index
     end
   end
 
-  # GET /categories/1/edit
+  
   def edit
     @category = Category.find(params[:id])
   end
 
-  # POST /categories
-  # POST /categories.xml
+  
   def create
     @category = Category.new(params[:category])
 
@@ -67,9 +63,9 @@ before_filter :check_admin,:except => :index
     end
   end
 
-  # PUT /categories/1
-  # PUT /categories/1.xml
+ 
   def update
+    
     @category = Category.find(params[:id])
 
     respond_to do |format|
@@ -84,14 +80,13 @@ before_filter :check_admin,:except => :index
     end
   end
 
-  # DELETE /categories/1
-  # DELETE /categories/1.xml
+  
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_categories_url) }
+      format.html { redirect_to(admin_categories_path) }
       format.xml  { head :ok }
     end
   end

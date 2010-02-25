@@ -3,11 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :wish_lists, :collection => {:add_to_wishlist => :get,:publish_to_friends => :any,:remove_category => :any}
 
-  map.resources :emails
-
-  map.resources :plans
-  
-  map.resources :fb_categories
+ 
   map.resource :account, :controller => "users"
   map.resources :users
   map.resource :user_session, :member => {:logout => :get}
@@ -24,6 +20,6 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :categories , :controller => 'categories',:collection => {:subcategory_new => :get}
    end
 
-  map.resources :categories   #, :collection => {:subcategory_new => :get}
+  map.resources :categories   
   map.root :controller => "categories", :action => "index"
 end

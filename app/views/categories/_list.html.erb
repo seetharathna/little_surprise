@@ -2,27 +2,24 @@
 <% @categories.each do |category| %>
 <div class="outer_box">
 <div class="box">
-<table class ="category-index" width="98%">
-<tr>
-	<td>
-	      <h4 class="heading"><%=h category.name %></h4>
-	</td>
-	<td></td>
-</tr>
-<tr>
-   	<td width="175px">
-		
+
+<div class="heading"><%=h category.name %></div>
+<div class="box_lt">
+		   
 		<center><%= image_tag category.avatar.url(:thumb)%></center>
-   	</td>
-   	<td valign="top">
+</div>
+<div class="box_rt">
+
+		
 		<p><%=h category.description %></p>
-    		<p><a><%=h category.url %></a></p>
-    		<p class="points">Lowest points needed 
-		<%=h category.lowest_number_of_points_needed %>
-		</p>
-   	</td>     
-</tr>
-</table>
+    		<a><%=h category.url %></a>
+</div>
+   
+
+<div class="points">
+	Lowest Points Needed :
+	<%=h category.lowest_number_of_points_needed %>
+</div>
 </div>
 </div>
 <% end %>
@@ -30,6 +27,6 @@
 <script type="text/javascript">
 	jQuery(".outer_box").corner("corner 10px");
 	jQuery(".box").corner("corner 10px");
-	jQuery(".points").corner("corner 10px");
+	jQuery(".heading").corner("top 10px");
 </script>
 

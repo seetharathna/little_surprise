@@ -88,7 +88,7 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 }
 
 .header_right ul li a{
-	color:#fff;
+	color:#2d6396;
 	font-size:14px;
 	font-weight:bold;
 }
@@ -218,41 +218,74 @@ ul#tree li ul li {
 	margin:25px 0px 0px 5px;
 }
 .outer_box {
-	min-height:200px;
-	height:auto !important;
-        height:200px;
+        height:230px;
 	float:left; 
 	margin: 10px 0px 10px 10px; 
-	padding:3px 2px 2px 2px;
+	padding:2px 2px 2px 2px;
 	width: 300px; 
 	background-color: #dbdbdb;
 }
+
 .box {
-	background-color: #fff;
+	background:url(/images/box.png) repeat-x;
 	clear:both;
-	min-height:200px;
-	height:auto !important;
-        height:200px;
+        height:230px;
 }
 
-table.category-index tr td h4.heading{
-	text-align:center;
-	color:#db3131;
-	font-size:15px;
+.heading{
+	text-align:left;
+	height:20px;
+	color:#dc214c;
+	font-size:14px;
+	padding:5px 0px 5px 15px;
+	background:url(/images/box_header.jpg) repeat-x;
+	margin-bottom:5px;
+	overflow:hidden
 }
+
+
+.box_lt {
+	width:135px;
+	float:left;
+	margin: 5px 0px 15px 8px;
+        height:132px;
+	overflow:hidden;
+}
+
+.box_rt {
+	width:155px;
+	float:right;
+	overflow:hidden;
+        height:132px;
+	margin: 5px 0px 15px 0px;
+}
+
+.box_rt p{
+        height:75px;
+	overflow:hidden;
+}
+
+.box_rt a{
+        margin: 0px 0px 0px 12px;
+}
+
+
+.points{
+	margin:30px 0px 0px 0px;
+	padding:10px 0px 0px 10px;
+	font-weight:bold;
+	color:#414040;
+	clear:both;
+}
+
 
 table.category-index tr td p{
 	line-height:18px;
+	margin-top:8px;
 }
 
 table.category-index tr td p a:hover{
 	text-decoration:underline;
-}
-
-.points{
-	margin:10px 0px 0px 0px;
-	background-color:#ededed;
-	padding:3px 10px;
 }
 
 
@@ -302,7 +335,7 @@ table.category-index tr td p a:hover{
 	font-size: 13px;
 }
 
-}
+
 
 
 

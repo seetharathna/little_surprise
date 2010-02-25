@@ -1,21 +1,21 @@
 
 
+<div class="sidebar">
+<h2>category List</h2>
+ <ul id='tree'><%= render :partial => 'category_list', :collection => @parent, :as => :category %></ul></td>
 
-<table class = "category-list" align = "left" ><br />
-<tr>
-<td> <ul id='tree'><%= render :partial => 'category_list', :collection => @parent, :as => :category %></ul></td>
-</tr>
 
 <%if admin?%>
-<tr><%= link_to 'Add new category', new_admin_category_path %> | <%= link_to 'Add subcategory', subcategory_new_admin_categories_path %></tr>
+<%= link_to 'Add new category', new_admin_category_path %> | <%= link_to 'Add subcategory', subcategory_new_admin_categories_path %></tr>
 <%end%>
-</table>
+</div>
 
+<div class="container">
 <div id = 'category-list'>
   <%= render :partial => 'list' %>
 </div>
 
-
+</div>
 <div class="clear"></div>
 
 

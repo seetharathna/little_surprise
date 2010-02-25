@@ -87,7 +87,7 @@ before_filter :check_admin,:except => :index #:set_current_user,
     respond_to do |format|
       if @category.save
         flash[:notice] = 'Category was successfully created.'
-        format.html { redirect_to(categories_path) }
+        format.html { redirect_to(admin_categories_path) }
         format.xml  { render :xml => @category, :status => :created, :location => @category }
       else
         format.html { render :action => "new" }
@@ -120,7 +120,7 @@ before_filter :check_admin,:except => :index #:set_current_user,
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to(categories_url) }
+      format.html { redirect_to(admin_categories_url) }
       format.xml  { head :ok }
     end
   end

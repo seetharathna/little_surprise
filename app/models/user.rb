@@ -25,7 +25,7 @@ end
     user = User.find_or_create_by_facebook_id(facebook_id)
     unless facebook_session.nil?
       user.store_session(facebook_session.session_key) 
-      #user.store_first_name_and_last_name(facebook_session.first_name,facebook_session.last_name)
+      user.store_name(facebook_session.user.name)
     end
      return user
     end
@@ -39,8 +39,8 @@ end
   end 
  # END:STORE_SESSION
 
-  def store_first_name_and_last_name(first_name,last_name)
-     self.update_attribute(:first_name,:last_name,first_name,last_name) 
+  def store_name(name)
+     self.update_attribute(:name,name) 
   end 
   	
   def facebook_session

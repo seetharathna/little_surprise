@@ -5,11 +5,9 @@ class WishListsController < ApplicationController
   def show
     @wish_list = WishList.find(params[:id]) rescue nil
     if @wish_list
-      
       @categories = @wish_list.categories(:order => 'desc created_at')
       #@items = @wish_list.categories.map{|c| c.category_id}
       #@category =  @items.last 
-      
     end
   end
 
@@ -87,11 +85,10 @@ class WishListsController < ApplicationController
     else
       render :action => 'grant_permission'
     end  
-    
   end
   
-  def grant_permission
   
+  def grant_permission
   end
   
   def remove_category

@@ -16,7 +16,7 @@ class UserSessionsController < ApplicationController
       if current_user.has_role?(:admin)
          redirect_to  admin_categories_path   
       else
-          puts "ppppppppppppppppppppppp #{current_user.wish_list}"
+          #puts "ppppppppppppppppppppppp #{current_user.wish_list}"
          if current_user.wish_list.blank?
            redirect_to  categories_path   
          else

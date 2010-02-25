@@ -5,12 +5,9 @@ class WishListsController < ApplicationController
   def show
     @wish_list = WishList.find(params[:id]) rescue nil
     if @wish_list
-      #@owner = facebook_session.user
-      #@facebook_id = @wish_list.facebook_id 
-      #@owner_wish_list = WishList.find(:first,:conditions => ["facebook_id =?",facebook_session.user.to_i]) rescue ""
+      
       @categories = @wish_list.categories(:order => 'desc created_at')
-      #@items = @wish_list.categories.map{|c| c.category_id}
-      #@category =  @items.last 
+      
     end
   end
 

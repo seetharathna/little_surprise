@@ -7,6 +7,7 @@
 <% if !@categories.blank? %>
   <% if current_user == @wish_list.user %>
     
+    
      <h2>Items in your wishlist.</h2>  
    <%else%>
    <h2> <%=fb_name(@facebook_id)%> 's  wishlist.</h2>

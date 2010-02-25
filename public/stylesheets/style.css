@@ -45,6 +45,13 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 	padding-left:10px;
 }
 
+ h2 {
+
+       font-size: 2.4em;
+
+}
+ 
+
 
 .main{
 	width:900px;
@@ -333,6 +340,14 @@ table.category-index tr td p a:hover{
 .item_links a {
 	color: #a70000; 
 	font-size: 13px;
+
+
+}
+
+table.category-list{
+border:1px solid #b1b1b1;
+width: 28%;
+background-color :#eaeaea
 }
 
 

@@ -21,6 +21,7 @@ class WishListsController < ApplicationController
   end
  
   def create
+    @user = facebook_user
     @wish_list = WishList.new(params[:wish_list])
     @wish_list.user = user
 
@@ -50,7 +51,7 @@ class WishListsController < ApplicationController
   def destroy
     @wish_list = WishList.find(params[:id])
     @wish_list.destroy
-    redirect_to(fb_categories_path)
+    redirect_to(categories_path)
   end
 
   def add_to_wishlist

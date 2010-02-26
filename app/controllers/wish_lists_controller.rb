@@ -12,7 +12,7 @@ class WishListsController < ApplicationController
   end
 
   def new
-    @user = facebook_session.user #facebook_user
+    @user = facebook_user
     @wish_list = WishList.new
   end
 
@@ -21,7 +21,7 @@ class WishListsController < ApplicationController
   end
  
   def create
-    @user = facebook_session.user #facebook_user
+    @user = facebook_user
     @wish_list = WishList.new(params[:wish_list])
     @wish_list.user = user
 

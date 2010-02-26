@@ -29,7 +29,7 @@
 <br />
 
 
-  <%= fb_prompt_permissions([‘email’,’offline_access’,’status_update’], ‘Would you like to grant some permissions?’) 
+  <%= fb_prompt_permissions([‘email’,’offline_access’,’status_update’], ‘Would you like to grant some permissions?’)%> 
 
 <br />
 <% unless @user.has_permissions?('offline_access') %>

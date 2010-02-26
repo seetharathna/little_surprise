@@ -42,6 +42,6 @@ class CategoriesController < ApplicationController
         User.find_or_create_by_facebook_id(facebook_session.user.to_i) rescue nil?
       #else
         #current_user
-      #end
+      end
     end
 end

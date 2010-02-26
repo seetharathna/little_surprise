@@ -6,8 +6,8 @@ class WishListsController < ApplicationController
     @wish_list = WishList.find(params[:id]) rescue nil
     if @wish_list
       @categories = @wish_list.categories(:order => 'desc created_at')
-      #@items = @wish_list.categories.map{|c| c.category_id}
-      #@category =  @items.last 
+      @items = @wish_list.categories.map{|c| c.category_id}
+      @category =  @items.last 
     end
   end
 

@@ -12,7 +12,7 @@ class WishListsController < ApplicationController
   end
 
   def new
-    @user = facebook_user
+    @user = facebook_session.user #facebook_user
     @wish_list = WishList.new
   end
 
@@ -21,7 +21,7 @@ class WishListsController < ApplicationController
   end
  
   def create
-    @user = facebook_user
+    @user = facebook_session.user #facebook_user
     @wish_list = WishList.new(params[:wish_list])
     @wish_list.user = user
 
@@ -68,7 +68,7 @@ class WishListsController < ApplicationController
   end
 
   def publish_to_friends
-    @wish_list = user.wish_list
+    @wish_list = user.wish_list unless user.nil?
     @category = Category.find(params[:category])
     @user = facebook_session.user
     if @user.has_permissions?('publish_stream')

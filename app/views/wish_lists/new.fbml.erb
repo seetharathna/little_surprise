@@ -29,9 +29,8 @@
 <br />
 
 <% unless @user.has_permissions?('email') %>
-  <p>Click the button below, to allow Birthday remainder emails from  Little surprises <form promptpermission="email">
-  <input type="submit" value="Allow emails"> 
-  </form> </p>
+  <p>Click the button below, to allow Birthday remainder emails from  Little surprises 
+<%= fb_prompt_permission(‘email’, "Would you like to receive email from our application?" ) %> 
 <% end %>
 <br />
 <% unless @user.has_permissions?('offline_access') %>

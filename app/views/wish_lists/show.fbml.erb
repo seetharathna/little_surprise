@@ -9,7 +9,7 @@
      </div>
      <h2>Items in your wishlist.</h2>  
    <%else%>
-   <h2> <%=fb_name(@facebook_id)%> 's  wishlist.</h2>
+   <h2> <%=current_user.name%> 's  wishlist.</h2>
 <%end%>
   <table>
   <% @counter = 0 %>

@@ -4,12 +4,13 @@
   
 <% if !@categories.blank? %>
   <% if @current_user == @wish_list.user %>
-     <%=@wish_list.user%> <%=@current_user%>
+     
      <div id = 'top_links'> 
         <b><%=link_to "Publish",publish_to_friends_wish_lists_path(:category => @category) ,:confirm => 'Allow your friends to view your wishlist?'%> </b>  |  <b><%= link_to 'Edit my wishlist', edit_wish_list_path(@wish_list)%></b>  |  <b><%= link_to 'Delete my wishlist', wish_list_path(:id => @wish_list.id), :confirm => 'your wishlist will be deleted', :method => :delete %></b> 
      </div>
      <h2>Items in your wishlist.</h2>  
    <%else%>
+   <%=@wish_list.user%> <%=@current_user%>
    <h2> <%=fb_name(@facebook_id)%> 's  wishlist.</h2>
 <%end%>
   <table>

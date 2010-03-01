@@ -8,6 +8,7 @@ class WishListsController < ApplicationController
       @categories = @wish_list.categories(:order => 'desc created_at')
       @items = @wish_list.categories.map{|c| c.category_id}
       @category =  @items.last 
+      @current_user = facebook_user
     end
   end
 

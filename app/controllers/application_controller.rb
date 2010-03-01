@@ -85,5 +85,17 @@ class ApplicationController < ActionController::Base
     return  @wish_list
   end
 
+ def set_current_user
+      set_facebook_session
+      #if the session isn't secured, we don't have a good user id
+      if facebook_session and facebook_session.secured? and !request_is_facebook_tab?
+        User.for(facebook_session.user.to_i,facebook_session) 
+      end
+    end
+
+def has_role?(role)
+    list ||= self.roles.collect(&:name)
+    list.include?(role.to_s) || list.include?('admin')
+end
 
 end

@@ -1,6 +1,6 @@
 class WishListsController < ApplicationController
   ensure_authenticated_to_facebook  
-  before_filter :owner_of_the_profile,:only => [:delete, :edit]
+  before_filter :owner_of_the_profile,:set_current_user,:only => [:delete, :edit]
  
   def show
     @wish_list = WishList.find(params[:id]) rescue nil

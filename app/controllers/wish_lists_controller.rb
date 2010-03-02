@@ -3,11 +3,11 @@ class WishListsController < ApplicationController
   before_filter :set_current_user,:only => [:delete, :edit]
  
   def show
-    @wish_list = WishList.find(params[:id])
+    @wish_list = WishList.find(params[:id]) rescue nil
     unless @wish_list.blank?
       @categories = @wish_list.categories(:order => 'desc created_at')
-      @items = @wish_list.categories.map{|c| c.category_id}
-      @category =  @items.last 
+      items = @wish_list.categories.map{|c| c.category_id}
+      @category =  items.last 
     end
 
     @current_user = user rescue nil

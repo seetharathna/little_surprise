@@ -26,10 +26,11 @@
             <div class ='item_links'><%=link_to "Add to wishlist",add_to_wishlist_wish_lists_path(:category_id => fb_category.id) ,:confirm => "#{fb_category.name} will be added to your wishlist."%> </div>
           <%else%>
             <div class ='item_links'><a>Already added to wishlist</div>
+</div>
+</div>
           <%end%>
      <%end%>
-</div>
-</div>
+
     <% if @counter == 3 %>
   
     <% @counter = 0 %> 

@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
                     end
                   }
        format.fbml{ ensure_authenticated_to_facebook 
-                    @current_user = user
+                    @current_user = user rescue nil
                     @wish_list = @current_user.wish_list unless @current_user.nil?
                     if !params[:category_id].blank?
                       @fb_categories = Category.find_all_by_parent_id(params[:category_id])

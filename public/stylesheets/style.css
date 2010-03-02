@@ -212,7 +212,7 @@ ul#tree li ul li {
 	height:auto !important;
         height:600px;
 	float:left;
-	background: #f0f5ff url(/images/con_header.jpg) repeat-x;
+	background-color: #f0f5ff;
 }
 
 .container h2{
@@ -373,6 +373,10 @@ table.category-index tr td p a:hover{
 	font-size: 13px;
 
 
+}
+.top_links{
+	padding:3px 10px;
+	background-color:#c4d6fb;
 }
 
 

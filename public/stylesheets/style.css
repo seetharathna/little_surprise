@@ -253,7 +253,7 @@ ul#tree li ul li {
 }
 
 hr{
-	border-top:1px solid #d2e1fd;
+	border-top:1px solid #c8dbff;
 	border-bottom:1px solid #fff;
 }
 
@@ -266,7 +266,8 @@ hr{
 .heading{
 	text-align:left;
 	height:20px;
-	color:#dc214c;
+	color:#2c4a83;
+	font-weight:bold;
 	font-size:14px;
 	padding:5px 0px 5px 15px;
 	background:url('http://69.164.192.249:3012/images/box_header.jpg') repeat-x;

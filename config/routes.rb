@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  
+
 
 
   map.resources :wish_lists, :collection => {:add_to_wishlist => :get,:publish_to_friends => :any,:remove_category => :any}
@@ -18,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
    map.namespace(:admin) do |admin|
     admin.resources :users, :controller => 'users'
     admin.resources :categories , :controller => 'categories',:collection => {:subcategory_new => :get}
+    admin.resources :banners
    end
 
   map.resources :categories   

@@ -1,7 +1,7 @@
 class Admin::BannersController < ApplicationController
    
-  before_filter :check_logged_in
-  #before_filter :check_admin,:except => :index
+  #before_filter :check_logged_in
+  before_filter :check_admin
 
   
   def index

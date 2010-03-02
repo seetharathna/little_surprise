@@ -10,7 +10,7 @@ class WishListsController < ApplicationController
       @category =  @items.last 
     end
 
-    @current_user = user
+    @current_user = user rescue nil
   end
 
   def new

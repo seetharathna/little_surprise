@@ -8,38 +8,46 @@
      <div id = 'top_links'> 
         <b><%=link_to "Publish",publish_to_friends_wish_lists_path(:category => @category) ,:confirm => 'Allow your friends to view your wishlist?'%> </b>  |  <b><%= link_to 'Edit my wishlist', edit_wish_list_path(@wish_list)%></b>  |  <b><%= link_to 'Delete my wishlist', wish_list_path(:id => @wish_list.id), :confirm => 'your wishlist will be deleted', :method => :delete %></b> 
      </div>
-     <h2>Items in your wishlist.</h2>  
+    
+     <div class ="facebook_container container">
+     <h3>Items in your wishlist.</h3>  
    <%else%>
-     <h2> <%= @wish_list.user.name %> 's  wishlist: <%= @wish_list.name %></h2>
+     <h3> <%= @wish_list.user.name %> 's  wishlist: <%= @wish_list.name %></h3>
 <%end%>
-  <table>
+
+<div class="outer-box">
+	<div class="box">
   <% @counter = 0 %>
-  <tr>
+ 
     <% @categories.each do |category| %>
     <% @counter = @counter + 1 %>
-      <td>
-        <div class = "item">
-          <div class ='item_title'> <%=h category.name %> </div>
-          <div class ='item_image'><%= image_tag category.avatar.url(:thumb)%></div>
-          <div class ='item_desc'> <%=h category.description %></div>
-          <div class ='item_url'> <a><%=h category.url %></a></div>
-          <!--<b>Lowest points needed:</b><%=h category.lowest_number_of_points_needed %><br/> -->
+      
+          <div class="heading"> <%=h category.name %> </div>
+
+          <div class="box_lt"><center><%= image_tag category.avatar.url(:thumb)%></center></div>
+
+          <div class="box_rt">
+		<p><%=h category.description %></p>
+		<a><%=h category.url %></a>
+          </div>
+         
+         
           <% if @current_user == @wish_list.user %>
-          <div class ='item_links'> <%= link_to 'Remove from wishlist', remove_category_wish_lists_path(:id => category.category_id), :confirm => "#{category.name} will be removed from your wishlist.", :method => :delete %>
+          <div class="points"><%= link_to 'Remove from wishlist', remove_category_wish_lists_path(:id => category.category_id), :confirm => "#{category.name} will be removed from your wishlist.", :method => :delete %>
           </div>
          <% end %>
-       </div>
-    </td>
+       
     <% if @counter == 3 %>
-      <tr></tr>
+
     <% @counter = 0 %> 
     <%end%>
+</div>
+</div>
   <% end %>
-   </tr>
+  
    
     
-
-</table>
+</div>
 <%else%> 
   <p>There are no items in your wishlist 
   <%= link_to 'Click here to Add Items', categories_path %></p>

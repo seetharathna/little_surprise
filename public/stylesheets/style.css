@@ -234,7 +234,7 @@ ul#tree li ul li {
 }
 
 .box {
-	background:url(/images/box.png) repeat-x;
+	background:url('http://69.164.192.249:3012/images/box.png') repeat-x;
 	clear:both;
         height:230px;
 }

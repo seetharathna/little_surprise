@@ -20,6 +20,7 @@ class WishListsController < ApplicationController
 
   def edit
     @wish_list = WishList.find(params[:id])
+    @current_user = user
   end
  
   def create

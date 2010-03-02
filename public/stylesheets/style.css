@@ -240,7 +240,16 @@ ul#tree li ul li {
 	margin: 10px 0px 10px 10px; 
 	padding:2px 2px 2px 2px;
 	width: 300px; 
-	background-color: #dbdbdb;
+	background-color: #ccc;
+}
+
+.outer-box {
+        height:230px;
+	float:left; 
+	margin: 10px 10px 10px 10px; 
+	padding:1px;
+	width: 300px; 
+	background-color: #ccc;
 }
 
 .box {

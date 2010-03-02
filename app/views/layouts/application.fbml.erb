@@ -28,7 +28,7 @@
   <%end%>
   
   <% unless (@current_user.wish_list.blank? && @current_user == @wish_list.user) %>
-    <%= fb_tab_item "View my wishlist",wish_list_path(@current_user.@wish_list.id) %>
+    <%= fb_tab_item "View my wishlist",wish_list_path(@current_user.wish_list.id) %>
   <%end%>
   
 

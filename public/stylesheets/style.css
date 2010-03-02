@@ -252,6 +252,11 @@ ul#tree li ul li {
 	background-color: #ccc;
 }
 
+hr{
+	border-top:1px solid #e3edff;
+	border-bottom:1px solid #fff;
+}
+
 .box {
 	background:url('http://69.164.192.249:3012/images/box.png') repeat-x;
 	clear:both;
@@ -274,7 +279,7 @@ ul#tree li ul li {
 	width:135px;
 	float:left;
 	margin: 5px 0px 15px 8px;
-        height:132px;
+        height:135px;
 	overflow:hidden;
 }
 
@@ -282,8 +287,8 @@ ul#tree li ul li {
 	width:155px;
 	float:right;
 	overflow:hidden;
-        height:132px;
-	margin: 5px 0px 15px 0px;
+        height:135px;
+	margin: 5px 0px 5px 0px;
 }
 
 .box_rt p{

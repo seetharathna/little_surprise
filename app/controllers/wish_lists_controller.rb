@@ -1,6 +1,6 @@
 class WishListsController < ApplicationController
   ensure_authenticated_to_facebook  
-  before_filter :owner_of_the_profile,:set_current_user,:only => [:delete, :edit]
+  before_filter :set_current_user,:only => [:delete, :edit]
  
   def show
     @wish_list = WishList.find(params[:id]) rescue nil
@@ -103,7 +103,7 @@ private
 
   def owner_of_the_profile
     @wish_list = WishList.find(params[:id])
-    if @wish_list.user.facebook_id == facebook_session.user.to_i
+    if @wish_list.user == user
       return true
     else
       redirect_to(wish_list_path(@wish_list))

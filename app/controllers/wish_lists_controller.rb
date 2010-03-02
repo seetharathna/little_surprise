@@ -16,6 +16,7 @@ class WishListsController < ApplicationController
   def new
     @user = facebook_user
     @wish_list = WishList.new
+    @current_user = user rescue nil
   end
 
   def edit

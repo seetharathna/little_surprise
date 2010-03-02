@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
      @search = Category.new_search(params[:search])
      @categories = @search.all
      @parent = Category.find_all_by_parent_id(nil)
+     @banners = Banner.find(:all)
      respond_to do |format|
        format.html # index.html.erb 
        format.js {  render :update do |page|
@@ -14,7 +15,7 @@ class CategoriesController < ApplicationController
                     end
                   }
        format.fbml{ ensure_authenticated_to_facebook 
-                    set_current_user
+                    @current_user = user
                     @wish_list = user.wish_list unless user.nil?
                     if !params[:category_id].blank?
                       @fb_categories = Category.find_all_by_parent_id(params[:category_id])
@@ -40,8 +41,8 @@ class CategoriesController < ApplicationController
     def user
       unless facebook_session.blank?
         User.find_or_create_by_facebook_id(facebook_session.user.to_i) rescue nil?
-      else
-        current_user
+      #else
+        #current_user
       end
     end
 end

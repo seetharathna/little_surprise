@@ -18,6 +18,13 @@
 <div class="sidebar">
     	<h2>Category list</h2>
 	<ul id='tree'><%= render :partial => 'category_list', :collection => @parent, :as => :category %></ul>
+
+<% @banners.each do |banner| %>
+    <%=h banner.name %><br/>
+    <%= link_to image_tag(banner.banner_image.url(:thumb)),banner.url %><br/>
+<% end %>
+
+
 </div>
 
 <div class="container">

@@ -1,0 +1,27 @@
+<h2>Edit banner</h2>
+
+<% form_for([:admin,@banner],:html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :image %><br />
+    <%= f.file_field :banner_image %>
+  </p>  
+
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>  
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_banner_path(@banner) %> |
+<%= link_to 'Back', admin_banners_path %>

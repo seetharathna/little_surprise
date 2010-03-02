@@ -3,13 +3,14 @@ class WishListsController < ApplicationController
   before_filter :set_current_user,:only => [:delete, :edit]
  
   def show
-    @wish_list = WishList.find(params[:id]) rescue nil
-    if @wish_list
+    @wish_list = WishList.find(params[:id])
+    unless @wish_list.blank?
       @categories = @wish_list.categories(:order => 'desc created_at')
       @items = @wish_list.categories.map{|c| c.category_id}
       @category =  @items.last 
-      @current_user = user
     end
+
+    @current_user = user
   end
 
   def new
@@ -103,7 +104,7 @@ private
 
   def owner_of_the_profile
     @wish_list = WishList.find(params[:id])
-    if @wish_list.user == user
+    if @wish_list.user == facebook_session.user.to_i
       return true
     else
       redirect_to(wish_list_path(@wish_list))

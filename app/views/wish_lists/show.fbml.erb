@@ -24,7 +24,7 @@
           <div class ='item_desc'> <%=h category.description %></div>
           <div class ='item_url'> <a><%=h category.url %></a></div>
           <!--<b>Lowest points needed:</b><%=h category.lowest_number_of_points_needed %><br/> -->
-          <% if current_user == @wish_list.user %>
+          <% if @current_user == @wish_list.user %>
           <div class ='item_links'> <%= link_to 'Remove from wishlist', remove_category_wish_lists_path(:id => category.category_id), :confirm => "#{category.name} will be removed from your wishlist.", :method => :delete %>
           </div>
          <% end %>

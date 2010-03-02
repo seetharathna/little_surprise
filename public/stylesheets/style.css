@@ -245,7 +245,7 @@ ul#tree li ul li {
 	color:#dc214c;
 	font-size:14px;
 	padding:5px 0px 5px 15px;
-	background:url(/images/box_header.jpg) repeat-x;
+	background:url('http://69.164.192.249:3012/images/box_header.jpg') repeat-x;
 	margin-bottom:5px;
 	overflow:hidden
 }

@@ -28,11 +28,12 @@
      <h3> <%= @wish_list.user.name %> 's  wishlist: <%= @wish_list.name %></h3>
 <%end%>
 
-<div class="outer-box">
-	<div class="box">
+
   <% @counter = 0 %>
  
     <% @categories.each do |category| %>
+<div class="outer-box">
+	<div class="box">
     <% @counter = @counter + 1 %>
       
           <div class="heading"> <%=h category.name %> </div>

@@ -27,13 +27,8 @@
   <%end%>
   
   <% if (!@owner_wish_list.blank? &&  @owner_wish_list.id != @wish_list.id) %>
-
-
     <%= fb_tab_item "View my wishlist",wish_list_path(@owner_wish_list.id) %>
   <%end%>
-
-
-
   
 
   <%= fb_tab_item "Help &amp; Feedback",fb_about_url,:align=>"right"%> 

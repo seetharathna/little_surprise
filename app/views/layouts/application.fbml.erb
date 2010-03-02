@@ -21,7 +21,7 @@
 
   <%= fb_tab_item "Categories", categories_path %>
  
-  <% unless (@wish_list.blank? && @wish_list.new_record?) %>
+  <% unless (@wish_list.blank?) %>
     <% if @current_user !=  @wish_list.user %>
        <%= fb_tab_item "#{@wish_list.user.name}'s wishlist", wish_list_path(@wish_list.id) %>
     <% end -%>

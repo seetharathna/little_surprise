@@ -21,8 +21,8 @@
 
   <%= fb_tab_item "Categories", categories_path %>
  
-  <%= yield(wish_list_tab) %>
-  <%= yield(categories_tab) %>
+  <%= yield(:wish_list_tab) %>
+  <%= yield(:categories_tab) %>
 
   <%= fb_tab_item "Help &amp; Feedback",fb_about_url,:align=>"right"%> 
   

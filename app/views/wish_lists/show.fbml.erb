@@ -15,19 +15,18 @@
 <%else%>
   
 <% if !@categories.blank? %>
-<% if @current_user == @wish_list.user %>
+ <div class ="facebook_container container">
+   <% if @current_user == @wish_list.user %>
      
-<div class = 'top_links'> 
-        <b><%=link_to "Publish",publish_to_friends_wish_lists_path(:category => @category) ,:confirm => 'Allow your friends to view your wishlist?'%> </b>  |  <b><%= link_to 'Edit my wishlist', edit_wish_list_path(@wish_list)%></b>  |  <b><%= link_to 'Delete my wishlist', wish_list_path(:id => @wish_list.id), :confirm => 'your wishlist will be deleted', :method => :delete %></b> 
-</div>
-    
-<div class ="facebook_container container">
-     <h4>Items in your wishlist.</h4> 
-     <hr /> 
-      <%else%>
-     <h4> <%= @wish_list.user.name %> 's  wishlist: <%= @wish_list.name %></h4>
-     <hr />
-     <%end%>
+      <div class = 'top_links'> 
+        <b><%=link_to "Publish", publish_to_friends_wish_lists_path(:category => @category) ,:confirm => 'Allow your friends to view your wishlist?'%> </b>  |  <b><%= link_to 'Edit my wishlist', edit_wish_list_path(@wish_list)%></b>  |  <b><%= link_to 'Delete my wishlist', wish_list_path(:id => @wish_list.id), :confirm => 'your wishlist will be deleted', :method => :delete %></b> 
+      </div>
+         <h4>Items in your wishlist.</h4> 
+         <hr /> 
+  <%else%>
+        <h4> <%= @wish_list.user.name %> 's  wishlist: <%= @wish_list.name %></h4>
+        <hr />
+  <%end%>
      <% @counter = 0 %>
      
      <% @categories.each do |category| %>

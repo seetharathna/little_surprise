@@ -16,26 +16,20 @@
 		<p><%=h fb_category.description %></p>
 		<a><%=h fb_category.url %></a>
 		<br />
-	  <% if @wish_list.blank? %>
-            <%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%> 
-          <%else%>
-             <% unless @category_ids.include?(fb_category.id) %>
-          <%=link_to "Add to wishlist",add_to_wishlist_wish_lists_path(:category_id => fb_category.id) ,:confirm => "#{fb_category.name} will be added to your wishlist."%> 
-          <%else%>
-            <a>Already added to wishlist</a>
-          <%end%>
-
+	  	<% if @wish_list.blank? %>
+            		<%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%> 
+         	<%else%>
+             		<% unless @category_ids.include?(fb_category.id) %>
+          		<%=link_to "Add to wishlist",add_to_wishlist_wish_lists_path(:category_id => fb_category.id) ,:confirm => "#{fb_category.name} will be added to your wishlist."%> 
+          	<%else%>
+            		<a>Already added to wishlist</a>
+          	<%end%>
 	</div>
 
 	<div class="points">
-           Lowest points needed:
-	   <%=h fb_category.lowest_number_of_points_needed %>
-       
-
-          
-          
-
- 	</div>
+           	Lowest Points Needed:
+	   	<%=h fb_category.lowest_number_of_points_needed %>
+       	</div>
      	<%end%>
     	<% if @counter == 3 %>
     	<% @counter = 0 %> 
@@ -45,10 +39,5 @@
 <% end %>
 </div>
 
-<script type="text/javascript">
-	jQuery(".outer_box").corner("corner 10px");
-	jQuery(".box").corner("corner 10px");
-	jQuery(".heading").corner("top 10px");
-</script>
 
 

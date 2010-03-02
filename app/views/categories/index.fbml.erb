@@ -29,13 +29,13 @@
              		<% unless @category_ids.include?(fb_category.id) %>
           		<%=link_to "Add to wishlist",add_to_wishlist_wish_lists_path(:category_id => fb_category.id) ,:confirm => "#{fb_category.name} will be added to your wishlist."%> 
           	<%else%>
-            		<a>Already added to wishlist</a>
+            		<a>Already in wishlist</a>
           	<%end%>
 	</div>
 
 	<div class="points">
-           	Lowest Points Needed:
-	   	<%=h fb_category.lowest_number_of_points_needed %>
+           	Lowest points needed:
+	   	<b><%=h fb_category.lowest_number_of_points_needed %></b>
        	</div>
      	<%end%>
     	<% if @counter == 3 %>

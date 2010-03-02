@@ -207,9 +207,11 @@ ul#tree li ul li {
 }
 
 .facebook_container{
+	width:100%;
 	min-height:600px;
 	height:auto !important;
         height:600px;
+	float:left;
 	background: #f0f5ff url(/images/con_header.jpg) repeat-x;
 }
 

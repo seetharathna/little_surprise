@@ -1,3 +1,15 @@
+<% content_for :wish_list_tab do %>
+    <% unless (@wish_list.blank?) %>
+    <% if @current_user !=  @wish_list.user %>
+       <%= fb_tab_item "#{@wish_list.user.name}'s wishlist", wish_list_path(@wish_list.id) %>
+    <% end -%>
+ 
+
+    <% unless (@current_user.wish_list.blank? && @current_user == @wish_list.user)  %>
+      <%= fb_tab_item "View my wishlist", wish_list_path(@current_user.wish_list.id) %>
+    <%end%>
+<% end %>
+
 <% if @wish_list.nil? %>
    Wish list does not exist.
 <%else%>

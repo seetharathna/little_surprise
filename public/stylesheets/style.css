@@ -238,7 +238,7 @@ ul#tree li ul li {
 	color:#d71920;
 	font-size:20px;
 	padding:4px 5px;
-	margin:25px 0px 0px 20px;
+	margin:15px 0px 5px 20px;
 }
 
 .outer_box {
@@ -262,6 +262,7 @@ ul#tree li ul li {
 hr{
 	border-top:1px solid #c8dbff;
 	border-bottom:1px solid #fff;
+	margin:2px 10px;
 }
 
 .box {

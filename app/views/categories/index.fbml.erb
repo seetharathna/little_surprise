@@ -3,9 +3,10 @@
 
   	
 	<% @fb_categories.each do |fb_category| %>
-        <% @counter = @counter + 1 %>
 <div class="outer_box">
 	<div class="box">
+        <% @counter = @counter + 1 %>
+
         <div class="heading"><%=h fb_category.name %></div>
 	<div class="box_lt">
 		<center><%=link_to "#{image_tag fb_category.avatar.url(:thumb)}",categories_path(:category_id => fb_category.id)%></center>
@@ -26,8 +27,7 @@
             <div class ='item_links'><%=link_to "Add to wishlist",add_to_wishlist_wish_lists_path(:category_id => fb_category.id) ,:confirm => "#{fb_category.name} will be added to your wishlist."%> </div>
           <%else%>
             <div class ='item_links'><a>Already added to wishlist</div>
-</div>
-</div>
+
           <%end%>
      <%end%>
 
@@ -36,6 +36,8 @@
     <% @counter = 0 %> 
 
     <%end%>
+</div>
+</div>
 <% end %>
 
 

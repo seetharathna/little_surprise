@@ -243,6 +243,15 @@ ul#tree li ul li {
 	background-color: #ccc;
 }
 
+.outer-box {
+        height:230px;
+	float:left; 
+	margin: 10px 10px 10px 10px; 
+	padding:1px;
+	width: 300px; 
+	background-color: #ccc;
+}
+
 .box {
 	background:url('http://69.164.192.249:3012/images/box.png') repeat-x;
 	clear:both;

@@ -1,3 +1,4 @@
+<div class ="facebook_container container">
 <% @counter = 0 %>
 <h3>Listing all product categories</h3>
 <% @fb_categories.each do |fb_category| %>
@@ -12,11 +13,12 @@
 
 	<div class="box_rt">
 		<p><%=h fb_category.description %></p>
-		<p><a><%=h fb_category.url %></p>
+		<p><a><%=h fb_category.url %></a></p>
 	</div>
 
 	<div class="points">
-           Lowest points needed:</b><%=h fb_category.lowest_number_of_points_needed %>
+           Lowest points needed:
+	   <%=h fb_category.lowest_number_of_points_needed %>
         </div>
 
           
@@ -36,7 +38,7 @@
 	</div>
 </div>
 <% end %>
-
+</div>
 
 <script type="text/javascript">
 	jQuery(".outer_box").corner("corner 10px");

@@ -10,7 +10,7 @@
      </div>
      <h2>Items in your wishlist.</h2>  
    <%else%>
-     <h2> <%= @current_user.name %> 's  wishlist: <%= @current_user.wish_list.name %></h2>
+     <h2> <%= @wishlist.user.name %> 's  wishlist: <%= @wish_list.name %></h2>
 <%end%>
   <table>
   <% @counter = 0 %>

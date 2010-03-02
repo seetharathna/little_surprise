@@ -206,6 +206,16 @@ ul#tree li ul li {
 	background: #fff url(/images/con_header.jpg) repeat-x;
 }
 
+.facebook_container{
+	width:100%;
+	min-height:600px;
+	height:auto !important;
+        height:600px;
+	float:left;
+	background: #f0f5ff url(/images/con_header.jpg) repeat-x;
+}
+
+
 .container h2{
 	color:#fff; 
 	font-size:25px;

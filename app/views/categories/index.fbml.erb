@@ -28,7 +28,7 @@
              <% unless @category_ids.include?(fb_category.id) %>
           <%=link_to "Add to wishlist",add_to_wishlist_wish_lists_path(:category_id => fb_category.id) ,:confirm => "#{fb_category.name} will be added to your wishlist."%> 
           <%else%>
-            <div class ='item_links'><a>Already added to wishlist
+            <a>Already added to wishlist</a>
 
 
         <%end%>

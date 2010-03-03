@@ -77,7 +77,7 @@ class WishListsController < ApplicationController
     @user = facebook_user
     if @user.has_permissions?('publish_stream')
        @user.publish_to(@user, :message => 'has added new product categories to wishlist.',:action_links => [
-      :text => "#{facebook_session.user.name}'s wishlist",
+      :text => "#{@user.name}'s wishlist",
       :href => "http://apps.facebook.com/littlesurprizes/wish_lists/#{@wish_list.id}"],
       :attachment => {  :name => "#{@category.name}",
                         :description => "#{@category.description}",

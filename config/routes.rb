@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
 
 
-  map.resources :wish_lists, :collection => {:add_to_wishlist => :get,:publish_to_friends => :any,:remove_category => :any}
+  map.resources :wish_lists, :collection => {:add_to_wishlist => :get, :remove_category => :any}, :member => {:publish_to_friends => :any}
 
  
   map.resource :account, :controller => "users"

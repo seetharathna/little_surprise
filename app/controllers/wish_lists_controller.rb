@@ -81,7 +81,7 @@ class WishListsController < ApplicationController
        user.publish_to(user, :message => 'has added new product categories to wishlist.',
       :action_links => [ :text => "#{user.name}'s wishlist",
                          :href => "http://apps.facebook.com/littlesurprizes/wish_lists/#{@wish_list.id}"
-                       ]
+                       ],
        :attachment =>  { :name => "#{@category.name}",
                          :description => "#{@category.description}",
                          :media => [{ :type => 'image',

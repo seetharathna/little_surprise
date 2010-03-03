@@ -1,14 +1,14 @@
-<h3>New category</h3>
+<div class="clear"></div>
 <% form_for([:admin,@category], :url => admin_categories_path,:html => { :multipart => true })  do |f| %>
   <%= f.error_messages %>
-<table class="formstyle" width="100%">
+<table class="formstyle"  cellpadding="15px;" border="1">
 	<tr>
       		<th><%= f.label :category_name %></th>
     		<td><%= f.text_field :name %></td>
   	</tr>
   	<tr>
     		<th><%= f.label :category_description %></td>
-    		<td><%= f.text_area :description %></td>
+    		<td><%= f.text_area :description,:cols=>25,:rows=>12 %></td>
   	</tr>
   	<tr>
     		<th><%= f.label :image %></td>
@@ -23,9 +23,9 @@
     		<td><%= f.text_field :lowest_number_of_points_needed %></td>
   	</tr>
 </table>
-  	<p>
-    <%= f.submit 'Create' %>
-  </p>
+  <div id="btn">
+    <center><%= f.submit 'Create' %></center>
+  </div>
 <% end %>
 
-<%= link_to 'Back', categories_path %>
+<!--<%= link_to 'Back', categories_path %>-->

@@ -14,24 +14,29 @@
 <div class="sidebar">
 	<h2>Category List</h2>
 	 <ul id='tree'><%= render :partial => 'category_list', :collection => @parent, :as => :category %></ul>
+     <h2 class="banner">Banners</h2>
      <div id = "banners">
        <% unless @banners.blank? %>
          <% @banners.each do |banner| %>
-           <%=h banner.name %><br/>
-           <%= banner.banner_image.url(:thumb) %>
-           <%= link_to image_tag(banner.banner_image.url(:thumb)),banner.url,:target=>'_blank'%><br/>
-           <%= link_to "Edit",edit_admin_banner_path(banner)%>
-           <%= link_to 'Destroy', admin_banner_path(banner), :confirm => 'Are you sure?', :method => :delete %><br/>
+           <div class = 'banner'>
+             <%= link_to image_tag(banner.banner_image.url(:thumb)),banner.url,:target=>'_blank'%><br/>
+             <%= link_to "Edit banner",edit_admin_banner_path(banner)%> | 
+             <%= link_to 'Destroy', admin_banner_path(banner), :confirm => 'Are you sure?', :method => :delete %><br/>
+           </div>
          <% end %>
       <% end %>
 
-      <% if @banners.count < 2 %>
+      <% if @banners.size < 2 %>
            <% if @banners.blank? %>
-              <%= image_tag('banner-placeholder.png') %><br />
-              <%= link_to 'Add a new banner', new_admin_banner_path %>
+             <div class = 'banner'>
+                <%= image_tag('banner.gif') %><br />
+                <%= link_to 'Add a new banner', new_admin_banner_path %>
+             </div>
            <% end %>  
-            <%= image_tag('banner-placeholder.png') %><br />
-            <%= link_to 'Add a new banner', new_admin_banner_path %>
+            <div class = 'banner'>
+              <%= image_tag('banner.gif') %><br />
+              <%= link_to 'Add a new banner', new_admin_banner_path %>
+            </div>
           <% end %>  
     
           

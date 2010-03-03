@@ -45,6 +45,52 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 	padding-left:10px;
 }
 
+.Login{
+	width:25%;
+	background-color:#415e9a;
+	margin:0 auto;
+	padding:50px 20px;
+}
+
+.Login p {
+	color: #fff;
+	text-align: left;
+	font-weight:normal;
+	font-size:14px;
+    	padding-left:15px;
+	padding-right:15px;
+	margin-top:10px;
+}
+
+.Login  a{
+	color:#fff;
+}
+
+.Login p input{
+	border:2px solid #bebebe;
+	padding:3px;
+	width:90%;
+}
+
+.Login p input:focus{
+	border:2px solid #e8c382;
+
+}
+
+.login_btn{
+        margin:20px 0px 10px 18px; 
+}
+
+.login_btn input{
+    color:#000;
+    padding:1px 3px; 
+}
+
+
+.spacing{
+	padding:35px 0px;
+}
+
  h2 {
        font-size: 2.4em;
 }
@@ -178,7 +224,7 @@ ul#tree li {
 	font-size:16px;
 	color:#105ea7;
 	text-align:left;
-	list-style-type:dotted;
+	list-style:none;
 }
 
 ul#tree li a{
@@ -383,6 +429,26 @@ table.formstyle tr td input:focus{
 
 }
 
+#dealer-list{
+	margin:10px 20px;
+}
+
+#dealer-list h3{
+	color:#434d8a;
+	font-size:16px;
+	border-bottom:1px solid #a6a4a4;
+	width:65%;
+}
+
+#dealer-list ul{
+	margin:10px 0px;
+	padding:0px;
+}
+
+#dealer-list ul li{
+	margin:10px 12px;
+}
+
 .clear{
 	clear:both;
 }
@@ -394,7 +460,14 @@ table.formstyle tr td input:focus{
 }
 
 
+#banners {margin: 20px;}
+.banner {margin-bottom: 20px; }
+.banner img{border: 1px solid #ddd; height: 150px; width:180px; }
 
+h2.banner{
+	color:#b32b31;
+	font-size:22px;
+	margin:20px 0px 0px 25px;	
+}
 
-
-
+#tree li{list-style: none;}

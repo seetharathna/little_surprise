@@ -11,6 +11,7 @@ before_filter :check_admin,:except => :index
      @search = Category.new_search(params[:search])
      @categories = @search.all
      @parent = Category.find_all_by_parent_id(nil)
+     @banners = Banner.find(:all)
 
 
      respond_to do |format|
@@ -98,6 +99,9 @@ before_filter :check_admin,:except => :index
  end
 
  
+
+
+
 
  
 

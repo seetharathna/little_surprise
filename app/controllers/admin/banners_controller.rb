@@ -6,11 +6,15 @@ class Admin::BannersController < ApplicationController
   
   def index
     @banners = Banner.all
-
+      
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @banners }
     end
+
+       
+                  
+     
   end
 
   
@@ -45,7 +49,7 @@ class Admin::BannersController < ApplicationController
     respond_to do |format|
       if @banner.save
         flash[:notice] = 'Banner was successfully created.'
-        format.html { redirect_to(admin_banners_path) }
+        format.html { redirect_to(admin_categories_path) }
         format.xml  { render :xml => @banner, :status => :created, :location => @banner }
       else
         format.html { render :action => "new" }
@@ -61,7 +65,7 @@ class Admin::BannersController < ApplicationController
     respond_to do |format|
       if @banner.update_attributes(params[:banner])
         flash[:notice] = 'Banner was successfully updated.'
-        format.html { redirect_to(admin_banner_path(@banner)) }
+        format.html { redirect_to(admin_categories_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +80,7 @@ class Admin::BannersController < ApplicationController
     @banner.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_banners_path) }
+      format.html { redirect_to(admin_categories_path) }
       format.xml  { head :ok }
     end
   end

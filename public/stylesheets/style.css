@@ -171,7 +171,7 @@ p.text{
 .sidebar h2{
 	color:#fff; 
 	font-size:25px;
-	margin:5px 0px 0px 10px;
+	margin:3px 0px 0px 10px;
 }
 
 ul#tree{
@@ -218,7 +218,7 @@ ul#tree li ul li {
 .container h2{
 	color:#fff; 
 	font-size:25px;
-	margin:5px 0px 0px 10px;
+	margin:2px 0px 0px 10px;
 }
 
 .container p{
@@ -240,6 +240,24 @@ ul#tree li ul li {
 	padding:4px 5px;
 	margin:15px 0px 5px 20px;
 }
+
+.container h2 span{
+	margin:0px 0px 0px 250px;
+	font-size:13px;
+	padding:0px;
+}
+
+.container h2 span a{
+	font-size:13px;
+	color:#fff;
+	padding:0px;
+	text-decoration:none;
+}
+
+.container h2 span a:hover{
+	text-decoration:underline;
+}
+
 
 .outer_box {
         height:230px;
@@ -315,6 +333,42 @@ hr{
 	font-weight:normal;
 	color:#414040;
 	clear:both;
+}
+
+
+.formstyle{
+	border-collapse: collapse;
+    	margin:0px 10px 10px 0px;
+    	border: 0px solid #e8ebec;
+}
+
+.formstyle th {
+	color: #000;
+	text-align: left;
+	font-weight:normal;
+	font-size:14px;
+    	padding-left:15px;
+	padding-right:15px;
+}
+
+table.formstyle tr td input{
+	border:1px solid #bebebe;
+	padding:3px;
+}
+
+table.formstyle tr td textarea{
+	border:1px solid #bebebe;
+	padding:3px;
+}
+
+table.formstyle tr td textarea:focus{
+	border:1px solid #e8c382;
+
+}
+
+table.formstyle tr td input:focus{
+	border:1px solid #e8c382;
+
 }
 
 

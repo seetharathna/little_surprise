@@ -1,31 +1,29 @@
-
-  <h2>New category</h2>
-
-
+<h3>New category</h3>
 <% form_for([:admin,@category], :url => admin_categories_path,:html => { :multipart => true })  do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :category_name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :category_description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :image %><br />
-    <%= f.file_field :avatar %>
-  </p>
-  <p>
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </p>
-  <p>
-    <%= f.label :lowest_number_of_points_needed %><br />
-    <%= f.text_field :lowest_number_of_points_needed %>
-  </p>
-  <p>
+<table class="formstyle" width="100%">
+	<tr>
+      		<th><%= f.label :category_name %></th>
+    		<td><%= f.text_field :name %></td>
+  	</tr>
+  	<tr>
+    		<th><%= f.label :category_description %></td>
+    		<td><%= f.text_area :description %></td>
+  	</tr>
+  	<tr>
+    		<th><%= f.label :image %></td>
+    		<td><%= f.file_field :avatar %></td>
+  	</tr>
+  	<tr>
+    		<th><%= f.label :url %></th>
+    		<td><%= f.text_field :url %></td>
+  	</tr>
+  	<tr>
+    		<th><%= f.label :lowest_number_of_points_needed %></th>
+    		<td><%= f.text_field :lowest_number_of_points_needed %></td>
+  	</tr>
+</table>
+  	<p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>

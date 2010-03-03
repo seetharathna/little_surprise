@@ -51,6 +51,11 @@ end
         Facebooker::Session.current = session
     end
   end
+ 
+ def publish_to(target, options = {})
+      @session.post('facebook.stream.publish', prepare_publish_to_options(target, options), false)
+end
+
 
 
 end

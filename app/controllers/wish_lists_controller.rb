@@ -77,9 +77,11 @@ class WishListsController < ApplicationController
 
     user = facebook_user
     if user.has_permissions?('publish_stream')
-       user.publish_to(@user, :message => 'has added new product categories to wishlist.',:action_links => [
-      :text => "#{user.name}'s wishlist",
-      :href => "http://apps.facebook.com/littlesurprizes/wish_lists/#{@wish_list.id}"])
+       user.publish_to(user, :message => 'has added new product categories to wishlist.',
+      :action_links => [ :text => "#{user.name}'s wishlist",
+                         :href => "http://apps.facebook.com/littlesurprizes/wish_lists/#{@wish_list.id}"
+                       ]
+      )
      
       redirect_to(wish_list_path(@wish_list))
     else

@@ -75,18 +75,12 @@ class WishListsController < ApplicationController
     @wish_list = WishList.find(params[:id])
     @category = Category.find(params[:category])
 
-    @user = facebook_user
-    if @user.has_permissions?('publish_stream')
-       @user.publish_to(@user, :message => 'has added new product categories to wishlist.',:action_links => [
-      :text => "#{@user.name}'s wishlist",
-      :href => "http://apps.facebook.com/littlesurprizes/wish_lists/#{@wish_list.id}"],
-      :attachment => {  :name => "#{@category.name}",
-                        :description => "#{@category.description}",
-                        :media => [{ :type => 'image',
-                                      :src => "http://69.164.192.249:3012/#{@category.avatar.url(:thumb)}",      
-                                      :href => "http://apps.facebook.com/littlesurprizes"}]
-                                                }
-                        )
+    user = facebook_user
+    if user.has_permissions?('publish_stream')
+       user.publish_to(@user, :message => 'has added new product categories to wishlist.',:action_links => [
+      :text => "#{user.name}'s wishlist",
+      :href => "http://apps.facebook.com/littlesurprizes/wish_lists/#{@wish_list.id}"])
+     
       redirect_to(wish_list_path(@wish_list))
     else
       render :action => 'grant_permission'

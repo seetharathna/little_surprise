@@ -19,7 +19,7 @@
    <% if @current_user == @wish_list.user %>
      
       <div class = 'top_links'> 
-        <b><%=link_to "Publish", publish_to_friends_wish_lists_path(:category => @category) ,:confirm => 'Allow your friends to view your wishlist?'%> </b>  |  <b><%= link_to 'Edit my wishlist', edit_wish_list_path(@wish_list)%></b>  |  <b><%= link_to 'Delete my wishlist', wish_list_path(:id => @wish_list.id), :confirm => 'your wishlist will be deleted', :method => :delete %></b> 
+        <b><%=link_to "Publish", publish_to_friends_wish_list_path(:id => @wish_list.id, :category => @category) ,:confirm => 'Allow your friends to view your wishlist?'%> </b>  |  <b><%= link_to 'Edit my wishlist', edit_wish_list_path(@wish_list)%></b>  |  <b><%= link_to 'Delete my wishlist', wish_list_path(:id => @wish_list.id), :confirm => 'your wishlist will be deleted', :method => :delete %></b> 
       </div>
          <h4>Items in your wishlist.</h4> 
          <hr /> 

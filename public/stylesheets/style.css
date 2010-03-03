@@ -221,12 +221,12 @@ ul#tree{
 
 ul#tree li {
 	margin:5px 0px;
-	padding:0px;
+	padding:0px 0px 0px 10px;
 	font-size:16px;
 	color:#105ea7;
 	text-align:left;
 	list-style:none;
-	background:url(/images/arrow_right.png) no-repeat left;
+	background:url(/images/arrow_right.png) no-repeat left top;
 }
 
 ul#tree li a{

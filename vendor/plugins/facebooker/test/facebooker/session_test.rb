@@ -386,14 +386,14 @@ class Facebooker::SessionTest < Test::Unit::TestCase
     assert_equal('attending', @fql_response.first.rsvp_status)
   end
   
-   def test_parses_batch_response_with_escaped_chars
-     @session = Facebooker::Session.create(ENV['FACEBOOK_API_KEY'], ENV['FACEBOOK_SECRET_KEY'])
-     expect_http_posts_with_responses(example_batch_run_with_escaped_chars_xml)
-     @session.batch do
-       @response = @session.events(:start_time => Time.now.to_i)
-     end
-     assert_kind_of(Facebooker::Event, @response.first)
-     assert_equal('Wolf & Crow', @response.first.name)
+  def test_parses_batch_response_with_escaped_chars
+    @session = Facebooker::Session.create(ENV['FACEBOOK_API_KEY'], ENV['FACEBOOK_SECRET_KEY'])
+    expect_http_posts_with_responses(example_batch_run_with_escaped_chars_xml)
+    @session.batch do
+      @response = @session.events(:start_time => Time.now.to_i)
+    end
+    assert_kind_of(Facebooker::Event, @response.first)
+    assert_equal('Wolf & Crow', @response.first.name)
   end
   
   def test_parses_batch_response_sets_exception
@@ -624,7 +624,7 @@ XML
         <modified>1132553363</modified>
         <description>No I will not make out with you</description>
         <location>York, PA</location>
-        <link>http://www.facebook.com/album.php?aid=2002205&id=8055</link>
+        <link>http://www.facebook.com/album.php?aid=2002205&amp;id=8055</link>
         <size>30</size>
         <visible>friends</visible>
         <modified_major>1241834423</modified_major>

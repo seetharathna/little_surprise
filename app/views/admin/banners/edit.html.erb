@@ -1,27 +1,26 @@
-<h2>Edit banner</h2>
+<div class="clear"></div>
+<h2 class="form_heading">Edit banner</h2>
 
 <% form_for([:admin,@banner],:html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
+<table class="formstyle"  cellpadding="15px;" border="1">
+	<tr>
+		<th><%= f.label :name %></th>
+    		<td><%= f.text_field :name %></td>
+  	</tr>
+  	<tr>
+    		<th><%= f.label :image %></th>
+    		<td><%= f.file_field :banner_image %></td>
+  	</tr>
+ 	<tr>
+    		<th><%= f.label :url %></th>
+    		<td><%= f.text_field :url %></td>
+  	</tr>
+</table>
+<div id="btn">
+    &nbsp;&nbsp;&nbsp;<%= f.submit 'Update' %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :image %><br />
-    <%= f.file_field :banner_image %>
-  </p>  
-
-  <p>
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </p>  
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
 <% end %>
-
-<%= link_to 'Show', admin_banner_path(@banner) %> |
 <%= link_to 'Back', admin_categories_path %>
+</div>
+

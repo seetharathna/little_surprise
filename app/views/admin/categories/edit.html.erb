@@ -1,34 +1,33 @@
-
- <h2>Edit category</h2>
-
-
+<div class="clear"></div>
+<h2 class="form_heading">Edit category</h2>
 <% form_for([:admin,@category],:html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :category_name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :category_description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :image %><br />
-    <%= f.file_field :avatar %>
-  </p>
-  <p>
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </p>
-  <p>
-    <%= f.label :lowest_number_of_points_needed %><br />
-    <%= f.text_field :lowest_number_of_points_needed %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<table class="formstyle"  cellpadding="15px;" border="1">
+	<tr>
+    		<th><%= f.label :category_name %></th>
+    		<td><%= f.text_field :name %></td>
+  	</tr>
+  	<tr>
+    		<th><%= f.label :category_description %></th>
+    		<td><%= f.text_area :description,:cols=>25,:rows=>12%></td>
+  	</tr>
+  	<tr>
+    		<th><%= f.label :image %></th>
+    		<td><%= f.file_field :avatar %></td>
+  	</tr>
+  	<tr>
+    		<th><%= f.label :url %></th>
+    		<td><%= f.text_field :url %></td>
+  	</tr>
+  	<tr>
+    		<th><%= f.label :lowest_number_of_points_needed %></th>
+    		<td><%= f.text_field :lowest_number_of_points_needed %></td>
+	</tr>
+</table>
+<div id="btn">
+    <center><%= f.submit 'Update' %></center>
+</div>
 <% end %>
 
-<%= link_to 'Show', admin_category_path(@category) %> |
-<%= link_to 'Back', admin_categories_path %>
+<!--<%= link_to 'Show', admin_category_path(@category) %> |
+<%= link_to 'Back', admin_categories_path %>-->

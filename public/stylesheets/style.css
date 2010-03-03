@@ -335,6 +335,14 @@ hr{
 	clear:both;
 }
 
+h2.form_heading{
+	background-color:#434d8a; 
+	color:#fff;
+	font-size:20px;width:62%;padding:5px;
+	margin:2px 0px 0px 15px;
+	
+}
+
 
 .formstyle{
 	background-color:#f6f7fb;

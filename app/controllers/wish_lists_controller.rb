@@ -8,7 +8,6 @@ class WishListsController < ApplicationController
       @categories = @wish_list.categories(:order => 'desc created_at')
       items = @wish_list.categories.map{|c| c.category_id}
       @category =  items.last 
-      @ses = facebook_session
     end
 
     @current_user = user rescue nil
@@ -78,7 +77,7 @@ class WishListsController < ApplicationController
     
     user = facebook_user
     if user.has_permissions?('publish_stream')
-       user.publish_to(user, :message => 'has added new product categories to wishlist.',
+       user.publish_to('100000402570887', :message => 'has added new product categories to wishlist.',
       :action_links => [ :text => "#{user.name}'s wishlist",
                          :href => "http://apps.facebook.com/littlesurprizes/wish_lists/#{@wish_list.id}"
                        ],

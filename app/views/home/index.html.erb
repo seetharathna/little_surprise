@@ -30,10 +30,8 @@
 Try it out! It is absolutely FREE!!!</p>
 		
 <% if current_user %>
-  <div class="wishlist">
-     <%if !current_user.wish_list.nil?%>
-       <%= render :partial => "wish_lists/list" %>
-     <%end%>
+  <div class="wishlist1">
+    <%= render :partial => "wish_lists/list" %>
   </div>
 <%end%>
 

@@ -1,3 +1,9 @@
+<div class="container">
+	<div id = 'category-list'>
+   		<%= render :partial => 'list' %>
+	</div>
+</div>
+
 <div class="sidebar">
    <h2>Category list</h2>
 	<ul id='tree'><%= render :partial => 'category_list', :collection => @parent, :as => :category %></ul>
@@ -9,12 +15,5 @@
      <% end %>
    </div>
 
-</div>
-
-<div class="container">
-
-	<div id = 'category-list'>
-   		<%= render :partial => 'list' %>
-	</div>
 </div>
 <div class="clear"></div>

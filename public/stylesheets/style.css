@@ -145,20 +145,19 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 }
 
 .header_left h1{
-	color:#bc3b93;
+	color:#a02d7b;
 	font-size:32px;
 	margin-top:10px;
 }
 
 .header_left h1 span{
-	color:#5a7c2e;
+	color:#4c6b23;
 
 }
 
 .image_bg{
 	margin:10px 0px 15px 0px ;
 	background-color:#f7ffec;
-	wiXdth:850px;
 	height:264px;
 	clear:both;
 	border-bottom:1px solid #efafdb;
@@ -456,6 +455,19 @@ table.formstyle tr td input:focus{
 
 .clear{
 	clear:both;
+}
+
+.bottom_link a{
+	float:right;
+	margin:10px 20px 10px 0px;
+	color:#bc3b93;
+	text-decoration:underline;
+	font-size:13px;
+}
+
+.bottom_link a:hover{
+	color:#000;
+	text-decoration:none;
 }
 
 

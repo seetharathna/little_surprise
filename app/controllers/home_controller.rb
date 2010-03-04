@@ -1,14 +1,10 @@
 class HomeController < ApplicationController
    def index
-     params[:search] ||= {}
-     params[:search][:conditions] ||= {}
+     #params[:search] ||= {}
+     #params[:search][:conditions] ||= {}
      params[:search][:conditions][:id] = params[:id] unless params[:id].blank?
      @search = Category.new_search(:limit => 4)
-      
      @categories =  @search.all
-     
-     #@categories = Category.find(:all,)
-     
      @parent = Category.find_all_by_parent_id(nil,:limit => 4)
      
      respond_to do |format|

@@ -3,7 +3,7 @@
 <%else%>
 
 <% if !@categories.blank? %>
- <div class ="facebook_container container">
+ <div class ="wishlist_container container">
   <% if current_user == @wish_list.user %>
      <h2>Items in your wishlist.</h2>  
   <%else%>
@@ -40,5 +40,6 @@
 <%end%>
 
 <%end%>
+<div class="clear"></div>
  
 

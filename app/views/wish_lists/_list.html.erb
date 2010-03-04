@@ -8,9 +8,10 @@
       <h2> <%=fb_name(@facebook_id)%> 's  wishlist.</h2>
   <%end%>
   <% @counter = 0 %>
-   <% @items.each do |item| %>
-      <div class="outer-box">
+ <div class="outer-box">
          <div class="box">
+   <% @items.each do |item| %>
+     
              <% @counter = @counter + 1 %>
              <div class="heading"> <%=h item.name %> </div>
              <div class="box_lt"><center><%= image_tag item.avatar.url(:thumb)%></div>

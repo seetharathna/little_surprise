@@ -259,6 +259,13 @@ ul#tree li ul li {
 	background-color: #f0f5ff;
 }
 
+.wishlist_container{
+	min-height:600px;
+	height:auto !important;
+        height:600px;
+	float:left;
+}
+
 .container h2{
 	color:#fff; 
 	font-size:25px;

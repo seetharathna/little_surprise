@@ -10,6 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource :user_session, :member => {:logout => :get}
   map.resource :admin,      :member => {:user_list => :get,:index => :get}
+  #map.resource :home,       :member => {:index => :get}
   #map.resources :user_sessions
 
   #map.resources :users
@@ -24,5 +25,5 @@ ActionController::Routing::Routes.draw do |map|
    end
 
   map.resources :categories   
-  map.root :controller => "categories", :action => "index"
+  map.root :controller => "home", :action => "index"
 end

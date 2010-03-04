@@ -3,42 +3,42 @@
 <%else%>
 
 <% if !@items.blank? %>
- <div class ="facebook_container container">
-  <% if current_user == @wish_list.user %>
+ <% if current_user == @wish_list.user %>
      <h3>Items in your wishlist.</h3>  
-  <%else%>
-     <h2> <%=fb_name(@facebook_id)%> 's  wishlist.</h2>
+ <%else%>
+      <h2> <%=fb_name(@facebook_id)%> 's  wishlist.</h2>
   <%end%>
 
+  <% @counter = 0 %>
+     
+   <% @items.each do |item| %>
+      <div class="outer-box">
+		  <div class="box">
+             <% @counter = @counter + 1 %>
+             <div class="heading"> <%=h item.name %> </div>
+             <div class="box_lt"><center><%= image_tag item.avatar.url(:thumb)%></div>
 
- 
-    <% @counter = 0 %>
-    
-      <% @items.each do |item| %>
-       <div class="outer-box">
-		 <div class="box">
-      <% @counter = @counter + 1 %>
-      <div class="heading"> <%=h item.name %> </div>
-      <div class="box_lt"><center><%= image_tag item.avatar.url(:thumb)%></div>
-
-         <div class="box_rt">
-				<p><%=h item.description %></p>
-				<a><%=h item.url %></a>
+              <div class="box_rt">
+				  <p><%=h item.description %></p>
+				  <a><%=h item.url %></a>
+             </div>
+      
+           <% if @counter == 3 %>
+      
+           <% @counter = 0 %> 
+          <%end%>
          </div>
-      
-      <% if @counter == 3 %>
-      
-      <% @counter = 0 %> 
-      <%end%>
-  </div>
 	</div>
    <% end %>
-  </div>
-  
 <%else%> 
   <p>There are no items in your wishlist 
 <%end%>
-
 <%end%>
+<div class="clear"></div>
+
+
+
+
+
  
 

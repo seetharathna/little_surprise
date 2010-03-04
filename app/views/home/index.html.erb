@@ -31,10 +31,8 @@ Try it out! It is absolutely FREE!!!</p>
 		
   <%if current_user and !admin?%>
    <%if !current_user.wish_list.nil?%>
-  	
-     <div id = "wishlist">
+
        <%= render :partial => "wish_lists/list" %>
-     </div>
    <%else%>
     <p class="text">No Items Found In Your Wish List.</p>
    <%end%>

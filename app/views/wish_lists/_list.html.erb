@@ -4,7 +4,7 @@
 <%else%>
 
 <% if !@items.blank? %>
- <div class ="wishlist_container container">
+
   <% if current_user == @wish_list.user %>
      <h2>Items in your wishlist.</h2>  
   <%else%>
@@ -34,7 +34,6 @@
   </div>
 	</div>
    <% end %>
-  </div>
   
 <%else%> 
   <p>There are no items in your wishlist 

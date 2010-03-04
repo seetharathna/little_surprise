@@ -56,7 +56,7 @@ class ApplicationController < ActionController::Base
   def check_admin
     if current_user
       if !current_user.has_role?('admin')
-        flash[:notice] = "Only admin can access access this page"
+        flash[:notice] = "Only admin can access this page"
         redirect_to(categories_url)
        end
      else

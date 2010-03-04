@@ -1,6 +1,7 @@
 class WishListsController < ApplicationController
   ensure_authenticated_to_facebook  
   before_filter :set_current_user,:only => [:delete, :edit]
+  before_filter :wish_list_exists,:only => [:new]
  
   #def index
    #WishList.birthday_reminder
@@ -129,5 +130,12 @@ private
     facebook_session.user
   end
 
+  def wish_list_exists
+      if !user.wish_list.nil?
+        flash[:notice] = "You can have only one wish list"
+        redirect_to root_url
+       end
+    end
+  
   
 end

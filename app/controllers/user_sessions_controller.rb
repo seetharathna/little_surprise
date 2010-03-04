@@ -16,7 +16,8 @@ class UserSessionsController < ApplicationController
         if current_user.wish_list.blank?
           redirect_to  categories_path   
         else
-          redirect_to  wish_list_path(current_user.wish_list)
+          flash[:notice] = "Login successful!"
+          redirect_to  root_url
         end
       end
     else

@@ -1,12 +1,13 @@
-class CategoriesController < ApplicationController
- 
-  def index
+class HomeController < ApplicationController
+   def index
      params[:search] ||= {}
      params[:search][:conditions] ||= {}
      params[:search][:conditions][:id] = params[:id] unless params[:id].blank?
      @search = Category.new_search(params[:search])
-     @categories = @search.all
-     @parent = Category.find_all_by_parent_id(nil)
+     
+     @categories = Category.find(:all,:limit => 4)
+     
+     @parent = Category.find_all_by_parent_id(nil,:limit => 4)
      
      respond_to do |format|
        format.html {@banners = Banner.find(:all)
@@ -22,6 +23,8 @@ class CategoriesController < ApplicationController
        format.fbml{ ensure_authenticated_to_facebook 
                     @current_user = user rescue nil
                     @wish_list = @current_user.wish_list unless @current_user.nil?
+                    
+
                     if !params[:category_id].blank?
                       @fb_categories = Category.find_all_by_parent_id(params[:category_id])
                     else
@@ -50,4 +53,5 @@ class CategoriesController < ApplicationController
         #current_user
       end
     end
+
 end

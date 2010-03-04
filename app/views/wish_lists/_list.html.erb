@@ -1,11 +1,11 @@
-<% if @wish_list.nil? %>
+ <% if @wish_list.nil? %>
    Wish list does not exist.
 <%else%>
 
-<% if !@categories.blank? %>
+<% if !@items.blank? %>
  <div class ="facebook_container container">
   <% if current_user == @wish_list.user %>
-     <h2>Items in your wishlist.</h2>  
+     <h3>Items in your wishlist.</h3>  
   <%else%>
      <h2> <%=fb_name(@facebook_id)%> 's  wishlist.</h2>
   <%end%>
@@ -14,16 +14,16 @@
  
     <% @counter = 0 %>
     
-      <% @categories.each do |category| %>
+      <% @items.each do |item| %>
        <div class="outer-box">
 		 <div class="box">
       <% @counter = @counter + 1 %>
-      <div class="heading"> <%=h category.name %> </div>
-      <div class="box_lt"><center><%= image_tag category.avatar.url(:thumb)%></div>
+      <div class="heading"> <%=h item.name %> </div>
+      <div class="box_lt"><center><%= image_tag item.avatar.url(:thumb)%></div>
 
          <div class="box_rt">
-				<p><%=h category.description %></p>
-				<a><%=h category.url %></a>
+				<p><%=h item.description %></p>
+				<a><%=h item.url %></a>
          </div>
       
       <% if @counter == 3 %>

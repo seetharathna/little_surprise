@@ -2,7 +2,9 @@ class WishListsController < ApplicationController
   ensure_authenticated_to_facebook  
   before_filter :set_current_user,:only => [:delete, :edit]
  
-  
+  #def index
+   #WishList.birthday_reminder
+  #end 
  
   def show
     @wish_list = WishList.find(params[:id]) rescue nil

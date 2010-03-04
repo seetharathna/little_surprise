@@ -20,7 +20,7 @@
 		 <div class="box">
       <% @counter = @counter + 1 %>
       <div class="heading"> <%=h item.name %> </div>
-      <div class="box_lt"><center><%= image_tag item.avatar.url(:thumb)%></div>
+      <div class="box_lt"><center><%= image_tag item.avatar.url(:thumb)%></center></div>
 
          <div class="box_rt">
 				<p><%=h item.description %></p>

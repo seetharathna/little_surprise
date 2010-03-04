@@ -4,7 +4,8 @@
  <li><%= authlogic_facebook_login_button :js => :jquery %></li>
 </ul>
 <%else%>
-<% unless request.request_uri == 'http://localhost:3000/' %>
+
+<% unless request.request_uri == '/'  %>
 <ul><li><%= link_to "Home", root_url %></li></ul>
 <%end%>
 <ul><li><%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %></li></ul>

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
    def index
-     #params[:search] ||= {}
-     #params[:search][:conditions] ||= {}
+     params[:search] ||= {}
+     params[:search][:conditions] ||= {}
      params[:search][:conditions][:id] = params[:id] unless params[:id].blank?
      @search = Category.new_search(:limit => 4)
      @categories =  @search.all

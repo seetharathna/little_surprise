@@ -29,20 +29,19 @@
     <p>You can also do monetary contributions to your friends wishlist. You can create a wishlist and start contributing for your own littlesurprizes gift too!
 Try it out! It is absolutely FREE!!!</p>
 		
-  <%if current_user and !admin?%>
-<div class="wishlist">
-   <%if !current_user.wish_list.nil?%>
-
+<% if current_user %>
+  <div class="wishlist">
+     <%if !current_user.wish_list.nil?%>
        <%= render :partial => "wish_lists/list" %>
-   <%else%>
-    <p class="text">No Items Found In Your Wish List.</p>
-   <%end%>
+     <%end%>
+  </div>
 <%end%>
-</div>
+
 	
 <div id = 'category-list'>
-   	<%= render :partial => 'list' %>
+   <%= render :partial => 'list' %>
 </div>
+
 <div class="clear"></div>
 <div class="bottom_link">
  	<%= link_to "view all", categories_path%>

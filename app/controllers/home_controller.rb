@@ -3,9 +3,11 @@ class HomeController < ApplicationController
      params[:search] ||= {}
      params[:search][:conditions] ||= {}
      params[:search][:conditions][:id] = params[:id] unless params[:id].blank?
-     @search = Category.new_search(params[:search])
+     @search = Category.new_search(:limit => 4)
+      
+     @categories =  @search.all
      
-     @categories = Category.find(:all,:limit => 4)
+     #@categories = Category.find(:all,)
      
      @parent = Category.find_all_by_parent_id(nil,:limit => 4)
      

@@ -2,7 +2,6 @@
     <% unless (@current_user.wish_list.blank?) %>
        <%= fb_tab_item "#{@current_user.name}'s wishlist", wish_list_path(@wish_list.id) %>
     <% end -%>
-
 <% end %>
 
 <div class ="facebook_container container">
@@ -36,8 +35,8 @@
           	<%else%>
             		<a>Already in wishlist</a>
           	<%end%>
-       	</div>
-     	<%end%>
+     	     <%end%>
+       </div>
     	<% if @counter == 3 %>
     	<% @counter = 0 %> 
     	<%end%>

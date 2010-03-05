@@ -9,7 +9,7 @@
 <h4>Listing all product categories</h4>
 <hr />
 <%if !@link.blank?%>
-<%= link_to "#{@link.name}",categories_path%>
+<%= link_to "#{@link.name}>>",categories_path(@link.id)%>
 <%end%>
 <% unless @category.blank?%>
   <%= render :partial => 'category_details' %>

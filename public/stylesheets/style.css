@@ -356,7 +356,7 @@ hr{
 	width:130px;
 	float:left;
 	margin: 5px 0px 15px 2px;
-        height:135px;
+    height:130px;
 	overflow:hidden;
 }
 
@@ -369,7 +369,7 @@ hr{
 }
 
 .box_rt p{
-        height:75px;
+     height:75px;
 	overflow:hidden;
 }
 
@@ -379,7 +379,7 @@ hr{
 
 
 .points{
-	margin:30px 0px 0px 0px;
+	margin:25px 0px 0px 0px;
 	padding:10px 0px 0px 10px;
 	font-weight:normal;
 	color:#414040;

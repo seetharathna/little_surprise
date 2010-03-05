@@ -65,16 +65,16 @@ class CategoriesController < ApplicationController
                     @wish_list = @current_user.wish_list unless @current_user.nil?
                     #@category = Category.find(params[:category_id]) rescue nil
                    
-                    if !params[:category_id].blank?
+                    if !params[:id].blank?
                       link =[]
-                      @link = Category.find(params[:category_id]) rescue nil             
-                      @fb_categories = Category.find_all_by_parent_id(params[:category_id])
-                      sub_categories = Category.find_all_by_parent_id(params[:category_id])
-                      if sub_categories.blank?
-                        redirect_to  category_path(params[:category_id])
-                      end
-                    else
-                      @fb_categories = Category.find_all_by_parent_id(nil)
+                      @link = Category.find(params[:id]) rescue nil             
+                      @fb_categories = Category.find_all_by_parent_id(params[:id])
+                      #sub_categories = Category.find_all_by_parent_id(params[:category_id])
+                      #if sub_categories.blank?
+                        #redirect_to  category_path(params[:category_id])
+                      #end
+                     #else
+                      #@fb_categories = Category.find_all_by_parent_id(nil)
                     end
                     @category_ids = []
                      @category_ids = @wish_list.categories.collect { | h|  h.id } unless @wish_list.nil?

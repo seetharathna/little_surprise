@@ -4,6 +4,11 @@
     <% end -%>
 <% end %>
 
+<%if !@link.blank?%>
+<%= link_to "#{@link.name}",category_path%>
+<%end%>
+
+
 <div class="facebook_container container">
    <div class="outer-box">
 	<div class="box"

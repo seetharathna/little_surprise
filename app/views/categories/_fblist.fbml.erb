@@ -4,9 +4,6 @@
 <% @counter = 0 %>
 <h4>Listing all product categories</h4>
 <hr />
-<%if !@link.blank?%>
-<%= link_to "#{@link.name}",category_path(@link.id)%>
-<%end%>
 
 <% @fb_categories.each do |fb_category| %>
 <div class="outer-box">

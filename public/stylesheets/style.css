@@ -124,7 +124,7 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 .header_right ul{
 	margin:15px 0px 0px 0px;
 	padding:0px;	
-	float:right;
+	float:right;color:#fff;
 }
 
 .header_right ul li{
@@ -132,7 +132,7 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 	margin:0px;
 	display:inline;
 	list-style:none;
-	color:#bc3b93;
+	
 }
 
 .header_right ul li a{
@@ -184,8 +184,6 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 .image_right{
 	width:70%;
 	float:right;
-	
-	
 }
 
 .image_right h2{

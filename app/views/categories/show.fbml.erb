@@ -17,7 +17,7 @@
 		</div>
 		<div class="points">
 			Lowest number of points needed:
-  			<%=h @category.lowest_number_of_points_needed %>
+  			<%=h @category.lowest_number_of_points_needed %>|
             <% if @wish_list.blank? %>
             		<%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%> 
          	<%else%>

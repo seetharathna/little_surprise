@@ -8,11 +8,11 @@ class CategoriesController < ApplicationController
      @search = Category.new_search(params[:search])
      if !params[:category_id].blank?
        @search.conditions.parent_id = params[:category_id] if params[:category_id]
-       sub_categories = Category.find_all_by_parent_id(params[:category_id])
+       #sub_categories = Category.find_all_by_parent_id(params[:category_id])
        
-       if sub_categories.blank?
-         redirect_to  category_path(params[:category_id])
-       end
+       #if sub_categories.blank?
+         #redirect_to  category_path(params[:category_id])
+       #end
      else
        @search.conditions.id = params[:id] if params[:id]
      end

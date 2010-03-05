@@ -353,34 +353,35 @@ hr{
 }
 
 .box_lt {
-	width:130px;
+	width:135px;
 	float:left;
-	margin: 5px 0px 15px 2px;
-    height:130px;
+	margin: 5px 0px 5px 2px;
+        height:130px;
 	overflow:hidden;
 }
 
 .box_rt {
-	width:155px;
+	width:140px;
 	float:right;
 	overflow:hidden;
-    height:130px;
-	margin: 5px 0px 5px 0px;
+        height:135px;
+	margin: 5px 1px 5px 0px;
 }
 
 .box_rt p{
      height:75px;
-	overflow:hidden;
+      margin:0px;
+     overflow:hidden;
 }
 
 .box_rt a{
-        margin: 0px 0px 0px 12px;
+        margin: 0px 0px 0px 0px;
 }
 
 
 .points{
-	margin:25px 0px 0px 0px;
-	padding:10px 0px 0px 10px;
+	margin:0px;
+	padding:15px 0px 0px 10px;
 	font-weight:normal;
 	color:#414040;
 	clear:both;

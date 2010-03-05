@@ -3,10 +3,11 @@
        <%= fb_tab_item "#{@current_user.name}'s wishlist", wish_list_path(@wish_list.id) %>
     <% end -%>
 <% end %>
-
+<div class ="top_links">
 <%if !@link.blank?%>
-<h2 class ="form_heading"><%= link_to "#{@link.name}",category_path%></h2>
+<%= link_to "#{@link.name}",category_path%>
 <%end%>
+</div>
 
 
 <div class="facebook_container container">

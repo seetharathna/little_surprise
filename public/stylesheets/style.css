@@ -355,7 +355,7 @@ hr{
 .box_lt {
 	width:130px;
 	float:left;
-	margin: 5px 0px 15px 8px;
+	margin: 5px 0px 15px 2px;
         height:135px;
 	overflow:hidden;
 }
@@ -364,7 +364,7 @@ hr{
 	width:155px;
 	float:right;
 	overflow:hidden;
-    height:135px;
+    height:130px;
 	margin: 5px 0px 5px 0px;
 }
 

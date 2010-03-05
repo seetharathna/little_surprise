@@ -62,6 +62,9 @@ class CategoriesController < ApplicationController
       format.fbml {ensure_authenticated_to_facebook 
                     @current_user = user rescue nil
                     @wish_list = @current_user.wish_list unless @current_user.nil?
+                    @category_ids = []
+                     @category_ids = @wish_list.categories.collect { | h|  h.id } unless @wish_list.nil?
+                    
                   }
     end
   end

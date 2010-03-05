@@ -357,21 +357,21 @@ hr{
 	float:left;
 	margin: 5px 0px 5px 2px;
         height:130px;
-	overflow:hidden;background-color:red;
+	overflow:hidden;
 }
 
 .box_rt {
 	width:140px;
 	float:right;
 	overflow:hidden;
-        height:135px;background-color:green;
+        height:135px;
 	margin: 5px 1px 5px 0px;
 }
 
 .box_rt p{
      height:75px;
       margin:0px;
-     overflow:hidden;background-color:red;
+     overflow:hidden;
 }
 
 .box_rt a{

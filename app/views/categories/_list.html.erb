@@ -1,13 +1,15 @@
 <h2>Product Categories</h2>
 <br />
+
 <% @categories.each do |category| %>
+
 <div class="outer_box">
 <div class="box">
 
 <div class="heading"><%=h category.name %></div>
 <div class="box_lt">
 		   
-		<center><%= image_tag category.avatar.url(:thumb)%></center>
+		<center><%=link_to "#{image_tag category.avatar.url(:thumb)}",categories_path(:category_id => category.id)%></center>
 </div>
 <div class="box_rt">
 

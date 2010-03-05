@@ -1,12 +1,25 @@
 class CategoriesController < ApplicationController
  
   def index
-     params[:search] ||= {}
-     params[:search][:conditions] ||= {}
-     params[:search][:conditions][:id] = params[:id] unless params[:id].blank?
+     #params[:search] ||= {}
+     #params[:search][:conditions] ||= {}
+     #params[:search][:conditions][:id] = params[:id] unless params[:id].blank?
+     
      @search = Category.new_search(params[:search])
+     if !params[:category_id].blank?
+       @search.conditions.parent_id = params[:category_id] if params[:category_id]
+       sub_categories = Category.find_all_by_parent_id(params[:category_id])
+       
+       if sub_categories.blank?
+         redirect_to  category_path(params[:category_id])
+       end
+     else
+       @search.conditions.id = params[:id] if params[:id]
+     end
+     
      @categories = @search.all
      @parent = Category.find_all_by_parent_id(nil)
+     
      
      respond_to do |format|
        format.html {@banners = Banner.find(:all)
@@ -24,6 +37,10 @@ class CategoriesController < ApplicationController
                     @wish_list = @current_user.wish_list unless @current_user.nil?
                     if !params[:category_id].blank?
                       @fb_categories = Category.find_all_by_parent_id(params[:category_id])
+                      sub_categories = Category.find_all_by_parent_id(params[:category_id])
+                      if sub_categories.blank?
+                        redirect_to  category_path(params[:category_id])
+                      end
                     else
                       @fb_categories = Category.find_all_by_parent_id(nil)
                     end
@@ -31,6 +48,15 @@ class CategoriesController < ApplicationController
                      @category_ids = @wish_list.categories.collect { | h|  h.id } unless @wish_list.nil?
                    }
      end
+  end
+
+
+  def show
+    @category = Category.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @category }
+    end
   end
 
   private

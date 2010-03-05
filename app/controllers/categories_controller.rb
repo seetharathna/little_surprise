@@ -59,7 +59,10 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @category }
-      format.fbml { }
+      format.fbml {ensure_authenticated_to_facebook 
+                    @current_user = user rescue nil
+                    @wish_list = @current_user.wish_list unless @current_user.nil?
+                  }
     end
   end
 

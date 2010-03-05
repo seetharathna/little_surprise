@@ -107,14 +107,15 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 
 .header_left{
 	float:left;
-	width:29%;height:60px;
-	padding:10px 5px 5px 12px;
-	margin-top:3px;
+	width:32%;height:60px;
+	margin:0px 0px 0px 30px;
+	margin-top:3px;padding:0px 0px 0px 85px;
+	background: url(/images/heading.gif) no-repeat;
 }
 
 .header_right{
 	float:right;
-	width:65%;
+	width:45%;
 	margin:0px 10px 37px 0px;
 	height:60px;
 }
@@ -135,7 +136,7 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 }
 
 .header_right ul li a{
-	color:#bc3b93;
+	color:#fff;
 	font-size:14px;
 	font-weight:bold;
 	text-decoration:none;
@@ -146,22 +147,23 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 }
 
 .header_left h1{
-	color:#a02d7b;
+	color:#ccfdac;
 	font-size:32px;
-	margin-top:10px;
+	margin-top:18px;
 }
 
 .header_left h1 span{
-	color:#4c6b23;
+	color:#e5ffd4;
 
 }
 
 .image_bg{
-	margin:10px 0px 15px 0px ;
+	margin:0px 0px 15px 0px ;
 	background-color:#f7ffec;
 	height:264px;
 	clear:both;
 	border-bottom:1px solid #efafdb;
+	
 	padding:5px 0px 0px 0px
 }
 
@@ -224,17 +226,17 @@ ul#tree{
 
 ul#tree li {
 	margin:10px 0px;
-	padding:0px 0px 0px 16px;
 	font-size:16px;
 	color:#b7318c;
 	text-align:left;
 	list-style:none;
-	background:url(/images/arrowright.png) no-repeat left top;
+	
 }
 
 ul#tree li a{
 	color:#170f15;
-	text-decoration:none;
+	padding:0px 0px 0px 16px;
+	text-decoration:none;background:url(/images/arrowright.png) no-repeat left top;
 }
 
 ul#tree li ul li {	
@@ -381,7 +383,7 @@ hr{
 
 .points{
 	margin:0px;
-	padding:15px 0px 0px 10px;
+	padding:18px 0px 0px 10px;
 	font-weight:normal;
 	color:#414040;
 	clear:both;

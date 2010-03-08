@@ -80,7 +80,10 @@ class CategoriesController < ApplicationController
                               @child = parent
                             end
                            end
-                          
+                         
+
+
+ 
                         #unless  !@child.parent_id.blank?
                           #parent = Category.find_by_parent_id(@child.parent_id)
                           #puts"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr #{parent.id}"

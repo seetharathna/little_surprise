@@ -14,7 +14,7 @@
 <body>
 
 
-	<p class= "notice"><%= flash[:notice] %></p>
+	
 
         <div class="header">
 	<div class="header_left">
@@ -30,7 +30,9 @@
 </div>
 
 <div class="clear"></div>
+
 <div class="main">
+<p class= "notice"><%= flash[:notice] %></p>
        <%= yield  %>
 </div>
 

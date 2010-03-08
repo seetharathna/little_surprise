@@ -69,7 +69,7 @@ class CategoriesController < ApplicationController
 
                     if !params[:id].blank?
                       @links = []
-                      @links << params[:links] 
+                      @links += params[:links] 
                       @links << Category.find(params[:id]).id
                                                                
                       

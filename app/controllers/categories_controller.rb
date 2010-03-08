@@ -74,7 +74,9 @@ class CategoriesController < ApplicationController
                           @links << Category.find(params[:id]).id if params[:id]
                           
                           if !@category.parent_id.blank?
+                            puts "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
                             while  !@child.parent_id.blank?
+                              puts "ddddddddddddddddddddddddddddddddddddddddddddddddddddd"
                               parent = Category.find_by_parent_id(@child.parent_id)
                               @links << parent if params[parent]
                               @child = parent
@@ -84,13 +86,7 @@ class CategoriesController < ApplicationController
 
 
  
-                        #unless  !@child.parent_id.blank?
-                          #parent = Category.find_by_parent_id(@child.parent_id)
-                          #puts"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr #{parent.id}"
-                          #@links += parent if params[parent]
-                          #@links << Category.find(parent).id if parent
-                          #@child = parent
-                         #end
+                       
                          
                      
                       @fb_categories = Category.find_all_by_parent_id(params[:id])

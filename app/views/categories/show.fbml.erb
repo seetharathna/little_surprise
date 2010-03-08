@@ -7,6 +7,9 @@
 <%if !@link.blank?%>
 <%= link_to "#{@link.name}",category_path%>
 <%end%>
+<% @links.each do |link| %>
+ <%= link_to "#{@link.name}",category_path(link.id)%> >>
+<%end%> 
 </div>
 
 

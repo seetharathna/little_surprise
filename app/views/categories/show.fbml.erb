@@ -15,8 +15,10 @@
 
 <%end%>
 
+<%if !@ancestors.blank? %>
 <%@ancestors.each do |ancestor| %>
 <%= ancestor %>
+<%= link_to "#{Category.find_by_name(ancestor).name}",category_path(Category.find_by_name(ancestor).id)%>
 <%end%>
 <%end%>
 

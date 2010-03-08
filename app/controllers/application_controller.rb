@@ -84,6 +84,11 @@ class ApplicationController < ActionController::Base
     @wish_list = WishList.find_by_facebook_id(facebook_session) rescue nil
     return  @wish_list
   end
+  
+  def find_category(id)
+    category =Category.find(id)
+    return  category
+  end
 
  def set_current_user
       set_facebook_session

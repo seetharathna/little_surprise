@@ -77,7 +77,7 @@ class CategoriesController < ApplicationController
                        else
                           
                         unless  !@child.parent_id.blank?
-                         puts "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr #{@child.parent_id}"
+                         puts "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr #{@child.parent_id}"       @links = []
                           parent = Category.find_by_parent_id(@child.parent_id)
                           @links += parent if params[parent]
                           @child = parent

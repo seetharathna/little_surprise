@@ -66,11 +66,10 @@ class CategoriesController < ApplicationController
                     @wish_list = @current_user.wish_list unless @current_user.nil?
                     #@category = Category.find(params[:category_id]) rescue nil
                      if !params[:id].blank?
-                       @links = [] 
+                          @links = [] 
                           @links += params[:links] if params[:links]                  
                           @links << Category.find(params[:id]).id if params[:id]
-                          @array =[]
-                          @array = @category.ancestors                 
+                          @a = @category.ancestors              
                           
                           #if !@category.parent_id.blank?
                             #while  !@child.parent_id.blank?

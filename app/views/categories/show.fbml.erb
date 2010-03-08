@@ -7,9 +7,9 @@
 <%if !@links.blank? and @links.count > 1%>
 
 <% @links.each do |link| %>
-
- <%= link_to "#{link}",category_path%> >>
-
+ <% if !link.blank?%>
+  <%= link_to "#{link}",category_path%> >>
+ <%end%>
 <%end%>
 <%end%>
 

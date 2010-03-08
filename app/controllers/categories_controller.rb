@@ -70,11 +70,8 @@ class CategoriesController < ApplicationController
                     if !params[:id].blank?
                       #@links = Array.new()
                       #$@links = [params[:id]]
-                      if !params[:links].blank?                      
-                        @links = [params[:links],Category.find(params[:id]).id]
-                      else 
-                        @links = [Category.find(params[:id]).id]
-                      end
+                                            
+                      @links = [params[:links],Category.find(params[:id]).id]
                       @fb_categories = Category.find_all_by_parent_id(params[:id])
                       #sub_categories = Category.find_all_by_parent_id(params[:category_id])
                       #if sub_categories.blank?

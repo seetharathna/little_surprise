@@ -7,8 +7,8 @@
 <%if !@links.blank? and @links.count > 1%>
 
 <% @links.each do |link| %>
- <% a = link%>
- <%= link_to "#{Category.find(a).name}",category_path%> >>
+ 
+ <%= link_to "#{Category.find(1).name}",category_path%> >>
 <%end%>
 <%end%>
 

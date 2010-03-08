@@ -5,11 +5,9 @@
 <% end %>
 <div class ="top_links">
 <%if !@link.blank?%>
-<%= link_to "#{@link.name}",category_path%>
+<%= link_to "#{@links.name}",category_path%>
 <%end%>
-<% @links.each do |link| %>
- <%= link_to "#{Category.find(link).name}",category_path(link.id)%> >>
-<%end%> 
+ 
 </div>
 
 

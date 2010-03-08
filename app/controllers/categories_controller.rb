@@ -74,7 +74,7 @@ class CategoriesController < ApplicationController
                        else 
                         parent = Category.find_by_parent_id(@category.parent_id)
                         while !parent.blank?
-                          @links += parent                 
+                          @links += parent if parent                 
                           parent = Category.find_by_parent_id(parent.parent_id) 
                         end     
                        end

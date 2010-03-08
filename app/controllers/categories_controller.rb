@@ -75,8 +75,9 @@ class CategoriesController < ApplicationController
                           @links << Category.find(params[:id]).id if params[:id]
                           puts "sssssssssssssssssssssssssssssssssssssssssssssss"
                        else
-                          puts "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr #{@child.parent_id}"
-                        while !@child.parent_id.blank?
+                          
+                        unless  !@child.parent_id.blank?
+                         puts "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr #{@child.parent_id}"
                           parent = Category.find_by_parent_id(@child.parent_id)
                           @links += parent if params[parent]
                           @child = parent

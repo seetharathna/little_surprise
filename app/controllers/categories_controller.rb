@@ -80,6 +80,7 @@ class CategoriesController < ApplicationController
                           parent = Category.find_by_parent_id(@child.parent_id)
                           puts"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr #{parent}"
                           @links += parent if params[parent]
+                          @links << Category.find(parent).id if parent
                           @child = parent
                          end
                        end  

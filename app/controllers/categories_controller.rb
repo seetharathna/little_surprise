@@ -57,6 +57,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @child = Category.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @category }
@@ -72,7 +73,13 @@ class CategoriesController < ApplicationController
                        if @category.parent_id.blank?
                           @links += params[:links] if params[:links]                  
                           @links << Category.find(params[:id]).id if params[:id]
-                       end
+                       else
+                         while !parent.nil
+                          parent = Category.find_parent(@child)
+                          @links += parent if params[parent]
+                          @child = parent
+                         end
+                       end  
                      
                       @fb_categories = Category.find_all_by_parent_id(params[:id])
                       #sub_categories = Category.find_all_by_parent_id(params[:category_id])

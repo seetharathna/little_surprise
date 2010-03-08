@@ -8,7 +8,7 @@
 
 <% @links.each do |link| %>
  
-  <%= link_to "#{find_category(link.to_i).name}",category_path(find_category(link.to_i).id)%> >>
+  <%= link_to "#{Category.find(link.to_i).name}",category_path(Category.find(link.to_i).id)%> >>
 
 <%end%>
 <%end%>

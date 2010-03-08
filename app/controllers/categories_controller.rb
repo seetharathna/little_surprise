@@ -69,9 +69,10 @@ class CategoriesController < ApplicationController
                           @links = [] 
                           #@links += params[:links] if params[:links]                  
                           @links << Category.find(params[:id]).id if params[:id]
-                          @ancestors = @category.ancestors.collect { | h|  h.id } unless
- @category.nil?           @ancestors = @ancestors.reverse  unless
- @ancestors.nil?          @links << Category.find(params[:id]).id if params[:id]
+                          @ancestors = @category.ancestors.collect { | h|  h.id } unless @category.nil?
+
+                          @ancestors = @ancestors.reverse  unless  @ancestors.nil?
+                          @links << Category.find(params[:id]).id if params[:id]
                           @links += @ancestors
                           #if !@category.parent_id.blank?
                             #while  !@child.parent_id.blank?

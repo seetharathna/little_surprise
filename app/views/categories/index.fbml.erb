@@ -8,7 +8,7 @@
 <% @counter = 0 %>
 <h4>Listing all product categories</h4>
 <hr />
-<%if !@link.blank?%>
+<%if !@links.blank?%>
 <%= link_to "#{@link.name}>>",categories_path(@link.id)%>
 <%end%>
 <% unless @category.blank?%>

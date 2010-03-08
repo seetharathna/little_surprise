@@ -38,8 +38,8 @@ class CategoriesController < ApplicationController
                     @category = Category.find(params[:category_id]) rescue nil
                    
                     if !params[:category_id].blank?
-                      link =[]
-                      @link = Category.find(params[:category_id]) rescue nil             
+                      links =[]
+                      @links = [params[:links],Category.find(params[:category_id])]             
                       @fb_categories = Category.find_all_by_parent_id(params[:category_id])
                       sub_categories = Category.find_all_by_parent_id(params[:category_id])
                       if sub_categories.blank?

@@ -22,7 +22,7 @@
         <div class="heading"><%=h fb_category.name %></div>
 	<div class="box_lt">
         
-		<center><%=link_to "#{image_tag fb_category.avatar.url(:thumb)}",category_path(fb_category.id) :link_id => @link.id%></center>
+		<center><%=link_to "#{image_tag fb_category.avatar.url(:thumb)}",category_path(fb_category.id), :link_id => @link.id%></center>
 	</div>
 
 	<div class="box_rt">

@@ -8,8 +8,8 @@
 
 <% @links.each do |link| %>
  <% if !link.blank?%>
-  <%name = Category.find(link).name%>
-  <%= link_to "#{name}",category_path%> >>
+  
+  <%= link_to "#{link}",category_path%> >>
  <%end%>
 <%end%>
 <%end%>

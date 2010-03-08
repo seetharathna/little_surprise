@@ -5,11 +5,9 @@
 <% end %>
 <div class ="top_links">
 <%if !@links.blank? and @links.count > 1%>
-
-
 <% @links.each do |link| %>
  <% if !link.blank?%>
-  <%= link_to "#{link}",category_path%> >>
+  <%= link_to "#{find_category(link)}",category_path%> >>
  <%end%>
 <%end%>
 <%end%>

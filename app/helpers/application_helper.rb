@@ -3,4 +3,10 @@ module ApplicationHelper
   def admin?
      current_user && current_user.has_role?(:admin)
   end
+
+  def find_category(id)
+    category = Category.find(id).name rescue nil
+    return  category
+  end
+
 end

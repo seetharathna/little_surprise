@@ -86,7 +86,7 @@ class ApplicationController < ActionController::Base
   end
   
   def find_category(id)
-    category = Category.find(id)
+    category = Category.find(id).name
     return  category
   end
 

@@ -1,5 +1,26 @@
+<h4>Product Categories</h4>
+<% @categories.each do |category| %>
+<div class="list">
 
-<h3>Product Categories</h3>
+<div class="list_box">
+		   
+		<center><%= image_tag category.avatar.url(:thumb)%></center>
+                 
+
+</div>
+
+<div class="description">
+	       <h4><%=h category.name %></h4>	
+		<p><%=h category.description %></p>
+</div>
+
+</div>
+
+<% end %>
+
+
+
+<!--<h3>Product Categories</h3>
 <% @categories.each do |category| %>
 <div class="outer_box">
 <div class="box">
@@ -23,7 +44,7 @@
 </div>
 </div>
 </div>
-<% end %>
+<% end %>-->
 
 
 <script type="text/javascript">

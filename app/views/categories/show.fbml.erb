@@ -10,7 +10,9 @@
 <%= link_to "Categories",categories_path %> >>
 
 <%@ancestors.each do |ancestor| %>
-<%= link_to "#{find_category(ancestor).name}",category_path(find_category(ancestor).id)%> <% ">>" if !@ancestors.last%> 
+<%= link_to "#{find_category(ancestor).name}",category_path(find_category(ancestor).id)%><%if ancestor != @ancestors.last%>
+">>"
+<%end%>
 <%end%>
 <%end%>
 

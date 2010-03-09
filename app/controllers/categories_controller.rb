@@ -75,6 +75,15 @@ class CategoriesController < ApplicationController
                           #@ancestors = @ancestors.reverse  unless  @ancestors.nil?
                           #@links << Category.find(params[:id]).id if params[:id]
                           #@links += @ancestors
+
+                          @ancestors = []                          
+                                
+                           @array_of_ancestors = @category.ancestors.collect { | h|  h.name } unless @category.nil?          
+                           @reversed_ancestors = @array_of_ancestors.reverse
+                        
+                           @ancestors << Category.find(params[:id]).id if params[:id]
+                           
+                           @ancestors += @reversed_ancestors
                           
                          
                    

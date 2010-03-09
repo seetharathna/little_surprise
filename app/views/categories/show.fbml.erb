@@ -21,7 +21,7 @@
 <%= link_to "categories",categories_path %> >>
 
 <%@ancestors.each do |ancestor| %>
-<%= link_to "#{Category.find_by_name(ancestor)}",category_path(Category.find_by_name(ancestor).id)%> >>
+<%= link_to "#{Category.find_by_name(ancestor).name}",category_path(Category.find_by_name(ancestor).id)%> >>
 <%end%>
 <%end%>
 

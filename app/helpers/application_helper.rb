@@ -4,8 +4,8 @@ module ApplicationHelper
      current_user && current_user.has_role?(:admin)
   end
 
-  def find_category(id)
-    category = Category.find(id) rescue nil
+  def find_category(name)
+    category = Category.find_by_name(name) rescue nil
     return  category
   end
 

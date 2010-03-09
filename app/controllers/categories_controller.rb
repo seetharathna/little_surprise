@@ -69,7 +69,7 @@ class CategoriesController < ApplicationController
                          
                            @ancestors = []                          
                                 
-                           @array_of_ancestors = @category.ancestors.collect { | h|  h.name } unless @category.nil?          
+                           @array_of_ancestors = @category.ancestors.collect { | h|  h.id } unless @category.nil?          
                            @reversed_ancestors = @array_of_ancestors.reverse
                                                                              
                            @ancestors += @reversed_ancestors

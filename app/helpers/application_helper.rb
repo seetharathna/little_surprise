@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def find_category(id)
-    category = Category.find(id).name rescue nil
+    category = Category.find(id) rescue nil
     return  category
   end
 

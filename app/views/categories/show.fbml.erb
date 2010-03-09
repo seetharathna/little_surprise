@@ -16,6 +16,15 @@
 <%end%>
 <%end%>
 
+<%if !@ancestors.blank? %>
+
+<%= link_to "categories",categories_path %> >>
+
+<%@ancestors.each do |ancestor| %>
+<%=ancestor|%>
+<%end%>
+<%end%>
+
  
 </div>
 

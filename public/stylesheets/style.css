@@ -256,7 +256,7 @@ ul#tree li ul li {
 	height:auto !important;
         height:600px;
 	float:left;
-	background-color: #f0f5ff;
+	backXground-color: #f0f5ff;
 }
 
 .wishlist_container{
@@ -413,6 +413,8 @@ h2.form_heading{
 	overflow:hidden; 
 	
 }
+
+list_box img{border:1px solid #ccc;}
 
 .description{
         height:85px;

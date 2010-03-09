@@ -146,6 +146,11 @@ body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; fon
 	margin-top:15px;
 }
 
+ul.btn li{
+	margin:0px;
+	padding:0px;
+}
+
 .header_left h1{
 	color:#ccfdac;
 	font-size:32px;

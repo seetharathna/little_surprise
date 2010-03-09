@@ -410,11 +410,11 @@ h2.form_heading{
         height:130px;
 	margin:2px 5px;
 	width: 135px;
-	overflow:hidden; 
+	overflow:hidden; border:1px solid #ccc;
 	
 }
 
-.list_box img{border:1px solid #ccc;}
+
 
 .description{
         height:85px;

@@ -5,17 +5,6 @@
 <% end %>
 <div class ="top_links">
 
-<%if !@links.blank? %>
-  
-  <%= link_to "categories",categories_path %> >>
-
-<% @links.each do |link| %>
- 
-  <%= link_to "#{Category.find(link.to_i).name}",category_path(Category.find(link.to_i).id)%> >>
-
-<%end%>
-<%end%>
-
 <%if !@ancestors.blank? %>
 
 <%= link_to "categories",categories_path %> >>

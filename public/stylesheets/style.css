@@ -34,7 +34,7 @@ blockquote, q {
 quotes : "" "";
 }
 /*******************************************************/
-body { margin: 0px 10px; padding: 0px; background:#f6f6f6 url(/images/body.jpg) repeat-x; color: #6d6c67; font-family: Arial, Helvetica, Sans-Serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; line-height: normal; }
+body { margin: 10px; padding: 0px; background-color:#e8e6e7; color: #6d6c67; font-family: Arial, Helvetica, Sans-Serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; line-height: normal; }
 
 .notice{
 	width:900px;
@@ -102,31 +102,22 @@ body { margin: 0px 10px; padding: 0px; background:#f6f6f6 url(/images/body.jpg) 
 	height:auto !important;
         height:600px;
         padding:0px 5px;
-	background:#fff url(/images/mXain.jpg) repeat-x;
-}
-
-.header{
-	width:900px;
-	margin:0 auto;
-	
+	background:#fff url(/images/main.jpg) repeat-x;
 }
 
 .header_left{
 	float:left;
-	width:35%;height:90px;
-	margin:0px 0px 0px 0px;
-	background:url(/images/icon.gif) no-repeat left bottom;
-	margin-top:15px;
-	padding:0px 0px 0px 90px;
-	
+	width:32%;height:60px;
+	margin:0px 0px 0px 30px;
+	margin-top:3px;padding:0px 0px 0px 85px;
+	background: url(/images/heading.gif) no-repeat;
 }
-
 
 .header_right{
 	float:right;
-	width:42%;
-	margin:10px 10px 37px 0px;
-	height:90px;
+	width:45%;
+	margin:0px 10px 37px 0px;
+	height:60px;
 }
 
 
@@ -136,17 +127,16 @@ body { margin: 0px 10px; padding: 0px; background:#f6f6f6 url(/images/body.jpg) 
 	float:right;color:#fff;
 }
 
-
 .header_right ul li{
 	padding:0px 10px 0px 10px;
 	margin:0px;
 	display:inline;
 	list-style:none;
+	
 }
 
-
 .header_right ul li a{
-	color:#b237bb;
+	color:#fff;
 	font-size:14px;
 	font-weight:bold;
 	text-decoration:none;
@@ -157,76 +147,43 @@ body { margin: 0px 10px; padding: 0px; background:#f6f6f6 url(/images/body.jpg) 
 }
 
 .header_left h1{
-	color:#3d4439;
+	color:#ccfdac;
 	font-size:32px;
-	margin-top:28px;
-	padding:0px 0px 0px 0px;
-	
+	margin-top:18px;
 }
 
 .header_left h1 span{
-	color:#646a60;
+	color:#e5ffd4;
 
 }
 
 .image_bg{
-	margin:0px 0px 20px 0px ;
+	margin:0px 0px 15px 0px ;
+	background-color:#f7ffec;
 	height:264px;
 	clear:both;
+	border-bottom:1px solid #efafdb;
+	
 	padding:5px 0px 0px 0px
 }
 
-.image_bg p span{
-	color:#fff;
-	font-size:25px;
+.image_bg p span,a{
+	color:#d71920;
 }
 
 
-
-.image_bg ul li a{
-	color:#b237bb;
-	font-size:13px;
-}
-
-
-.image_bg ul{
-	margin:0px 0px 0px 0px;
-	padding:0px 30px 0px 30px;
-}
-
-.image_bg ul li{
-	padding:5px 0px;
+.image_bg p{
+	padding:10px 5px;
+	font-size:18px;
         margin-top:5px;
-	line-height:35px;
-	color:#fff;
-	
-}
-
-.image_bg li.first{
-	font-size:25px;
-	letter-spacing:0.6px;
-	list-style:none;
+	line-height:30px;
+	color:#1560a4;
 	text-align:justify;
-	padding-left:0px;
-	padding-right:5px;
-	background:url(/images/iXcon.gif) no-repeat;
-
-}
-
-.image_bg li.second{
-	font-size:15px;list-style:none;
-}
-
-.image_bg li.third{
-	font-size:16px;
-	background:url(/imXages/icon.gif) no-repeat;
 }
 
 .image_right{
-	width:72%;
+	width:70%;
 	float:right;
-	background:#4c8527 url(/images/image_bg_right.gif) no-repeat;
-	
 }
 
 .image_right h2{
@@ -235,8 +192,8 @@ body { margin: 0px 10px; padding: 0px; background:#f6f6f6 url(/images/body.jpg) 
 }
 
 .image_left{
-	width:25%;
-	float:left;	
+	width:27%;
+	float:left;border-right:1px solid #f2f9e9;		
 }
 
 p.text{
@@ -290,7 +247,7 @@ ul#tree li ul li {
 	height:auto !important;
         height:600px;
 	float:right;
-	background: #fff url(/iXmages/con_header.jpg) repeat-x;
+	background: #fff url(/images/con_header.jpg) repeat-x;
 }
 
 .facebook_container{
@@ -310,10 +267,9 @@ ul#tree li ul li {
 }
 
 .container h2{
-	color:#b237bb; 
-	font-size:30px;
-	margin:0px 0px 0px 10px;
-	border-bottom:1px solid #e5e2e5;
+	color:#fff; 
+	font-size:25px;
+	margin:2px 0px 0px 10px;
 }
 
 .container p{
@@ -440,6 +396,7 @@ h2.form_heading{
 	margin:2px 0px 0px 15px;	
 }
 
+
 .list{
 	height:250px;
 	float:left; 
@@ -479,6 +436,7 @@ h2.form_heading{
 	font-size:12px;
 	
 }
+
 
 .formstyle{
 	background:#f7f7f9 url(/images/form_bg.jpg) repeat-x;

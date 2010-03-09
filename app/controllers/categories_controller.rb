@@ -66,17 +66,8 @@ class CategoriesController < ApplicationController
                     @wish_list = @current_user.wish_list unless @current_user.nil?
                     #@category = Category.find(params[:category_id]) rescue nil
                      if !params[:id].blank?
-                          @links = [] 
-                          @links += params[:links] if params[:links]                  
-                          @links << Category.find(params[:id]).id if params[:id]
-
-                          #@ancestors = @category.ancestors.collect { | h|  h.id } unless @category.nil?
-
-                          #@ancestors = @ancestors.reverse  unless  @ancestors.nil?
-                          #@links << Category.find(params[:id]).id if params[:id]
-                          #@links += @ancestors
-
-                          @ancestors = []                          
+                         
+                           @ancestors = []                          
                                 
                            @array_of_ancestors = @category.ancestors.collect { | h|  h.name } unless @category.nil?          
                            @reversed_ancestors = @array_of_ancestors.reverse
@@ -84,19 +75,11 @@ class CategoriesController < ApplicationController
                            @ancestors += @reversed_ancestors
                         
                            @ancestors << @category.name if @category
-                          
-                         
-                   
-                     
-                      @fb_categories = Category.find_all_by_parent_id(params[:id])
-                      #sub_categories = Category.find_all_by_parent_id(params[:category_id])
-                      #if sub_categories.blank?
-                        #redirect_to  category_path(params[:category_id])
-                      #end
-                     #else
-                      #@fb_categories = Category.find_all_by_parent_id(nil)
-                    end
-                    @category_ids = []
+                                              
+                           @fb_categories = Category.find_all_by_parent_id(params[:id])
+                      
+                     end
+                     @category_ids = []
                      @category_ids = @wish_list.categories.collect { | h|  h.id } unless @wish_list.nil?
                     
                   }

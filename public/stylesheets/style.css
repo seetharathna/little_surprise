@@ -414,6 +414,8 @@ h2.form_heading{
 	
 }
 
+list_box img{border:1px solid #ccc;}
+
 .description{
         height:85px;
 	margin:2px 5px;

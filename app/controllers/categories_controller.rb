@@ -83,7 +83,7 @@ class CategoriesController < ApplicationController
                                                                              
                            @ancestors += @reversed_ancestors
                         
-                           @ancestors << Category.find(params[:id]).name if params[:id]
+                           @ancestors << @category.name if @category
                           
                          
                    

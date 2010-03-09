@@ -402,16 +402,17 @@ h2.form_heading{
 	float:left; 
 	margin: 15px 0px 10px 0px; 
 	padding:1px 10px;
-	width: 140px; 
+	width: 135px; 
 	border-bottom:1px solid #ccc;
 }
 
 .list_box{
         height:130px;
 	margin:2px 5px;
-	width: 135px;
-	overflow:hidden; border:1px solid #ccc;
-	
+	width: 132px;
+	overflow:hidden; 
+	border:1px solid #ccc;
+	background-color:#fff;
 }
 
 

@@ -80,10 +80,10 @@ class CategoriesController < ApplicationController
                                 
                            @array_of_ancestors = @category.ancestors.collect { | h|  h.name } unless @category.nil?          
                            @reversed_ancestors = @array_of_ancestors.reverse
+                                                                             
+                           @ancestors += @reversed_ancestors
                         
                            @ancestors << Category.find(params[:id]).id if params[:id]
-                           
-                           @ancestors += @reversed_ancestors
                           
                          
                    

@@ -11,7 +11,7 @@
 
 <%@ancestors.each do |ancestor| %>
 <%= link_to "#{find_category(ancestor).name}",category_path(find_category(ancestor).id)%><%if ancestor != @ancestors.last%>
-">>"
+>>
 <%end%>
 <%end%>
 <%end%>

@@ -485,8 +485,7 @@ h2.form_heading{
 
 
 .show-box{
-        height:200px;
-	float:left; 
+       	float:left; 
 	margin: 15px 0px 10px 25px; 
 	padding:1px;
 	width:700px; 
@@ -503,7 +502,7 @@ h2.form_heading{
 }
 
 .show_rt {
-	width:498px;
+	width:485px;
 	float:right;
 	overflow:hidden;
         height:200px;

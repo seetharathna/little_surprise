@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="description">
-		 <h4>Points needed: :<b><%=h fb_category.lowest_number_of_points_needed %></b></h4>
+		 <h4>Points needed:<b><%=h fb_category.lowest_number_of_points_needed %></b></h4>
                   <a><%=link_to "View details",category_path(fb_category.id)%></a>|
           <% if @wish_list.blank? %>
             		<a><%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%></a> 

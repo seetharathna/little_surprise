@@ -402,9 +402,9 @@ hr{
 }
 
 .box_rt p{
-     height:75px;
-      margin:0px;
-     overflow:hidden;
+     	height:75px;
+      	margin:0px;
+     	overflow:hidden;
 }
 
 .box_rt a{
@@ -475,16 +475,13 @@ h2.form_heading{
 }
 
 .description p{
-   margin:0px 0px 0px 12px;
-color:#000;
-font-size:12px;
-	
+   	margin:0px 0px 0px 12px;
+	color:#000;
+	font-size:12px;
 }
 
 .description a{
        margin:0px 0px 0px 12px;
-	
-	
 }
 
 
@@ -493,17 +490,24 @@ font-size:12px;
 	float:left; 
 	margin: 15px 0px 10px 25px; 
 	padding:1px;
-	width:80%; 
+	width:500px; 
 	background-color: #ccc;
 }
 
-.show_lt{
-        height:230px;
-	float:left; 
-	margin: 15px 0px 10px 25px; 
-	padding:1px;
-	width: 500px; 
-	background-color: #ccc;
+.show_lt {
+	width:150px;
+	float:left;
+	margin: 5px 0px 5px 2px;
+        height:130px;
+	overflow:hidden;
+}
+
+.show_rt {
+	width:350px;
+	float:right;
+	overflow:hidden;
+        height:135px;
+	margin: 5px 1px 5px 0px;
 }
 
 

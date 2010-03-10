@@ -17,25 +17,25 @@
 	<div class="description">
 		 <h4>Points needed:<%=h fb_category.lowest_number_of_points_needed %></h4>
          <a><%=link_to "View details",category_path(fb_category.id)%></a>
-	</div>
-	  	
-	
-
-	<div class="points">
-         <% if @wish_list.blank? %>
-            		<%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%> 
+          <% if @wish_list.blank? %>
+            		<a><%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%></a> 
          	<%else%>
              		<% unless @category_ids.include?(fb_category.id) %>
-          		<%=link_to "Add to wishlist",add_to_wishlist_wish_lists_path(:category_id => fb_category.id) ,:confirm => "#{fb_category.name} will be added to your wishlist."%> 
+          		<a><%=link_to "Add to wishlist",add_to_wishlist_wish_lists_path(:category_id => fb_category.id) ,:confirm => "#{fb_category.name} will be added to your wishlist."%> </a>
           	<%else%>
             		<a>Already in wishlist</a>
           	<%end%>
      	     <%end%>
        </div>
+	</div>
+	  	
+	</div>
+
+	
     	<% if @counter == 3 %>
     	<% @counter = 0 %> 
     	<%end%>
-	</div>
+	
 
 <% end %>
 

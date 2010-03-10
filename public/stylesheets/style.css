@@ -286,7 +286,7 @@ ul#tree li ul li {
 	min-height:600px;
 	height:auto !important;
         height:600px;
-	float:left;margin-left:200px;
+	float:left;
 	background-color: #f0f5ff;
 }
 
@@ -355,7 +355,7 @@ ul#tree li ul li {
 .outer-box {
         height:230px;
 	float:left; 
-	margin: 15px 0px 10px 25px; 
+	margin: 15px 0px 10px 125px; 
 	padding:1px;
 	width: 300px; 
 	background-color: #ccc;

@@ -4,25 +4,25 @@
 <hr />
 
 <% @fb_categories.each do |fb_category| %>
-<div class="outer-box">
-	<div class="box">
+<div class="list">
         <% @counter = @counter + 1 %>
 
-        <div class="heading"><%=h fb_category.name %></div>
-	<div class="box_lt">
-       
-		<center><%=link_to "#{image_tag fb_category.avatar.url(:thumb)}",category_path(fb_category.id,:links => @links)%></center>
+       <div class="name"><center><%=h fb_category.name %></center></div>
+
+
+	<div class="list_box">
+       <center><%=link_to "#{image_tag fb_category.avatar.url(:thumb)}",category_path(fb_category.id,:links => @links)%></center>
 	</div>
 
-	<div class="box_rt">
-		<p><%=h fb_category.description %></p>
-		<a><%=h fb_category.url %></a>
+	<div class="desription">
+		 <h4>Points needed:<%=h fb_category.lowest_number_of_points_needed %></h4>
+    <a><%=link_to "View details",category_path(fb_category.id)%></a>
+	</div>
 	  	
 	</div>
 
 	<div class="points">
-           	Lowest points needed:
-	   	<b><%=h fb_category.lowest_number_of_points_needed %></b> | 
+       
                <% if @wish_list.blank? %>
             		<%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%> 
          	<%else%>
@@ -37,7 +37,7 @@
     	<% @counter = 0 %> 
     	<%end%>
 	</div>
-</div>
+
 <% end %>
 
 

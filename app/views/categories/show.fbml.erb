@@ -22,17 +22,17 @@
 
 
 <div class="facebook_container container">
-   <div class="outer-box">
-	<div class="box"
-		<div class="heading"><%=h @category.name %></div>
-		<div class="box_lt">
+   <div class="show-box">
+	
+		
+		<div class="show_lt">
+			<%=h @category.name %>
 			<center><%= image_tag @category.avatar.url(:thumb)%></center>
 		</div>
-		<div class="box_rt">
+		<div class="show_rt">
  			<p><%=h @category.description %></p>
   			<a><%=h @category.url %></a>
-		</div>
-		<div class="points">
+		
 			Lowest number of points needed:
   			<%=h @category.lowest_number_of_points_needed %>|
             <% if @wish_list.blank? %>
@@ -45,7 +45,7 @@
           	<%end%>
      	     <%end%>
 		</div>
-	</div>
+	
   </div>
 
 <div class="clear"></div>

@@ -152,13 +152,13 @@ ul.btn li{
 }
 
 .header_left h1{
-	color:#effdd0;
+	color:#ed2626;
 	font-size:32px;
 	margin-top:5px;
 }
 
 .header_left h1 span{
-	color:#f3f9e7;
+	color:#f8db37;
 
 }
 
@@ -170,7 +170,7 @@ ul.btn li{
 }
 
 .image_bg p span,a{
-	color:#3b3737;
+	color:#977c0f;
 	text-decoration:underline;
 }
 
@@ -190,21 +190,24 @@ ul.btn li{
 .image_bg p.first{
 	line-height:40px;
 	font-size:28px;
-	color:#7b0306;
+	color:#9b1121;
        
 }
 
 .image_bg p.second{
 	line-height:26px;
 	font-size:15px;
-	text-align:justify;
-	color:#3b3737;
+	
+	color:#977c0f;
        
 }
 
 .image_right{
-	width:72%;border:1px solid #7ba71d;
-	float:right;background-color:#fff;
+	width:71%;
+	border:1px solid #7ba71d;
+	float:right;
+	background-color:#fff;
+	padding-left:6px;
 }
 
 .image_right h2{
@@ -455,7 +458,7 @@ h2.form_heading{
 }
 
 .name{
-    margin:0px 0px 0px 5px;
+    	margin:0px 0px 0px 5px;
 	color:#000;
 	font-size:13px;
 	font-weight:bold;
@@ -464,17 +467,17 @@ h2.form_heading{
 
 
 .description h4{
-       margin:0px 0px 0px 5px;
+        margin:0px 0px 0px 5px;
 	color:#000;
 	font-size:13px;
-	'font-weight:bold;
+	font-weight:bold;
 	
 }
 
 .description p{
-    margin:0px 0px 0px 12px;
-	color:#000;
-	font-size:12px;
+   margin:0px 0px 0px 12px;
+color:#000;
+font-size:12px;
 	
 }
 
@@ -482,6 +485,16 @@ h2.form_heading{
        margin:0px 0px 0px 12px;
 	
 	
+}
+
+
+.show-box{
+        height:230px;
+	float:left; 
+	margin: 15px 0px 10px 25px; 
+	padding:1px;
+	width: 500px; 
+	background-color: #ccc;
 }
 
 

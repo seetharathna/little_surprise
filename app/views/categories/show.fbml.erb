@@ -26,15 +26,16 @@
 	
 		
 		<div class="show_lt">
-		       <%=h @category.name %>
+		       <h2><%=h @category.name %></h2>
 			<center><%= image_tag @category.avatar.url(:thumb)%></center>
 		</div>
 		<div class="show_rt">
  			<p><%=h @category.description %></p>
-  			<a><%=h @category.url %></a>
+  			
 		
-			Lowest number of points needed:
-  			<%=h @category.lowest_number_of_points_needed %>|
+			<p>Lowest number of points needed:
+  			<%=h @category.lowest_number_of_points_needed %></p>
+			<a><%=h @category.url %></a>
             <% if @wish_list.blank? %>
             		<%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%> 
          	<%else%>

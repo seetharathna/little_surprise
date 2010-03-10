@@ -461,7 +461,6 @@ h2.form_heading{
     	margin:0px 0px 0px 5px;
 	color:#000;
 	font-size:13px;
-	font-weight:bold;
 }   
 	
 
@@ -509,6 +508,14 @@ h2.form_heading{
 	overflow:hidden;
         height:200px;
 	margin: 5px 1px 5px 0px;
+}
+
+.show_lt h2{
+	color:#2c4a83;
+	font-weight:bold;
+	font-size:14px;
+	padding:5px 0px 5px 15px;
+	margin-bottom:5px;
 }
 
 

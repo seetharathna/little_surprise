@@ -499,6 +499,7 @@ h2.form_heading{
         height:200px;
 	overflow:hidden;
 	background-color:#fff;
+	border:1px solid #ccc;
 }
 
 .show_rt {

@@ -286,7 +286,7 @@ ul#tree li ul li {
 	min-height:600px;
 	height:auto !important;
         height:600px;
-	float:left;
+	float:left;margin-left:200px;
 	background-color: #f0f5ff;
 }
 
@@ -493,7 +493,7 @@ font-size:12px;
 	float:left; 
 	margin: 15px 0px 10px 25px; 
 	padding:1px;
-	width: 500px; 
+	width:80%; 
 	background-color: #ccc;
 }
 

@@ -1,6 +1,6 @@
 <% content_for :categories_tab do %>
     <% unless (@current_user.wish_list.blank?) %>
-       <%= fb_tab_item "#{@current_user.name}'s wishlist", wish_list_path(@wish_list.id) %>
+       <%= fb_tab_item "View my wishlist", wish_list_path(@wish_list.id) %>
     <% end -%>
 <% end %>
 <div class ="top_links">

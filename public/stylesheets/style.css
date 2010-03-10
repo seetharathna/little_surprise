@@ -503,7 +503,7 @@ h2.form_heading{
 }
 
 .show_rt {
-	width:350px;
+	width:498px;
 	float:right;
 	overflow:hidden;
         height:200px;
@@ -513,6 +513,7 @@ h2.form_heading{
 
 .show_rt p{
 	font-size:13px;
+	padding:0px;
 }
 
 .show_lt h2{

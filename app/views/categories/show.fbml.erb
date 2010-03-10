@@ -10,9 +10,10 @@
 <%= link_to "Categories",root_url %> >>
 
 <%@ancestors.each do |ancestor| %>
-<%= link_to "#{find_category(ancestor).name}",category_path(find_category(ancestor).id)%><%if ancestor != @ancestors.last%>
+  <%= link_to "#{find_category(ancestor).name}",category_path(find_category(ancestor).id)%>
+  <%if ancestor != @ancestors.last%>
 >>
-<%end%>
+  <%end%>
 <%end%>
 <%end%>
 
@@ -25,7 +26,7 @@
 	<div class="box"
 		<div class="heading"><%=h @category.name %></div>
 		<div class="box_lt">
-			<center><%= image_tag @category.avatar.url(:thumb)%></center>
+			<center><%= image_tag @category.avatar.url(:medium)%></center>
 		</div>
 		<div class="box_rt">
  			<p><%=h @category.description %></p>

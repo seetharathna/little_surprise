@@ -422,7 +422,7 @@ h2.form_heading{
 
 
 .description{
-        height:85px;
+        height:95px;
 	margin:2px 5px;
 	width: 135px; 
 	overflow:hidden; 
@@ -446,7 +446,7 @@ h2.form_heading{
 }
 
 .description p{
-       margin:0px 0px 0px 12px;
+    margin:0px 0px 0px 12px;
 	color:#000;
 	font-size:12px;
 	

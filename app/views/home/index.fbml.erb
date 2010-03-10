@@ -16,6 +16,10 @@
 
         <% @counter = @counter + 1 %>
 
+   <div class="description">
+      <h4><%=h fb_category.name %></h4>
+   </div>
+
 	<div class="list_box">
 		<center><%=link_to "#{image_tag fb_category.avatar.url(:thumb)}",category_path(fb_category.id)%></center>
 	</div>
@@ -23,8 +27,6 @@
 	<div class="description">
                   <h4><%=h fb_category.name %></h4>
 		<p><%=h fb_category.description %></p>
-		
-	  	
 	</div>
 
 	

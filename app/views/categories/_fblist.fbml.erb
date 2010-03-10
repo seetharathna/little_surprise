@@ -16,10 +16,10 @@
 
 	<div class="description">
 		 <h4>Points needed:<%=h fb_category.lowest_number_of_points_needed %></h4>
-    <a><%=link_to "View details",category_path(fb_category.id)%></a>
+         <a><%=link_to "View details",category_path(fb_category.id)%></a>
 	</div>
 	  	
-	</div>
+	
 
 	<div class="points">
          <% if @wish_list.blank? %>

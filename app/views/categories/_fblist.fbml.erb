@@ -14,7 +14,7 @@
        <center><%=link_to "#{image_tag fb_category.avatar.url(:thumb)}",category_path(fb_category.id,:links => @links)%></center>
 	</div>
 
-	<div class="desription">
+	<div class="description">
 		 <h4>Points needed:<%=h fb_category.lowest_number_of_points_needed %></h4>
     <a><%=link_to "View details",category_path(fb_category.id)%></a>
 	</div>
@@ -22,8 +22,7 @@
 	</div>
 
 	<div class="points">
-       
-               <% if @wish_list.blank? %>
+         <% if @wish_list.blank? %>
             		<%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%> 
          	<%else%>
              		<% unless @category_ids.include?(fb_category.id) %>

@@ -515,6 +515,12 @@ h2.form_heading{
 	color:#000;
 }
 
+
+.show_rt h4{
+	font-size:13px;
+	padding:0px;
+	color:#3a3d3f;
+}
 .show_rt a{
 	font-size:13px;
 	padding:0px;

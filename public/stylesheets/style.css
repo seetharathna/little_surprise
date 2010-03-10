@@ -426,8 +426,16 @@ h2.form_heading{
 	margin:2px 5px;
 	width: 135px; 
 	overflow:hidden; 
-	
 }
+
+.name{
+      margin:0px 0px 0px 5px;
+	color:#000;
+	font-size:13px;
+	font-weight:bold;
+}   
+	
+
 
 .description h4{
        margin:0px 0px 0px 5px;

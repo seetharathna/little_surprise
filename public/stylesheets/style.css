@@ -489,7 +489,6 @@ h2.form_heading{
 	margin: 15px 0px 10px 25px; 
 	padding:1px;
 	width:700px; 
-	border:1px solid #ccc;
 }
 
 .show_lt {
@@ -498,7 +497,6 @@ h2.form_heading{
 	margin: 5px 0px 5px 2px;
         height:200px;
 	overflow:hidden;
-	background-color:#fff;
 	border:1px solid #ccc;
 }
 
@@ -514,6 +512,7 @@ h2.form_heading{
 .show_rt p{
 	font-size:13px;
 	padding:0px;
+	color:#000;
 }
 
 .show_rt a{
@@ -621,6 +620,12 @@ table.formstyle tr td input:focus{
 	background-color:#c4d6fb;
 }
 
+
+.top_links a{
+	color:red;
+	font-weight:bold;
+	font-size:13px;
+}
 
 #banners {margin: 20px;}
 .banner {margin-bottom: 20px; }

@@ -34,7 +34,7 @@
   			
 		
 			<p>Lowest number of points needed:
-  			<%=h @category.lowest_number_of_points_needed %></p>
+  			<b><%=h @category.lowest_number_of_points_needed %></b></p>
 			<a><%=h @category.url %></a> |
             <% if @wish_list.blank? %>
             		<%=link_to "Add to wishlist", new_wish_list_path ,:confirm => 'You have not created a wishlist yet.Create a new wishlist?'%> 

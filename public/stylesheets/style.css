@@ -497,6 +497,15 @@ font-size:12px;
 	background-color: #ccc;
 }
 
+.show_lt{
+        height:230px;
+	float:left; 
+	margin: 15px 0px 10px 25px; 
+	padding:1px;
+	width: 500px; 
+	background-color: #ccc;
+}
+
 
 .formstyle{
 	background:#f7f7f9 url(/images/form_bg.jpg) repeat-x;

@@ -512,12 +512,12 @@ h2.form_heading{
 .show_rt p{
 	font-size:13px;
 	padding:0px;
-	color:#000;
+	color:#1573a4;
 }
 
 
-.show_rt h4{
-	font-size:13px;
+.show_rt p.points{
+	font-size:14px;
 	padding:0px;
 	color:#3a3d3f;
 }

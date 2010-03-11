@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
        @search.conditions.parent_id = params[:category_id] if params[:category_id]
      else
        @search.conditions.id = params[:id] if params[:id]
-       @search.conditions.parent_id = nil
+       #@search.conditions.parent_id = nil
      end
      
      @categories = @search.all

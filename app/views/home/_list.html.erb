@@ -1,6 +1,6 @@
 <h4>Product Categories</h4>
 <% @categories.each do |category| %>
-<div class="list">
+<div id="list">
 
 <div class="list_box">
 		   
@@ -10,7 +10,7 @@
 </div>
 
 <div class="description">
-	       <h4><%=h category.name %></h4>	
+	        <h3><%=h category.name %></h3>
 		<p><%=h category.description %></p>
 </div>
 
@@ -20,31 +20,6 @@
 
 
 
-<!--<h3>Product Categories</h3>
-<% @categories.each do |category| %>
-<div class="outer_box">
-<div class="box">
-
-<div class="heading"><%=h category.name %></div>
-<div class="box_lt">
-		   
-		<center><%= image_tag category.avatar.url(:thumb)%></center>
-</div>
-<div class="box_rt">
-
-		
-		<p><%=h category.description %></p>
-    		<a><%=h category.url %></a>
-</div>
-   
-
-<div class="points">
-	Lowest Points Needed :
-	<%=h category.lowest_number_of_points_needed %>
-</div>
-</div>
-</div>
-<% end %>-->
 
 
 <script type="text/javascript">

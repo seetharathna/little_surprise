@@ -477,6 +477,7 @@ h2.form_heading{
 .description a{
         margin:2px 0px 0px 0px;
 	color:#9f1717;
+	text-align:center;
 }
 
 
@@ -520,10 +521,11 @@ h2.form_heading{
 	font-size:13px;
 	padding:0px;
 	margin:0px 0px 0px 5px;
+	color:#9f1717;
 }
 
 .show_lt h2{
-	color:#2c4a83;
+	color:#000;
 	font-weight:bold;
 	font-size:14px;
 	padding:0px;

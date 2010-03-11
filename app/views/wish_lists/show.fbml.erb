@@ -36,16 +36,10 @@
           		<div class="name"><center><%=h category.name %></center></div>
 
           		<div class="list_box"><center><%= image_tag category.avatar.url(:thumb)%></center>
-			    </div>
-
-          		<div class="description">
-				<p><%=h category.description %></p>
-				<a><%=h category.url %></a>
-          		</div>
-         
+			    </div>        
          
           		<% if @current_user == @wish_list.user %>
-          		<div class="points"><%= link_to 'Remove from wishlist', remove_category_wish_lists_path(:id => category.category_id), :confirm => "#{category.name} will be removed from your wishlist.", :method => :delete %>
+          		<div class="description"><%= link_to 'Remove from wishlist', remove_category_wish_lists_path(:id => category.category_id), :confirm => "#{category.name} will be removed from your wishlist.", :method => :delete %>
           		</div>
         		 <% end %>
        

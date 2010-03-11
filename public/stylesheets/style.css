@@ -431,13 +431,21 @@ h2.form_heading{
 
 
 .list{
-	height:250px;
+	height:200px;
 	float:left; 
 	margin: 15px 0px 10px 0px; 
 	padding:1px 5px;
 	width: 135px; 
 	border-bottom:1px solid #ccc;
+	overflow:hidden;
 }
+
+.name{
+    	margin:0px 0px 0px 5px;
+	color:#000;
+	font-size:13px;
+	font-weight:bold;
+}  
 
 .list_box{
         height:130px;
@@ -457,11 +465,7 @@ h2.form_heading{
 	overflow:hidden; 
 }
 
-.name{
-    	margin:0px 0px 0px 5px;
-	color:#000;
-	font-size:13px;
-}   
+ 
 	
 
 

@@ -3,6 +3,7 @@ class HomeController < ApplicationController
      
      @search = Category.new_search(:limit => 4)
      @search.conditions.id = params[:id] if params[:id]
+     @search.conditions.parent_id = nil
      @categories =  @search.all
     
      @parent = Category.find_all_by_parent_id(nil,:limit => 4)

@@ -478,8 +478,8 @@ h2.form_heading{
 }
 
 .description h3{
-        margin:0px 0px 0px 12px;
-	color:#000;
+        margin:0px 0px 0px 8px;
+	color:#000;font-weight:bold;
 	font-size:13px;
 }
 

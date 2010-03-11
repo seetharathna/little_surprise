@@ -1,20 +1,14 @@
 class CategoriesController < ApplicationController
  
   def index
-     #params[:search] ||= {}
-     #params[:search][:conditions] ||= {}
-     #params[:search][:conditions][:id] = params[:id] unless params[:id].blank?
+    
      
      @search = Category.new_search(params[:search])
      if !params[:category_id].blank?
        @search.conditions.parent_id = params[:category_id] if params[:category_id]
-       #sub_categories = Category.find_all_by_parent_id(params[:category_id])
-       
-       #if sub_categories.blank?
-         #redirect_to  category_path(params[:category_id])
-       #end
      else
        @search.conditions.id = params[:id] if params[:id]
+       @search.conditions.parent_id = nil
      end
      
      @categories = @search.all
@@ -57,7 +51,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @child = Category.find(params[:id])
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @category }

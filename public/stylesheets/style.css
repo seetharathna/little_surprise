@@ -436,7 +436,7 @@ h2.form_heading{
 	margin: 15px 0px 10px 0px; 
 	padding:1px 5px;
 	width: 135px; 
-	bXorder-boXttom:1px solid #ccc;
+	border-bottom:1px solid #ccc;
 	overflow:hidden;
 }
 
@@ -456,18 +456,12 @@ h2.form_heading{
 	background-color:#fff;
 }
 
-
-
 .description{
         height:95px;
 	margin:2px 5px;
 	width: 135px; 
 	overflow:hidden; 
 }
-
- 
-	
-
 
 .description h4{
         margin:0px 0px 0px 5px;
@@ -483,6 +477,7 @@ h2.form_heading{
 
 .description a{
        margin:0px 0px 0px 12px;
+	color:#9f1717;
 }
 
 

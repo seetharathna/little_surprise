@@ -431,13 +431,12 @@ h2.form_heading{
 
 
 .list{
-	height:200px;
+	height:205px;
 	float:left; 
 	margin: 15px 0px 10px 0px; 
 	padding:1px 5px;
 	width: 135px; 
 	border-bottom:1px solid #ccc;
-	overflow:hidden;
 }
 
 .name{
@@ -476,7 +475,7 @@ h2.form_heading{
 }
 
 .description a{
-        margin:0px 0px 0px 0px;
+        margin:2px 0px 0px 0px;
 	color:#9f1717;
 }
 

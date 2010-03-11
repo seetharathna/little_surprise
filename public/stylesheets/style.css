@@ -37,17 +37,18 @@ quotes : "" "";
 body { margin: 10px 0px; padding: 0px; background:#fff url(/images/body.jpg) repeat-x; color: #6d6c67; font-family: Arial, Helvetica, Sans-Serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 13px; line-height: normal; }
 
 .notice{
-	width:900px;
 	margin:0 auto;
-	color:#3b612d;
-	font-size:15px;
-	line-height:30px;
-	padding-left:10px;
+	color:#9b1121;
+	font-size:20px;
+	line-height:20px;
+	padding:0px 40px;
+	background-color:#b7d47a;
+	
 }
 
 .Login{
 	width:25%;
-	background-color:#9a1e73;
+	background-color:#2fa1f1;
 	margin:0 auto;
 	padding:50px 20px;
 }
@@ -91,9 +92,7 @@ body { margin: 10px 0px; padding: 0px; background:#fff url(/images/body.jpg) rep
 	padding:35px 0px;
 }
 
- h2 {
-       font-size: 2.4em;
-}
+
 
 .main{
 	width:920px;
@@ -101,13 +100,23 @@ body { margin: 10px 0px; padding: 0px; background:#fff url(/images/body.jpg) rep
 	min-height:600px;
 	height:auto !important;
         height:600px;
+        padding:5px 5px 0px 10px;
+	
+}
+
+.header{
+	width:920px;
+	margin:0 auto;
+	min-height:80px;
+	height:auto !important;
+        height:80px;
         padding:0px 5px 0px 10px;
 	
 }
 
 .header_left{
 	float:left;
-	width:32%;height:48px;
+	width:32%;height:44px;
 	margin:0px 0px 0px 10px;
 	padding:0px 0px 0px 55px;
 	background: url(/images/heading.gif) no-repeat;
@@ -117,7 +126,7 @@ body { margin: 10px 0px; padding: 0px; background:#fff url(/images/body.jpg) rep
 	float:right;
 	width:45%;
 	margin:0px 10px 37px 0px;
-	height:48px;
+	height:44px;
 }
 
 
@@ -164,9 +173,9 @@ ul.btn li{
 
 .image_bg{
 	margin:0px 0px 15px 0px ;
-	height:264px;
-	clear:both;
-	padding:5px 0px 0px 0px
+	height:270px;
+	clear:both;background: url(/images/image_bg.jpg) repeat-x;
+	padding:5px 40px 0px 40px
 }
 
 .image_bg p span,a{
@@ -236,16 +245,16 @@ p.text{
 	height:auto !important;
         height:600px;
         float:left;
-	border:1px solid #ddd;
-	background:#f2f2f2 url(/imageXs/bg_side.gif) repeat-y right;
+	border:1px solid #c1bdbd;
+	background:#d5d3d3 url(/images/sidebar.jpg) repeat-x;
 }
 
 .sidebar h2{
-	color:#1d93d3; 
-	border-bottom:1px solid #cbcbcb; 
+	color:#1990d4; 
+	border-bottom:1px solid #c1bdbd; 
 	font-size:25px;
-	margin:3px 0px 0px 0px;
-	padding:2px 0px 2px 10px;
+	margin:0px 0px 0px 0px;
+	padding:3px 0px 2px 10px;background:url(/images/sidebar-top.jpg) repeat-x ;
 }
 
 ul#tree{
@@ -281,6 +290,13 @@ ul#tree li ul li {
 	background-color: #fff;
 }
 
+.bg{
+	background-color:#fbfff3;
+	
+	padding:0px 5px 5px 0px;
+	
+}
+
 .facebook_container{
 	width:100%;
 	min-height:600px;
@@ -299,10 +315,15 @@ ul#tree li ul li {
 
 .container h2{
 	color:#84a934; 
-	border-bottom:1px solid #a3cd48;
 	font-size:26px;
-	margin:2px 0px 0px 6px;
-	padding:2px 0px;
+	margin:0px 0px 0px 6px;border-bottom:1px solid #84a934;
+	padding:2px 0px 3px 0px;
+}
+
+.container hr{
+	border-top:1px solid #9ec844;
+	border-bottom:1px solid #f1f8e2;
+	margin:0px;
 }
 
 .container p{
@@ -333,7 +354,7 @@ ul#tree li ul li {
 
 .container h2 span a{
 	font-size:13px;
-	color:#fff;
+	color:#2fa1f1;
 	padding:0px;
 	text-decoration:none;
 }
@@ -421,7 +442,7 @@ hr{
 }
 
 h2.form_heading{
-	background-color:#bc3b93; 
+	background-color:#1d93d3; 
 	color:#fff;
 	font-size:20px;
 	width:62%;
@@ -479,7 +500,8 @@ h2.form_heading{
 
 .description h3{
         margin:0px 0px 0px 8px;
-	color:#000;font-weight:bold;
+	color:#000;
+	font-weight:bold;
 	font-size:13px;
 }
 
@@ -654,7 +676,9 @@ table.formstyle tr td input:focus{
 h2.banner{
 	color:#b32b31;
 	font-size:22px;
-	margin:20px 0px 0px 25px;	
+	margin:20px 5px 0px 5px;
+	background:none;
+	text-align:leftl	
 }
 
 #tree li{

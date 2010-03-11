@@ -15,9 +15,9 @@
 <%= fb_connect_javascript_tag %>
 <%= init_fb_connect "XFBML", :js => :jquery %>
 
-	<p class= "notice"><%= flash[:notice] %></p>
+	
 
-<div class="main">
+<div class="header">
 	<div class="header_left">
 		<h1>Little <span>Surprizes</span></h1>
     	</div>
@@ -25,9 +25,10 @@
 	<div class="header_right">
 		<%= render :partial => "shared/link" %>	
 	</div>
-
-       <%= yield  %>
 </div>
+<div class="notice"><p class= "notice"><%= flash[:notice] %></p></div>
+       <%= yield  %>
+
 
 <div class="clear"></div>
 

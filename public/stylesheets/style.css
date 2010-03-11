@@ -482,7 +482,7 @@ h2.form_heading{
 
 .show-box{
        	float:left; 
-	margin: 15px 0px 10px 0px; 
+	margin: 15px 0px 10px 5px; 
 	padding:1px;
 	width:700px; 
 }

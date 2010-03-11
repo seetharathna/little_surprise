@@ -2,10 +2,18 @@ class HomeController < ApplicationController
    def index
      
      @search = Category.new_search(:limit => 4)
-     @search.conditions.id = params[:id] if params[:id]
-     #@search.conditions.parent_id = nil
+     if params[:id]
+       @category =  Category.find(params[:id]) 
+       if @category.parent_id
+         @search.conditions.id = params[:id] 
+       else 
+         @search.conditions.id = params[:id] 
+         @search.conditions.parent_id = nil
+       end
+     else
+       @search.conditions.parent_id = nil
+     end
      @categories =  @search.all
-    
      @parent = Category.find_all_by_parent_id(nil,:limit => 4)
      
      respond_to do |format|

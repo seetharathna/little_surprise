@@ -1,18 +1,26 @@
 class CategoriesController < ApplicationController
  
   def index
-    
-     
-     @search = Category.new_search(params[:search])
-     if !params[:category_id].blank?
+    @search = Category.new_search(params[:search])
+    if !params[:category_id].blank?
        @search.conditions.parent_id = params[:category_id] if params[:category_id]
-     else
-       @search.conditions.id = params[:id] if params[:id]
-       #@search.conditions.parent_id = nil
+    else
+       if params[:id]
+          @category =  Category.find(params[:id])
+          if @category.parent_id
+            @search.conditions.id = params[:id] 
+          else 
+            @search.conditions.id = params[:id] 
+            @search.conditions.parent_id = nil
+          end
+        else
+          @search.conditions.parent_id = nil
+        end
      end
+       
+      @categories = @search.all
+      @parent = Category.find_all_by_parent_id(nil)
      
-     @categories = @search.all
-     @parent = Category.find_all_by_parent_id(nil)
      
      
      respond_to do |format|

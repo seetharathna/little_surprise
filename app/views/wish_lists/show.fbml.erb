@@ -35,7 +35,8 @@
       
           		<div class="name"><center><%=h category.name %></center></div>
 
-          		<div class="list_box"><center><%= image_tag category.avatar.url(:thumb)%></center>
+          		<div class="list_box">
+				<center><%= image_tag category.avatar.url(:thumb)%></center>
 			    </div>        
          
           		<% if @current_user == @wish_list.user %>

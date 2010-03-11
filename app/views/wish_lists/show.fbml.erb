@@ -40,7 +40,7 @@
 			    </div>        
          
           		<% if @current_user == @wish_list.user %>
-          		<div class="description"><%= link_to 'Remove from wishlist', remove_category_wish_lists_path(:id => category.category_id), :confirm => "#{category.name} will be removed from your wishlist.", :method => :delete %>
+          		<div class="description"><center><%= link_to 'Remove from wishlist', remove_category_wish_lists_path(:id => category.category_id), :confirm => "#{category.name} will be removed from your wishlist.", :method => :delete %></center>
           		</div>
         		 <% end %>
        

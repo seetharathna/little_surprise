@@ -123,7 +123,8 @@ private
   end
  
   def user
-    User.find_or_create_by_facebook_id(facebook_session.user.to_i)
+    user = User.find_by_facebook_id(facebook_session.user.to_i)
+    user ||= set_current_user 
   end
 
   def facebook_user

@@ -30,13 +30,11 @@
       <% if @banners.size < 2 %>
            <% if @banners.blank? %>
              <div class = 'banner'>
-                <%= image_tag('banner.gif') %><br />
-                <%= link_to 'Add a new banner', new_admin_banner_path %>
+                <%= link_to(image_tag('banner.gif'), new_admin_banner_path) %><br />
              </div>
            <% end %>  
             <div class = 'banner'>
-              <%= image_tag('banner.gif') %><br />
-              <%= link_to 'Add a new banner', new_admin_banner_path %>
+              <%= link_to(image_tag('banner.gif'), new_admin_banner_path) %><br />
             </div>
           <% end %>  
     

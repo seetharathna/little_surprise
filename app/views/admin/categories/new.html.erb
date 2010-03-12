@@ -1,3 +1,4 @@
+<div class="main">
 <div class="clear"></div>
 <h2 class="form_heading">Add New Category </h2>
 <% form_for([:admin,@category], :url => admin_categories_path,:html => { :multipart => true })  do |f| %>
@@ -28,5 +29,6 @@
     <center><%= f.submit 'Create' %></center>
   </div>
 <% end %>
+</div>
 
 <!--<%= link_to 'Back', categories_path %>-->

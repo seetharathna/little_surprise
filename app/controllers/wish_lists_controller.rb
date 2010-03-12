@@ -3,8 +3,6 @@ class WishListsController < ApplicationController
   before_filter :set_current_user,:only => [:delete, :edit]
   before_filter :wish_list_exists,:only => [:new]
  
-  
- 
   def show
     @wish_list = WishList.find(params[:id]) rescue nil
     unless @wish_list.blank?

@@ -94,7 +94,7 @@ body { margin: 10px 0px; padding: 0px; background:#fdfdfd url(/images/body.jpg) 
 
 
 .main{
-	width:920px;
+	width:940px;
 	margin:0 auto;
 	min-height:600px;
 	height:auto !important;
@@ -104,7 +104,7 @@ body { margin: 10px 0px; padding: 0px; background:#fdfdfd url(/images/body.jpg) 
 }
 
 .header{
-	width:920px;
+	width:940px;
 	margin:0 auto;
 	min-height:80px;
 	height:auto !important;
@@ -173,13 +173,14 @@ ul.btn li{
 .image_bg{
 	margin:0px 0px 15px 0px ;
 	height:270px;
-	clear:both;background: url(/images/image_bg.jpg) repeat-x;
+	clear:both;
+	background: url(/images/image_bg.jpg) repeat-x;
 	padding:5px 0px 0px 0px
 }
 
 .image_in{
 	margin:0 auto;
-	width:920px;
+	width:940px;
 }
 
 .image_bg p span,a{
@@ -243,7 +244,7 @@ p.text{
 
 
 .sidebar{
-        width:235px;
+        width:25%;
 	min-height:600px;
 	height:auto !important;
         height:600px;

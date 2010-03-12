@@ -3,9 +3,7 @@ class WishListsController < ApplicationController
   before_filter :set_current_user,:only => [:delete, :edit]
   before_filter :wish_list_exists,:only => [:new]
  
-  #def index
-   #WishList.birthday_reminder
-  #end 
+  
  
   def show
     @wish_list = WishList.find(params[:id]) rescue nil
@@ -122,10 +120,10 @@ private
     end
   end
  
-  def user
+   def user
     user = User.find_by_facebook_id(facebook_session.user.to_i)
     user ||= set_current_user 
-  end
+   end
 
   def facebook_user
     facebook_session.user

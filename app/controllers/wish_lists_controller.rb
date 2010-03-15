@@ -56,7 +56,7 @@ class WishListsController < ApplicationController
   def destroy
     @wish_list = WishList.find(params[:id])
     @wish_list.destroy
-    redirect_to(categories_path)
+    redirect_to(root_url)
   end
 
   def add_to_wishlist

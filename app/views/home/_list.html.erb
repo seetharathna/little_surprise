@@ -4,7 +4,7 @@
 
 <div class="list_box">
 		   
-		<center><%= image_tag category.avatar.url(:thumb)%></center>
+		<center><%=link_to "#{image_tag category.avatar.url(:thumb)}",categories_path(:category_id => category.id)%></center>
                  
 
 </div>

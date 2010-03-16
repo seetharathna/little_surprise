@@ -9,4 +9,9 @@ module ApplicationHelper
     return  category
   end
 
+  def find_root(id)
+    category = Category.find(id) rescue nil
+    return  category
+  end
+
 end

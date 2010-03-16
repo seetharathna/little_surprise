@@ -3,9 +3,11 @@
 <div id="list">
 
 <div class="list_box">
-		   
-		<center><%=link_to "#{image_tag category.avatar.url(:thumb)}",categories_path(:category_id => category.id)%></center>
-                 
+		<%unless find_root(category).children.blank?%>    
+		   <center><%=link_to "#{image_tag category.avatar.url(:thumb)}",categories_path(:category_id => category.id)%></center>
+        <%else%>
+           <center><%= image_tag(category.avatar.url(:thumb)) %></center>
+        <%end%>
 
 </div>
 

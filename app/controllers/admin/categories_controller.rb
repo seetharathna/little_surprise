@@ -5,10 +5,24 @@ before_filter :check_admin,:except => :index
   
   def index
      
-     params[:search] ||= {}
-     params[:search][:conditions] ||= {}
-     params[:search][:conditions][:id] = params[:id] unless params[:id].blank?
+     
      @search = Category.new_search(params[:search])
+      if !params[:category_id].blank?
+       
+       @search.conditions.parent_id = params[:category_id] if params[:category_id]
+     else
+       if params[:id]
+          @category =  Category.find(params[:id])
+          if @category.parent_id
+            @search.conditions.id = params[:id] 
+          else 
+            @search.conditions.id = params[:id] 
+            @search.conditions.parent_id = nil
+          end
+        else
+          @search.conditions.parent_id = nil
+        end
+     end
      @categories = @search.all
      @parent = Category.find_all_by_parent_id(nil)
      @banners = Banner.find(:all)

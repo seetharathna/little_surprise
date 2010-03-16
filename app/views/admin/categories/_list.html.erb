@@ -5,7 +5,11 @@
 		<div class="heading"><%=h category.name %></div>
 	
 		<div class="box_lt">
-			<center><%= image_tag category.avatar.url(:thumb)%></center>
+			<%unless find_root(category).children.blank?%>    
+		      <center><%=link_to "#{image_tag category.avatar.url(:thumb)}",admin_categories_path(:category_id => category.id)%></center>
+           <%else%>
+              <center><%= image_tag(category.avatar.url(:thumb)) %></center>
+           <%end%>
 		</div>
 		<div class="box_rt">
    			<p></b><%=h category.description %></p>

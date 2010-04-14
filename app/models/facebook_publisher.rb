@@ -43,17 +43,30 @@ def news_feed(recipients, title, body)
   
 end
 
-def notification_email(user,sender,friends,date)
+def notification_email(user,sender,friends,date,wish_list)
     send_as :email
     recipients friends
     from sender                       
     title "Birthday reminder"
     fbml  <<-MESSAGE                    
   	  <fb:fbml> 
-         #{user.facebook_id}'s birthday is on #{date.strftime("%B #{date.day.ordinalize}")} <br/><br/>
-
-        Click here to view #{user.facebook_id}'s wishlist http://apps.facebook.com/littlesurprizes/wish_lists/#{WishList.find_by_user_id(user.id).id rescue nil}}
+         #{user.name}'s birthday is on #{date.strftime("%B #{date.day.ordinalize}")} <br/><br/>
+        
+        Click here to view #{user.name}'s wishlist http://apps.facebook.com/littlesurprizes/wish_lists/#{wish_list}
          
+  	  </fb:fbml>
+  	MESSAGE
+ end
+
+def notification_email_without_wish_list(user,sender,friends,date)
+    send_as :email
+    recipients friends
+    from sender                       
+    title "Birthday reminder"
+    fbml  <<-MESSAGE                    
+  	  <fb:fbml> 
+         #{user.name}'s birthday is on #{date.strftime("%B #{date.day.ordinalize}")} <br/><br/>
+                
   	  </fb:fbml>
   	MESSAGE
  end

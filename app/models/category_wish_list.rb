@@ -1,4 +1,5 @@
 class CategoryWishList < ActiveRecord::Base
-belongs_to :categories
-belongs_to :wish_lists
+  belongs_to :category
+  belongs_to :wish_list
 end
+

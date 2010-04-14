@@ -1,49 +1,41 @@
+<script type="text/javascript">
+ function change_function ()
+ {
 
-<h1>Listing wish lists</h1>
+    
+    document.getElementById("edit").href = "littlesurprisetest/wish_lists/9/edit"
 
-
-
- <fb:prompt-permission perms="email" next_fbjs="$('#grant-permissions').hide()">
-    Click here to grant email access!
-  </fb:prompt-permission>
-
- <fb:prompt-permission perms="offline_access" next_fbjs="$('#grant-permissions').hide()">
-    Click here to grant offline access!
-  </fb:prompt-permission>
+    return false;
+ }
+</script>
 
 
+<h1>My wishlists</h1><br/>
 
-<% if !@my_wish_lists.blank? %>
 
-<table cellpadding="10px" cellspacing="10px">
-  <% @counter = 0 %>
+
+<table>
   <tr>
-  <% @my_wish_lists.each do |my_wish_list| %>
-  <% @counter = @counter + 1 %>
-    <td class = "image_border">
-      <div class = "left">
-        <b><%=h my_wish_list.name %></b><br/><%= image_tag my_wish_list.avatar.url(:thumb)%>
-      </div>
- 
-      <div class = "right">
-        <b>Description:</b><%=h my_wish_list.description %><br/>
-        <b>Url</b>:<a><%=h my_wish_list.url %></a><br/>
-        <b>Lowest points needed:</b><%=h my_wish_list.lowest_number_of_points_needed %><br/>
-        <b><%= link_to 'Remove from wishlist', wish_list_path(:id => my_wish_list.category_id), :confirm => 'Are you sure?', :method => :delete %></b>
-      </div>
-     </td>
-     <% if @counter == 2 %>
-    <tr></tr>
-    <% @counter = 0 %> 
-    <%end%>
-  <% end %>
+    <th></th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Created at</th>
   </tr>
+
+
+<% @wish_lists.each do |wish_list| %>
   <tr>
-   </tr>
+    <td> <%=radio_button_tag('wishlist_id', wish_list.id, checked = false, options = {:onclick => "change_function()"})%>   </td>
+     <td><%=link_to "#{wish_list.name}",edit_wish_list_path(wish_list)%></td>
+    <td><%=h wish_list.description %></td>
+    <td><%=Time.parse(wish_list.created_at.to_s).strftime('%m/%d/%Y') %></td>
+    <!--<td><%= link_to 'Show', wish_list %></td>
+    <td><%= link_to 'Edit', edit_wish_list_path(wish_list) %></td>
+    <td><%= link_to 'Destroy', wish_list, :confirm => 'Are you sure?', :method => :delete %></td>-->
+  </tr>
+<% end %>
 </table>
-<%else%>
-  <%=@message%>
-<%end%>
 
 <br />
 
+<%= link_to 'Add new', new_wish_list_path %> |<%= link_to 'Edit', edit_wish_list_path(34),:id => "edit" %>| <%= link_to 'Delete selected', new_wish_list_path %> 

@@ -14,4 +14,14 @@ module ApplicationHelper
     return  category
   end
 
+  def find_custom_description(wish_list,category)
+   description = CategoryWishList.find_by_wish_list_id_and_category_id(wish_list,category).custom_description rescue nil
+   return description
+  end
+
+  def find_by_wish_list_and_category(w_id,ct_id)
+    record = CategoryWishList.find_by_wish_list_id_and_category_id(w_id,ct_id)
+    record.blank?? "" : record.custom_description
+  end
 end
+
